@@ -2,13 +2,33 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* Light mode is the default. Dark mode only applies when <html> has class="dark"
+   (set by the theme toggle we'll add later). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Oneg brand palette
+   Use directly as Tailwind classes, e.g. bg-oneg-teal, text-oneg-blue
+   ------------------------------------------------------------------ */
+@theme {
+  --color-oneg-teal: #6cc2ba;  /* brand teal */
+  --color-oneg-paper: #eff1f2; /* light-mode app background */
+  --color-oneg-mist: #dae1e7;  /* light sections / elements */
+  --color-oneg-green: #6dccc3; /* green accent */
+  --color-oneg-blue: #2064b6;  /* blue: buttons, links */
+  --color-oneg-night: #1c2b33; /* dark-mode app background */
+  --color-oneg-cyan: #00ddff;  /* logo ring */
+}
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navbar: var(--navbar);
+  --color-field: var(--field);
+  --color-field-focus: var(--field-focus);
+  --color-navbar-foreground: var(--navbar-foreground);
+  --font-sans: var(--font-albert-sans), system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -48,83 +68,353 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ---------- Light mode ---------- */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  color-scheme: light;
+  --background: #eff1f2;
+  --foreground: #10232b;
+  --navbar: #ffffff;
+  --navbar-foreground: #10232b;
+  --field: #eff1f2;       /* filled controls, e.g. language picker */
+  --field-focus: #e3e7ea;
+  --card: #dae1e7;
+  --card-foreground: #10232b;
+  --popover: #dae1e7;
+  --popover-foreground: #10232b;
+  --primary: #2064b6;
+  --primary-foreground: #ffffff;
+  --secondary: #6dccc3;
+  --secondary-foreground: #10232b;
+  --muted: #dae1e7;
+  --muted-foreground: #46596a;
+  --accent: #6dccc3;
+  --accent-foreground: #10232b;
+  --destructive: #c62828;
+  --border: rgb(16 35 43 / 15%);
+  --input: rgb(16 35 43 / 20%);
+  --ring: #2064b6;
+  --chart-1: #2064b6;
+  --chart-2: #6dccc3;
+  --chart-3: #1c2b33;
+  --chart-4: #dae1e7;
+  --chart-5: #46596a;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #dae1e7;
+  --sidebar-foreground: #10232b;
+  --sidebar-primary: #2064b6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #6dccc3;
+  --sidebar-accent-foreground: #10232b;
+  --sidebar-border: rgb(16 35 43 / 15%);
+  --sidebar-ring: #2064b6;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+/* ---------- Dark mode (only when <html class="dark">) ---------- */
+:root.dark {
+  color-scheme: dark;
+  --background: #1c2b33;
+  --foreground: #e6edf1;
+  --navbar: #15222a;
+  --navbar-foreground: #e6edf1;
+  --field: #253842;
+  --field-focus: #2e4450;
+  --card: #253842;
+  --card-foreground: #e6edf1;
+  --popover: #253842;
+  --popover-foreground: #e6edf1;
+  --primary: #2064b6;
+  --primary-foreground: #ffffff;
+  --secondary: #6dccc3;
+  --secondary-foreground: #10232b;
+  --muted: #253842;
+  --muted-foreground: #9fb2bd;
+  --accent: #6dccc3;
+  --accent-foreground: #10232b;
+  --destructive: #ef5350;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: #6dccc3;
+  --sidebar: #253842;
+  --sidebar-foreground: #e6edf1;
+  --sidebar-primary: #2064b6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #6dccc3;
+  --sidebar-accent-foreground: #10232b;
+  --sidebar-border: rgb(255 255 255 / 10%);
+  --sidebar-ring: #6dccc3;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html,
+  body {
+    min-height: 100%;
+  }
   body {
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans bg-background;
+    /* Whole app is sized like the browser at 90% zoom (user's choice).
+       Use rem-based sizes (Tailwind defaults) so everything follows this. */
+    font-size: 90%;
   }
+}
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Everything uses Albert Sans (loaded in app/[lang]/layout.js) via html's font-sans.
+   Albert Sans has no Arabic letters, so Arabic pages use the system font. */
+html:lang(ar) {
+  font-family: system-ui, 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Hide the scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Style the scrollbar itself */
+::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+}
+
+/* Show the pill (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 9999px;
+}
+
+/* ---------- Gradient pill (hero "Try personal care") ----------
+   A conic gradient with coloured streaks spins behind the pill (::before);
+   a white layer (::after) covers all but a thin edge, so only the border moves.
+   Technique from the "galaxy button" on Uiverse.io, without the blur glow. */
+.oneg-gradient-pill {
+  position: relative;
+  display: inline-flex;
+  border-radius: 9999px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.oneg-gradient-pill::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 600px;
+  height: 600px;
+  z-index: 0;
+  background: conic-gradient(
+    from 0deg,
+    #d5dbe1 0deg,
+    #0091ff 50deg,
+    #ff02f0 110deg,
+    #d5dbe1 180deg,
+    #f76808 230deg,
+    #6647f0 290deg,
+    #d5dbe1 360deg
+  );
+  transform: translate(-50%, -50%);
+  animation: oneg-pill-spin 4s linear infinite;
+}
+
+.oneg-gradient-pill:hover::before {
+  animation-duration: 2s; /* speeds up on hover */
+}
+
+.oneg-gradient-pill::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px; /* border thickness */
+  z-index: 1;
+  border-radius: 9999px;
+  background: #ffffff;
+}
+
+.oneg-gradient-pill > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes oneg-pill-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oneg-gradient-pill::before {
+    animation: none;
+  }
+}
+
+/* ══ Eye tracker (Lara's face) ══════════════════════════
+   From Bencho (MIT, bencho.dev/licence); see components/lara/eye-tracker.jsx.
+   Bencho's design tokens are mapped onto Oneg's own on the component's root,
+   so nothing new leaks out globally:
+     --bg      → Oneg's page ground   (--background)
+     --card    → Oneg's surface       (--card)
+     --ink     → Oneg's text          (--foreground)
+     --font-ui → Oneg's UI font       (--font-sans, Albert Sans)
+   --fill-slab / --fill-on (the body and the eyes) have no Oneg equivalent;
+   they are set per use, below for Lara */
+.eyt {
+  --bg: var(--background);
+  --card: var(--card);
+  --ink: var(--foreground);
+  --font-ui: var(--font-sans);
+}
+
+/* The frame holds the largest ball the Size knob allows, so the
+   wall never rescales it. */
+.eyt {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-items: center;}
+
+.eyt-ball {
+  width: var(--eyt-size, 100px);
+  height: var(--eyt-size, 100px);
+  overflow: visible;}
+
+/* the ball is the Fill's own slab and the eyes its ink: white
+   with dark eyes on a light fill, near-black with light eyes on
+   a dark one */
+.eyt-body { fill: var(--fill-slab, #ffffff); }
+
+.eyt-eye { fill: var(--fill-on, #0b0b0d); }
+
+/* a press on the toy opens a chat bubble off its lower right: the
+   pet's bubble, its square corner pointing back at the face */
+.eyt { position: relative; }
+
+/* Oneg: the poke target is a <button>; strip its default look */
+.eyt-hit {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 14px;}
+
+.eyt-hit:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+
+/* a press gives a little under the finger and springs back out */
+.eyt-ball[data-poke] {
+  cursor: pointer;
+  transform-origin: center;
+  transition: scale 420ms cubic-bezier(0.24, 1.34, 0.38, 1);
+  -webkit-tap-highlight-color: transparent;}
+
+.eyt-ball[data-poke]:active { scale: 0.96; transition-duration: 160ms; transition-timing-function: ease; }
+
+.eyt-say {
+  position: absolute;
+  left: calc(50% + var(--eyt-size, 100px) * 0.36);
+  top: calc(50% + var(--eyt-size, 100px) * 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 34px;
+  padding: 0 16px;
+  border-radius: 6px 14px 14px 14px;
+  background: var(--tint, #3b5bff);
+  box-shadow: inset 0 -1.5px 0 rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  transform-origin: top left;
+  opacity: 0;
+  scale: 0.85;
+  pointer-events: none;
+  transition: opacity 160ms ease, scale 220ms cubic-bezier(0.24, 1.34, 0.38, 1), background-color 220ms ease;
+  letter-spacing: 0em;}
+
+.eyt-say[data-on] { opacity: 1; scale: 1; }
+
+.eyt-caret {
+  width: 1.5px;
+  height: 13px;
+  border-radius: 1px;
+  background: var(--fill-slab, var(--card));
+  animation: pet-caret 1s steps(1) infinite;}
+
+@keyframes pet-caret {
+  50% { opacity: 0; }}
+
+/* ── Oneg: Lara, the floating AI ──────────────────────────
+   Built like Milo's button in the Milo project: a 48px black chip
+   (#141414, 12px corners) with the face's eyes in white, Milo's soft
+   shadow, and a slight grow on hover. The body is see-through so the
+   chip is the face, the way Bencho does it on its lock screen. It sits
+   in the bottom right corner, so its bubble opens up and to the LEFT,
+   its square corner pointing back at the face, instead of off screen. */
+.oneg-lara .eyt {
+  --fill-slab: transparent;
+  --fill-on: #ffffff;
+  width: auto;
+  height: auto;
+}
+
+.oneg-lara .eyt-hit {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px; /* Milo's rounded-xl: 0.625rem × 1.4 */
+  background: #141414;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  transition: transform 150ms ease;
+}
+
+.oneg-lara .eyt-hit:hover { transform: scale(1.05); }
+
+.oneg-lara .eyt-caret { background: #fff; }
+
+.oneg-lara .eyt-say {
+  left: auto;
+  top: auto;
+  right: calc(100% + 8px);
+  bottom: 50%;
+  border-radius: 14px 14px 6px 14px;
+  transform-origin: bottom right;
+}
+
+/* ── Auth page form card (light mode) ─────────────────────────
+   Lenzro's card is "bg-background" on a darker page. In Oneg's light mode the
+   page is the light grey background and the card is white, so the card
+   re-points --background to white: everything inside that reads the
+   background colour (like the "Or continue with" divider label) matches it. */
+.oneg-auth-card {
+  --background: #ffffff;
+  background: var(--background);
+}
+
+/* ── Lara's face inside her chat panel ────────────────────────
+   The same black chip and white eyes as her floating button, at any size
+   (64px over the starters, 24px beside her replies). */
+.oneg-lara-face {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #141414;
+}
+
+.oneg-lara-face .eyt {
+  --fill-slab: transparent;
+  --fill-on: #ffffff;
+  width: auto;
+  height: auto;
 }

@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "title": "Oneg",
+    "description": "Ongea na madaktari waliothibitishwa, wakati wowote."
+  },
+  "header": {
+    "banner": {
+      "text": "Tunakuletea Lara: angalia dalili zako na uunganishwe na daktari aliyethibitishwa kwa dakika chache.",
+      "link": "Jifunze zaidi",
+      "close": "Funga tangazo"
+    },
+    "nav": {
+      "featuredTitle": "Vilivyoangaziwa",
+      "newBadge": "MPYA",
+      "patients": {
+        "label": "Kwa wagonjwa",
+        "care": {
+          "title": "Pata huduma",
+          "items": {
+            "symptoms": "Angalia dalili kwa AI",
+            "findDoctor": "Tafuta daktari",
+            "book": "Weka miadi ya ushauri",
+            "video": "Ushauri kwa video"
+          }
+        },
+        "health": {
+          "title": "Afya yako",
+          "items": {
+            "records": "Rekodi za afya",
+            "prescriptions": "Maagizo ya dawa",
+            "family": "Akaunti za familia"
+          }
+        },
+        "urgent": {
+          "title": "Msaada wa haraka",
+          "items": {
+            "emergency": "Msaada wa dharura",
+            "hospitals": "Hospitali zilizo karibu",
+            "pharmacies": "Maduka ya dawa yaliyo karibu"
+          },
+          "seeAll": "Yote kwa wagonjwa"
+        },
+        "featured": {
+          "ai": {
+            "title": "Lara",
+            "desc": "Angalia dalili zako na upate daktari kwa dakika chache"
+          },
+          "mpesa": {
+            "title": "Malipo kwa M-Pesa",
+            "desc": "Lipia mashauriano moja kwa moja kutoka kwa simu yako"
+          }
+        }
+      },
+      "doctors": {
+        "label": "Kwa madaktari",
+        "start": {
+          "title": "Anza",
+          "items": {
+            "join": "Jiunge na Oneg",
+            "verify": "Pata uthibitisho",
+            "howItWorks": "Jinsi mashauriano yanavyofanya kazi"
+          }
+        },
+        "practice": {
+          "title": "Kazi yako",
+          "items": {
+            "schedule": "Ratiba na upatikanaji",
+            "prescribe": "Maagizo ya dawa kidijitali",
+            "notes": "Maelezo ya wagonjwa"
+          }
+        },
+        "earn": {
+          "title": "Mapato",
+          "items": {
+            "payouts": "Mapato na malipo",
+            "fees": "Weka ada zako"
+          },
+          "seeAll": "Yote kwa madaktari"
+        },
+        "featured": {
+          "dashboard": {
+            "title": "Dashibodi ya daktari",
+            "desc": "Wagonjwa, ratiba na mapato yako mahali pamoja"
+          },
+          "verified": {
+            "title": "Beji ya uthibitisho",
+            "desc": "Waonyeshe wagonjwa kuwa leseni yako imethibitishwa"
+          }
+        }
+      },
+      "hospitals": {
+        "label": "Kwa hospitali",
+        "partner": {
+          "title": "Ushirikiano",
+          "items": {
+            "partner": "Shirikiana na Oneg",
+            "solutions": "Huduma kwa hospitali",
+            "contact": "Ongea na timu yetu"
+          }
+        },
+        "services": {
+          "title": "Huduma",
+          "items": {
+            "referrals": "Rufaa za wagonjwa",
+            "telemedicine": "Huduma za mtandaoni kwa kliniki",
+            "beds": "Vitanda na nafasi za dharura"
+          },
+          "seeAll": "Yote kwa hospitali"
+        },
+        "featured": {
+          "dashboard": {
+            "title": "Dashibodi ya hospitali",
+            "desc": "Simamia rufaa na madaktari mahali pamoja"
+          },
+          "network": {
+            "title": "Mtandao wa rufaa",
+            "desc": "Pokea wagonjwa kutoka kwa madaktari wa Oneg"
+          }
+        }
+      },
+      "learn": {
+        "label": "Kujifunza",
+        "learn": {
+          "title": "Jifunze",
+          "items": {
+            "library": "Maktaba ya afya",
+            "firstAid": "Miongozo ya huduma ya kwanza",
+            "videos": "Masomo ya video",
+            "courses": "Kozi kwa wahudumu wa afya"
+          }
+        },
+        "discover": {
+          "title": "Gundua",
+          "items": {
+            "blog": "Blogu",
+            "news": "Habari za afya",
+            "families": "Miongozo kwa familia"
+          }
+        },
+        "support": {
+          "title": "Msaada",
+          "items": {
+            "help": "Kituo cha msaada",
+            "support247": "Msaada saa 24/7",
+            "contact": "Wasiliana nasi"
+          }
+        },
+        "spotlight": {
+          "title": "Mwongozo maalum",
+          "heading": "Jua la kufanya wakati wa dharura, kabla haijatokea.",
+          "cta": "Soma miongozo ya huduma ya kwanza"
+        }
+      },
+      "pricing": "Bei"
+    },
+    "actions": {
+      "login": "Ingia",
+      "getStarted": "Anza sasa"
+    },
+    "language": "Lugha",
+    "openMenu": "Fungua menyu",
+    "closeMenu": "Funga menyu",
+    "home": "Ukurasa wa mwanzo wa Oneg"
+  },
+  "hero": {
+    "tryPill": "Jaribu huduma binafsi",
+    "titleTop": "Programu Bora",
+    "titleMain": "ya Huduma za Afya",
+    "body": "Angalia dalili zako kwa AI na uzungumze na daktari aliyethibitishwa kwa dakika chache.",
+    "primaryCta": "Anza sasa",
+    "secondaryCta": "Tafuta daktari",
+    "note": "Kuangalia dalili kwa AI ni bure. Lipa tu unapomwona daktari."
+  },
+  "lara": {
+    "label": "Uliza Lara",
+    "lines": [
+      "Habari, mimi ni Lara.",
+      "Unajisikiaje leo?",
+      "Bup.",
+      "Hiyo inanitekenya.",
+      "Kunywa maji leo.",
+      "Niko hapa ukihitaji daktari.",
+      "Umenipata.",
+      "Acha kunichokoza."
+    ],
+    "chat": {
+      "title": "Mazungumzo mapya",
+      "newChat": "Mazungumzo mapya",
+      "hide": "Ficha mazungumzo",
+      "heading": "Nikusaidie vipi leo?",
+      "starters": {
+        "symptoms": "Angalia dalili zangu",
+        "findDoctor": "Tafuta daktari",
+        "book": "Weka miadi ya ushauri",
+        "library": "Soma maktaba ya afya"
+      },
+      "placeholder": "Uliza Lara",
+      "add": "Ongeza",
+      "send": "Tuma",
+      "steps": [
+        "Ninasoma swali lako",
+        "Ninakagua miongozo ya kitabibu inayoaminika",
+        "Ninaandaa jibu salama"
+      ],
+      "activity": {
+        "thinking": "Ninafikiri…",
+        "thoughtFor": "Nimefikiri kwa {duration}",
+        "seconds": "{seconds}s",
+        "minutes": "{minutes}m",
+        "minutesSeconds": "{minutes}m {seconds}s",
+        "completedStepsOne": "Hatua {count} imekamilika",
+        "completedStepsOther": "Hatua {count} zimekamilika"
+      },
+      "guest": {
+        "greeting": "Habari, mimi ni Lara, msaidizi wako wa kitabibu mwenye akili.",
+        "noted": "Nimeliandika swali lako.",
+        "cta": "{signup} au {login} ili tuendelee na mazungumzo yetu.",
+        "signup": "Fungua akaunti",
+        "login": "ingia"
+      }
+    }
+  },
+  "auth": {
+    "home": "Ukurasa wa mwanzo wa Oneg",
+    "image": {
+      "title": "Oneg",
+      "tagline": "Madaktari waliothibitishwa, ukaguzi wa dalili na Lara, na rekodi zako za afya, vyote mahali pamoja."
+    },
+    "showPassword": "Onyesha nenosiri",
+    "hidePassword": "Ficha nenosiri",
+    "or": "Au endelea na",
+    "login": {
+      "title": "Ingia kwenye akaunti yako",
+      "subtitle": "Weka barua pepe yako hapa chini ili uingie",
+      "email": "Barua pepe",
+      "emailPlaceholder": "wewe@mfano.com",
+      "password": "Nenosiri",
+      "forgot": "Umesahau nenosiri?",
+      "submit": "Ingia",
+      "google": "Ingia na Google",
+      "noAccount": "Huna akaunti?",
+      "switch": "Jisajili"
+    },
+    "signup": {
+      "title": "Fungua akaunti yako",
+      "subtitle": "Anza na Oneg kwa chini ya dakika 2",
+      "name": "Jina kamili (si lazima)",
+      "namePlaceholder": "Jina lako",
+      "email": "Barua pepe",
+      "emailPlaceholder": "wewe@mfano.com",
+      "password": "Nenosiri",
+      "confirm": "Thibitisha nenosiri",
+      "submit": "Fungua akaunti",
+      "google": "Jisajili na Google",
+      "haveAccount": "Una akaunti tayari?",
+      "switch": "Ingia"
+    },
+    "strength": [
+      "Dhaifu sana",
+      "Dhaifu",
+      "Wastani",
+      "Imara",
+      "Imara sana"
+    ]
+  }
+}

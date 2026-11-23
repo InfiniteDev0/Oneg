@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "title": "Oneg",
+    "description": "Talk to verified doctors, anytime."
+  },
+  "header": {
+    "banner": {
+      "text": "Introducing Lara: check your symptoms and get matched with a verified doctor in minutes.",
+      "link": "Learn more",
+      "close": "Close announcement"
+    },
+    "nav": {
+      "featuredTitle": "Featured",
+      "newBadge": "NEW",
+      "patients": {
+        "label": "For patients",
+        "care": {
+          "title": "Get care",
+          "items": {
+            "symptoms": "Check symptoms with AI",
+            "findDoctor": "Find a doctor",
+            "book": "Book a consultation",
+            "video": "Video consultations"
+          }
+        },
+        "health": {
+          "title": "Your health",
+          "items": {
+            "records": "Health records",
+            "prescriptions": "Prescriptions",
+            "family": "Family accounts"
+          }
+        },
+        "urgent": {
+          "title": "Urgent help",
+          "items": {
+            "emergency": "Emergency help",
+            "hospitals": "Nearby hospitals",
+            "pharmacies": "Nearby pharmacies"
+          },
+          "seeAll": "See all for patients"
+        },
+        "featured": {
+          "ai": {
+            "title": "Lara",
+            "desc": "Check your symptoms and get a doctor in minutes"
+          },
+          "mpesa": {
+            "title": "M-Pesa payments",
+            "desc": "Pay for consultations straight from your phone"
+          }
+        }
+      },
+      "doctors": {
+        "label": "For doctors",
+        "start": {
+          "title": "Get started",
+          "items": {
+            "join": "Join Oneg",
+            "verify": "Get verified",
+            "howItWorks": "How consultations work"
+          }
+        },
+        "practice": {
+          "title": "Your practice",
+          "items": {
+            "schedule": "Schedule & availability",
+            "prescribe": "E-prescriptions",
+            "notes": "Patient notes"
+          }
+        },
+        "earn": {
+          "title": "Earnings",
+          "items": {
+            "payouts": "Earnings & payouts",
+            "fees": "Set your fees"
+          },
+          "seeAll": "See all for doctors"
+        },
+        "featured": {
+          "dashboard": {
+            "title": "Doctor dashboard",
+            "desc": "Your patients, schedule and earnings in one place"
+          },
+          "verified": {
+            "title": "Verified badge",
+            "desc": "Show patients your licence is verified"
+          }
+        }
+      },
+      "hospitals": {
+        "label": "For hospitals",
+        "partner": {
+          "title": "Partner",
+          "items": {
+            "partner": "Partner with Oneg",
+            "solutions": "Hospital solutions",
+            "contact": "Talk to our team"
+          }
+        },
+        "services": {
+          "title": "Services",
+          "items": {
+            "referrals": "Patient referrals",
+            "telemedicine": "Telemedicine for clinics",
+            "beds": "Bed & ER availability"
+          },
+          "seeAll": "See all for hospitals"
+        },
+        "featured": {
+          "dashboard": {
+            "title": "Hospital dashboard",
+            "desc": "Manage referrals and doctors in one place"
+          },
+          "network": {
+            "title": "Referral network",
+            "desc": "Receive patients from Oneg doctors"
+          }
+        }
+      },
+      "learn": {
+        "label": "Learning",
+        "learn": {
+          "title": "Learn",
+          "items": {
+            "library": "Health library",
+            "firstAid": "First aid guides",
+            "videos": "Video lessons",
+            "courses": "Courses for health workers"
+          }
+        },
+        "discover": {
+          "title": "Discover",
+          "items": {
+            "blog": "Blog",
+            "news": "Health news",
+            "families": "Guides for families"
+          }
+        },
+        "support": {
+          "title": "Support",
+          "items": {
+            "help": "Help centre",
+            "support247": "24/7 support",
+            "contact": "Contact us"
+          }
+        },
+        "spotlight": {
+          "title": "Featured guide",
+          "heading": "Know what to do in an emergency, before it happens.",
+          "cta": "Read the first aid guides"
+        }
+      },
+      "pricing": "Pricing"
+    },
+    "actions": {
+      "login": "Log in",
+      "getStarted": "Get started"
+    },
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Oneg home"
+  },
+  "hero": {
+    "tryPill": "Try personal care",
+    "titleTop": "The Best",
+    "titleMain": "Health Care App",
+    "body": "Check your symptoms with AI and talk to a verified doctor in minutes.",
+    "primaryCta": "Get started",
+    "secondaryCta": "Find a doctor",
+    "note": "The AI symptom check is free. Pay only when you see a doctor."
+  },
+  "lara": {
+    "label": "Ask Lara",
+    "lines": [
+      "Hi, I am Lara.",
+      "How are you feeling today?",
+      "Boop.",
+      "That tickles.",
+      "Drink some water today.",
+      "I am here if you need a doctor.",
+      "You found me.",
+      "Stop poking me."
+    ],
+    "chat": {
+      "title": "New chat",
+      "newChat": "New chat",
+      "hide": "Hide chat",
+      "heading": "How can I help you today?",
+      "starters": {
+        "symptoms": "Check my symptoms",
+        "findDoctor": "Find a doctor",
+        "book": "Book a consultation",
+        "library": "Read the health library"
+      },
+      "placeholder": "Ask Lara",
+      "add": "Add",
+      "send": "Send",
+      "steps": [
+        "Reading your question",
+        "Checking trusted medical guidance",
+        "Preparing a safe answer"
+      ],
+      "activity": {
+        "thinking": "Thinking…",
+        "thoughtFor": "Thought for {duration}",
+        "seconds": "{seconds}s",
+        "minutes": "{minutes}m",
+        "minutesSeconds": "{minutes}m {seconds}s",
+        "completedStepsOne": "Completed {count} step",
+        "completedStepsOther": "Completed {count} steps"
+      },
+      "guest": {
+        "greeting": "Hello, I'm Lara, your intelligent medical assistant.",
+        "noted": "I've taken note of your question.",
+        "cta": "{signup} or {login} so we can continue our conversation.",
+        "signup": "Create an account",
+        "login": "log in"
+      }
+    }
+  },
+  "auth": {
+    "home": "Oneg home",
+    "image": {
+      "title": "Oneg",
+      "tagline": "Verified doctors, symptom checks with Lara, and your health records, all in one place."
+    },
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "or": "Or continue with",
+    "login": {
+      "title": "Login to your account",
+      "subtitle": "Enter your email below to log in",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "forgot": "Forgot your password?",
+      "submit": "Login",
+      "google": "Sign in with Google",
+      "noAccount": "Don't have an account?",
+      "switch": "Sign up"
+    },
+    "signup": {
+      "title": "Create your account",
+      "subtitle": "Get started with Oneg in less than 2 minutes",
+      "name": "Full name (optional)",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "confirm": "Confirm password",
+      "submit": "Create account",
+      "google": "Sign up with Google",
+      "haveAccount": "Already have an account?",
+      "switch": "Log in"
+    },
+    "strength": [
+      "Too weak",
+      "Weak",
+      "Fair",
+      "Strong",
+      "Very strong"
+    ]
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "title": "Oneg",
+    "description": "La hadal dhakhaatiir la xaqiijiyay, wakhti kasta."
+  },
+  "header": {
+    "banner": {
+      "text": "Waxaan idiin soo bandhignay Lara: hubi calaamadahaaga oo lagugu xiro dhakhtar la xaqiijiyay daqiiqado gudahood.",
+      "link": "Wax badan ka ogow",
+      "close": "Xir ogeysiiska"
+    },
+    "nav": {
+      "featuredTitle": "Kuwa la soo xulay",
+      "newBadge": "CUSUB",
+      "patients": {
+        "label": "Bukaannada",
+        "care": {
+          "title": "Hel daryeel",
+          "items": {
+            "symptoms": "Ku hubi calaamadaha AI",
+            "findDoctor": "Hel dhakhtar",
+            "book": "Ballanso la-tashi",
+            "video": "La-tashi muuqaal ah"
+          }
+        },
+        "health": {
+          "title": "Caafimaadkaaga",
+          "items": {
+            "records": "Diiwaanka caafimaadka",
+            "prescriptions": "Warqadaha daawada",
+            "family": "Koontooyinka qoyska"
+          }
+        },
+        "urgent": {
+          "title": "Caawimaad degdeg ah",
+          "items": {
+            "emergency": "Xaalad degdeg ah",
+            "hospitals": "Isbitaalada kuu dhow",
+            "pharmacies": "Farmashiyeyaasha kuu dhow"
+          },
+          "seeAll": "Dhammaan bukaannada"
+        },
+        "featured": {
+          "ai": {
+            "title": "Lara",
+            "desc": "Hubi calaamadahaaga oo hel dhakhtar daqiiqado gudahood"
+          },
+          "mpesa": {
+            "title": "Lacag-bixinta M-Pesa",
+            "desc": "Si toos ah uga bixi la-tashiga taleefankaaga"
+          }
+        }
+      },
+      "doctors": {
+        "label": "Dhakhaatiirta",
+        "start": {
+          "title": "Bilow",
+          "items": {
+            "join": "Ku biir Oneg",
+            "verify": "Hel xaqiijin",
+            "howItWorks": "Sida la-tashiyadu u shaqeeyaan"
+          }
+        },
+        "practice": {
+          "title": "Shaqadaada",
+          "items": {
+            "schedule": "Jadwalka iyo helitaanka",
+            "prescribe": "Warqadaha daawada ee elektaroonigga ah",
+            "notes": "Qoraallada bukaanka"
+          }
+        },
+        "earn": {
+          "title": "Dakhliga",
+          "items": {
+            "payouts": "Dakhliga iyo lacag-bixinta",
+            "fees": "Dejiso khidmadahaaga"
+          },
+          "seeAll": "Dhammaan dhakhaatiirta"
+        },
+        "featured": {
+          "dashboard": {
+            "title": "Dashboard-ka dhakhtarka",
+            "desc": "Bukaannadaada, jadwalkaaga iyo dakhligaaga hal meel"
+          },
+          "verified": {
+            "title": "Calaamadda xaqiijinta",
+            "desc": "U muuji bukaannada in shatigaaga la xaqiijiyay"
+          }
+        }
+      },
+      "hospitals": {
+        "label": "Isbitaalada",
+        "partner": {
+          "title": "Iskaashi",
+          "items": {
+            "partner": "La shaqee Oneg",
+            "solutions": "Adeegyada isbitaalada",
+            "contact": "La hadal kooxdayada"
+          }
+        },
+        "services": {
+          "title": "Adeegyo",
+          "items": {
+            "referrals": "Gudbinta bukaannada",
+            "telemedicine": "Daryeel online ah oo loogu talagalay rugaha caafimaadka",
+            "beds": "Sariiraha iyo qaybta degdegga"
+          },
+          "seeAll": "Dhammaan isbitaalada"
+        },
+        "featured": {
+          "dashboard": {
+            "title": "Dashboard-ka isbitaalka",
+            "desc": "Maamul gudbinta iyo dhakhaatiirta hal meel"
+          },
+          "network": {
+            "title": "Shabakadda gudbinta",
+            "desc": "Ka hel bukaanno dhakhaatiirta Oneg"
+          }
+        }
+      },
+      "learn": {
+        "label": "Waxbarasho",
+        "learn": {
+          "title": "Baro",
+          "items": {
+            "library": "Maktabadda caafimaadka",
+            "firstAid": "Tilmaamaha gargaarka degdegga ah",
+            "videos": "Casharro muuqaal ah",
+            "courses": "Koorsooyin loogu talagalay shaqaalaha caafimaadka"
+          }
+        },
+        "discover": {
+          "title": "Daah-furo",
+          "items": {
+            "blog": "Blog",
+            "news": "Wararka caafimaadka",
+            "families": "Hagayaal loogu talagalay qoysaska"
+          }
+        },
+        "support": {
+          "title": "Taageero",
+          "items": {
+            "help": "Xarunta caawimaadda",
+            "support247": "Taageero 24/7",
+            "contact": "Nala soo xiriir"
+          }
+        },
+        "spotlight": {
+          "title": "Hage la soo xulay",
+          "heading": "Ogow waxa la sameeyo xaalad degdeg ah, intaanay dhicin.",
+          "cta": "Akhri tilmaamaha gargaarka degdegga ah"
+        }
+      },
+      "pricing": "Qiimaha"
+    },
+    "actions": {
+      "login": "Gal",
+      "getStarted": "Bilow"
+    },
+    "language": "Luqadda",
+    "openMenu": "Fur liiska",
+    "closeMenu": "Xir liiska",
+    "home": "Bogga hore ee Oneg"
+  },
+  "hero": {
+    "tryPill": "Isku day daryeel shakhsi ah",
+    "titleTop": "Abka ugu Fiican",
+    "titleMain": "ee Daryeelka Caafimaadka",
+    "body": "Ku hubi calaamadahaaga AI oo la hadal dhakhtar la xaqiijiyay daqiiqado gudahood.",
+    "primaryCta": "Bilow",
+    "secondaryCta": "Hel dhakhtar",
+    "note": "Hubinta calaamadaha ee AI waa bilaash. Lacag bixi oo keliya marka aad aragto dhakhtar."
+  },
+  "lara": {
+    "label": "Weydii Lara",
+    "lines": [
+      "Haye, waxaan ahay Lara.",
+      "Sidee tahay maanta?",
+      "Buub.",
+      "Waan ku arkaa.",
+      "Maanta biyo cab.",
+      "Halkan ayaan joogaa haddii aad dhakhtar u baahato.",
+      "Waad i heshay.",
+      "Iska daa inaad i taabato."
+    ],
+    "chat": {
+      "title": "Sheeko cusub",
+      "newChat": "Sheeko cusub",
+      "hide": "Qari sheekada",
+      "heading": "Sideen kuu caawin karaa maanta?",
+      "starters": {
+        "symptoms": "Hubi calaamadahayga",
+        "findDoctor": "Hel dhakhtar",
+        "book": "Ballanso la-tashi",
+        "library": "Akhri maktabadda caafimaadka"
+      },
+      "placeholder": "Weydii Lara",
+      "add": "Ku dar",
+      "send": "Dir",
+      "steps": [
+        "Waxaan akhrinayaa su'aashaada",
+        "Waxaan hubinayaa hagaha caafimaadka ee la isku halleyn karo",
+        "Waxaan diyaarinayaa jawaab ammaan ah"
+      ],
+      "activity": {
+        "thinking": "Waan fakarayaa…",
+        "thoughtFor": "Waxaan ka fakaray {duration}",
+        "seconds": "{seconds}s",
+        "minutes": "{minutes}m",
+        "minutesSeconds": "{minutes}m {seconds}s",
+        "completedStepsOne": "{count} tallaabo waa la dhammaystiray",
+        "completedStepsOther": "{count} tallaabo waa la dhammaystiray"
+      },
+      "guest": {
+        "greeting": "Haye, waxaan ahay Lara, kaaliyahaaga caafimaadka ee caqliga leh.",
+        "noted": "Su'aashaada waan qoray.",
+        "cta": "{signup} ama {login} si aan u sii wadno sheekadeena.",
+        "signup": "Samee koonto",
+        "login": "gal"
+      }
+    }
+  },
+  "auth": {
+    "home": "Bogga hore ee Oneg",
+    "image": {
+      "title": "Oneg",
+      "tagline": "Dhakhaatiir la xaqiijiyay, hubinta calaamadaha oo Lara la jirto, iyo diiwaanka caafimaadkaaga, dhammaan hal meel."
+    },
+    "showPassword": "Muuji furaha sirta",
+    "hidePassword": "Qari furaha sirta",
+    "or": "Ama ku sii wad",
+    "login": {
+      "title": "Gal koontadaada",
+      "subtitle": "Hoos ku qor iimaylkaaga si aad u gasho",
+      "email": "Iimayl",
+      "emailPlaceholder": "adiga@tusaale.com",
+      "password": "Furaha sirta",
+      "forgot": "Ma ilowday furaha sirta?",
+      "submit": "Gal",
+      "google": "Ku gal Google",
+      "noAccount": "Koonto ma lihid?",
+      "switch": "Is diiwaangeli"
+    },
+    "signup": {
+      "title": "Samee koontadaada",
+      "subtitle": "Ku bilow Oneg wax ka yar 2 daqiiqo",
+      "name": "Magaca oo buuxa (ikhtiyaari)",
+      "namePlaceholder": "Magacaaga",
+      "email": "Iimayl",
+      "emailPlaceholder": "adiga@tusaale.com",
+      "password": "Furaha sirta",
+      "confirm": "Xaqiiji furaha sirta",
+      "submit": "Samee koonto",
+      "google": "Ku is diiwaangeli Google",
+      "haveAccount": "Koonto ma leedahay?",
+      "switch": "Gal"
+    },
+    "strength": [
+      "Aad u liita",
+      "Liita",
+      "Dhexdhexaad",
+      "Xooggan",
+      "Aad u xooggan"
+    ]
+  }
+}
