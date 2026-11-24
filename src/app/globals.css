@@ -27,6 +27,10 @@
   --color-field: var(--field);
   --color-field-focus: var(--field-focus);
   --color-navbar-foreground: var(--navbar-foreground);
+  --color-chrome: var(--chrome);
+  --color-solid: var(--solid);
+  --color-solid-ink: var(--solid-ink);
+  --color-solid-hover: var(--solid-hover);
   --font-sans: var(--font-albert-sans), system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --font-heading: var(--font-sans);
@@ -107,35 +111,47 @@
   --sidebar-accent-foreground: #10232b;
   --sidebar-border: rgb(16 35 43 / 15%);
   --sidebar-ring: #2064b6;
+  --chrome: #141414;    /* Lara's black chip */
+  --solid: #000000;     /* the Log in button */
+  --solid-ink: #ffffff;
+  --solid-hover: rgb(0 0 0 / 80%);
 }
 
-/* ---------- Dark mode (only when <html class="dark">) ---------- */
+/* ---------- Dark mode (only when <html class="dark">) ----------
+   Milo's dark theme (Milo project, web/src/app/globals.css): a warm near-black
+   page, slightly lighter cards, and soft white text. Oneg's blue stays. */
 :root.dark {
   color-scheme: dark;
-  --background: #1c2b33;
-  --foreground: #e6edf1;
-  --navbar: #15222a;
-  --navbar-foreground: #e6edf1;
-  --field: #253842;
-  --field-focus: #2e4450;
-  --card: #253842;
-  --card-foreground: #e6edf1;
-  --popover: #253842;
-  --popover-foreground: #e6edf1;
+  --background: oklch(0.168 0.004 84.4);
+  --foreground: oklch(0.965 0.004 84.4);
+  --navbar: oklch(0.195 0.004 84.4);
+  --navbar-foreground: oklch(0.965 0.004 84.4);
+  --field: oklch(0.235 0.004 84.4);
+  --field-focus: oklch(0.269 0.004 84.4);
+  --card: oklch(0.222 0.004 84.4);
+  --card-foreground: oklch(0.965 0.004 84.4);
+  --popover: oklch(0.222 0.004 84.4);
+  --popover-foreground: oklch(0.985 0 0);
   --primary: #2064b6;
   --primary-foreground: #ffffff;
-  --secondary: #6dccc3;
-  --secondary-foreground: #10232b;
-  --muted: #253842;
-  --muted-foreground: #9fb2bd;
-  --accent: #6dccc3;
-  --accent-foreground: #10232b;
-  --destructive: #ef5350;
-  --border: rgb(255 255 255 / 10%);
-  --input: rgb(255 255 255 / 15%);
-  --ring: #6dccc3;
-  --sidebar: #253842;
-  --sidebar-foreground: #e6edf1;
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  /* Milo's "chrome" (Lara's chip) lightens just enough to show on the dark page,
+     and "solid" (the Log in button) inverts to near-white */
+  --chrome: #2a2724;
+  --solid: #f0ece6;
+  --solid-ink: #16150f;
+  --solid-hover: #ffffff;
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: #2064b6;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #6dccc3;
@@ -235,7 +251,7 @@ html:lang(ar) {
   inset: 1.5px; /* border thickness */
   z-index: 1;
   border-radius: 9999px;
-  background: #ffffff;
+  background: var(--navbar); /* white in light mode, Milo's dark surface in dark */
 }
 
 .oneg-gradient-pill > * {
@@ -371,7 +387,7 @@ html:lang(ar) {
   width: 48px;
   height: 48px;
   border-radius: 14px; /* Milo's rounded-xl: 0.625rem × 1.4 */
-  background: #141414;
+  background: var(--chrome);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
   transition: transform 150ms ease;
 }
@@ -399,6 +415,11 @@ html:lang(ar) {
   background: var(--background);
 }
 
+/* In dark mode the card is Milo's card colour, a step up from the page */
+.dark .oneg-auth-card {
+  --background: oklch(0.222 0.004 84.4);
+}
+
 /* ── Lara's face inside her chat panel ────────────────────────
    The same black chip and white eyes as her floating button, at any size
    (64px over the starters, 24px beside her replies). */
@@ -409,7 +430,7 @@ html:lang(ar) {
   justify-content: center;
   overflow: hidden;
   border-radius: 14px;
-  background: #141414;
+  background: var(--chrome);
 }
 
 .oneg-lara-face .eyt {

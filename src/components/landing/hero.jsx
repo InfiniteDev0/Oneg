@@ -49,7 +49,7 @@ export default function Hero({ lang, dict }) {
           </Link>
           <Link
             href={to("/doctors")}
-            className="inline-flex h-10 items-center rounded-md bg-field-focus px-5 text-[1rem] text-foreground transition-colors hover:bg-[#d8dde1]"
+            className="inline-flex h-10 items-center rounded-md bg-field-focus px-5 text-[1rem] text-foreground transition-colors hover:bg-[#d8dde1] dark:hover:bg-[#3a3734]"
           >
             {t.secondaryCta}
           </Link>
@@ -80,10 +80,10 @@ function HeroImage({ src, className }) {
 function TryPill({ href, label }) {
   return (
     <Link href={href} className="oneg-gradient-pill group">
-      <span className="inline-flex items-center gap-1.5 py-1.5 ps-4 pe-2.5 text-[0.95rem] font-semibold text-[#10232b]">
+      <span className="inline-flex items-center gap-1.5 py-1.5 ps-4 pe-2.5 text-[0.95rem] font-semibold text-foreground">
         {label}
         <HeartPulseGradientIcon className="size-4" />
-        <ChevronRight className="size-4 text-[#10232b]/60 transition-transform group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
+        <ChevronRight className="size-4 text-foreground/60 transition-transform group-hover:translate-x-0.5 rtl:rotate-180 rtl:group-hover:-translate-x-0.5" />
       </span>
     </Link>
   );

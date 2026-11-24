@@ -94,7 +94,7 @@ export default function LaraChat({ label, t, lang }) {
         open={open}
         onOpenChange={setOpen}
         initialFocus={inputRef}
-        className="border border-border bg-white"
+        className="border border-border bg-white dark:bg-card"
       >
         <DialogPrimitive.Title className="sr-only">Lara</DialogPrimitive.Title>
 

@@ -29,9 +29,9 @@ export default async function RootLayout({ children, params }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
 
-  // Light mode by default. A future theme toggle adds "dark" to this className.
+  // Dark mode for now (Milo's dark colours), while the app is being built. Remove "dark" to go back to light mode.
   return (
-    <html lang={lang} dir={getDirection(lang)} className={`${albertSans.variable} antialiased`}>
+    <html lang={lang} dir={getDirection(lang)} className={`${albertSans.variable} dark antialiased`}>
       {/* Lara is added by app/[lang]/(site)/layout.js, so she isn't on the auth pages */}
       <body>{children}</body>
     </html>

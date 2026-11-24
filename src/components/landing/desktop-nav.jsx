@@ -24,7 +24,7 @@ import { navLinkClass } from "./nav-links";
 const GLOW = "oneg-tile-glow text-white";
 const FEATURED_ICONS = {
   ai: {}, // Lara: drawn with her face, see FeaturedColumn
-  wallet: { Icon: WalletIcon, tile: "bg-[#141414] text-white" },
+  wallet: { Icon: WalletIcon, tile: "bg-chrome text-white" },
   doctorDashboard: { Icon: WidgetIcon, tile: GLOW },
   verified: { Icon: VerifiedBadgeIcon, tile: "oneg-tile-soft text-[#8fbffa]", size: "size-8" },
   hospitalDashboard: { Icon: Building2, tile: GLOW },

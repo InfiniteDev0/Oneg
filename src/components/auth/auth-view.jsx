@@ -58,7 +58,7 @@ export default function AuthView({ t, lang, languageLabel }) {
           lang={lang}
           label={languageLabel}
           className="absolute end-6 top-6 z-30 md:top-5"
-          triggerClassName="bg-white hover:bg-white focus-visible:bg-white"
+          triggerClassName="bg-white hover:bg-white focus-visible:bg-white dark:bg-card dark:hover:bg-card dark:focus-visible:bg-card"
         />
 
         {/* Form card, with Lenzro's quick swap between login and signup */}

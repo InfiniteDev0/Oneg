@@ -48,7 +48,7 @@ export default function SiteHeader({ lang, dict }) {
 
             <Link
               href={actions.login.href}
-              className="hidden h-9 items-center rounded-lg bg-black px-4 text-[0.9375rem] font-medium whitespace-nowrap text-white transition-colors hover:bg-black/80 lg:inline-flex"
+              className="hidden h-9 items-center rounded-lg bg-solid px-4 text-[0.9375rem] font-medium whitespace-nowrap text-solid-ink transition-colors hover:bg-solid-hover lg:inline-flex"
             >
               {actions.login.label}
             </Link>
