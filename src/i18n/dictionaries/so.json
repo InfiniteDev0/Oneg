@@ -343,7 +343,7 @@
       "title": "Oneg"
     },
     "workspace": {
-      "name": "Caafimaadka Amina",
+      "name": "Caafimaadka {name}",
       "meta": "{count} xubnood",
       "plan": "Bilaash",
       "upgrade": "Kor u qaad",
@@ -450,7 +450,15 @@
       "pin": "Ku dheji baarka sare",
       "logout": "Ka bax",
       "signedOut": "Waad ka baxday",
-      "signedOutBody": "Mar kale ayaan ku arki doonnaa."
+      "signedOutBody": "Mar kale ayaan ku arki doonnaa.",
+      "profile": "Profile",
+      "utilities": "Qalab",
+      "reminder": "Samee xasuusin",
+      "records": "Diiwaannada caafimaadka",
+      "family": "Eeg qoyska",
+      "dashboard": "Dashboard-kayga",
+      "lara": "Sheekada Lara",
+      "trash": "Qashinka"
     },
     "side": {
       "title": "Hoyga",
@@ -509,6 +517,27 @@
     },
     "tray": {
       "priority": "{count} Mudnaan"
+    },
+    "themes": {
+      "title": "Muuqaalka",
+      "description": "Sida Oneg uga muuqato qalabkan.",
+      "appearance": "Muuqaal",
+      "light": "Iftiin",
+      "dark": "Madow",
+      "auto": "Toos",
+      "colour": "Midabka muuqaalka",
+      "colours": {
+        "black": "Madow",
+        "purple": "Guduud",
+        "blue": "Buluug",
+        "pink": "Casaan khafiif",
+        "violet": "Violet",
+        "indigo": "Indigo",
+        "orange": "Oranji",
+        "teal": "Teal",
+        "bronze": "Naxaas",
+        "mint": "Cagaar khafiif"
+      }
     }
   }
 }

@@ -28,6 +28,7 @@
   --color-field-focus: var(--field-focus);
   --color-navbar-foreground: var(--navbar-foreground);
   --color-chrome: var(--chrome);
+  --color-canvas: var(--canvas);
   --color-solid: var(--solid);
   --color-solid-ink: var(--solid-ink);
   --color-solid-hover: var(--solid-hover);
@@ -509,6 +510,83 @@ html:lang(ar) {
 }
 .oneg-lara-pill > * { position: relative; z-index: 2; }
 @media (prefers-reduced-motion: reduce) { .oneg-lara-pill::before { animation: none; } }
+
+/* ── The signed-in app: Barista's colours ───────────────────────
+   Barista's admin (styles/globals.css): a white page, the sidebar a black card,
+   the main panel #f4f4f5; in dark, the page oklch(0.145), the sidebar the grey of
+   the top bar's account button, oklch(0.195), and the panel neutral-950. The
+   search bar is Barista's black/white at 5%, made solid for the Ask Lara pill. */
+.oneg-app {
+  --background: oklch(1 0 0);
+  --sidebar: oklch(0 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-ring: oklch(0.556 0 0);
+  --canvas: #f4f4f5;
+  --searchbar: #f2f2f2;
+  --searchbar-hover: #ebebeb;
+}
+:root.dark .oneg-app {
+  --background: oklch(0.145 0 0);
+  --sidebar: oklch(0.195 0 0);
+  --canvas: #0a0a0a;
+  --searchbar: oklch(0.19 0 0);
+  --searchbar-hover: oklch(0.215 0 0);
+}
+
+/* Barista's rail icons: grey at rest, yellow→pink under the pointer, yellow→green
+   on the page you're on (the icon files are only masks) */
+.oneg-app {
+  --rail-icon: color-mix(in oklab, var(--sidebar-foreground) 50%, transparent);
+  --rail-icon-hover: linear-gradient(135deg, #ffd600, #ff007a);
+  --rail-icon-active: linear-gradient(135deg, #ffd600, #00d078);
+}
+
+/* Barista's theme colours (the Themes dialog): one laid on the page as
+   data-accent paints the strong buttons (primary, solid) and turns the sidebar
+   into a gradient of the colour, darker as it goes down, with white ink.
+   Black (none picked) is the app as it ships. */
+:root[data-accent="purple"] { --theme-colour: #7b68ee; }
+:root[data-accent="blue"] { --theme-colour: #1090e0; }
+:root[data-accent="pink"] { --theme-colour: #ee5e99; }
+:root[data-accent="violet"] { --theme-colour: #b660e0; }
+:root[data-accent="indigo"] { --theme-colour: #6985ff; }
+:root[data-accent="orange"] { --theme-colour: #e16b16; }
+:root[data-accent="teal"] { --theme-colour: #0f9d9f; }
+:root[data-accent="bronze"] { --theme-colour: #aa8d80; }
+:root[data-accent="mint"] { --theme-colour: #3db88b; }
+:root[data-accent],
+:root[data-accent] .oneg-app {
+  --primary: var(--theme-colour);
+  --primary-foreground: #ffffff;
+  --solid: var(--theme-colour);
+  --solid-ink: #ffffff;
+  --solid-hover: color-mix(in oklab, var(--theme-colour) 85%, white);
+  --ring: var(--theme-colour);
+}
+:root[data-accent] [data-slot="sidebar-inner"] {
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--theme-colour) 82%, black),
+    color-mix(in srgb, var(--theme-colour) 38%, black)
+  );
+  --sidebar-foreground: oklch(0.985 0 0);
+  --rail-icon: color-mix(in oklab, oklch(0.985 0 0) 50%, transparent);
+}
+
+/* Barista's loading sheen (AdminTopBar's SHEEN): a light passing across a shape */
+.oneg-sheen { position: relative; overflow: hidden; }
+.oneg-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  background: linear-gradient(to right, transparent, rgb(255 255 255 / 0.55), transparent);
+  animation: shimmer-sweep 1.6s infinite;
+}
+.dark .oneg-sheen::after { background: linear-gradient(to right, transparent, rgb(255 255 255 / 0.08), transparent); }
+@keyframes shimmer-sweep { 100% { transform: translateX(100%); } }
+@media (prefers-reduced-motion: reduce) { .oneg-sheen::after { animation: none; } }
 
 /* Lenzro's thin pill scrollbar (as Lenzro's globals.css) */
 .scrollbar-pill { scrollbar-width: thin; scrollbar-color: color-mix(in oklch, var(--muted-foreground) 45%, transparent) transparent; }

@@ -27,6 +27,20 @@ export function PlannerGlyph({ className }) {
   );
 }
 
+/** Milo's top bar calendar: Streamline's Calendar Mark (Flex), in the text colour. */
+export function CalendarMark({ className }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" aria-hidden="true" className={className}>
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M4.50342 2.08975c1.07975 -0.07862 1.9909 -0.10489 2.49662 -0.10489 0.50463 0 1.41298 0.02616 2.48971 0.10439V0.915039c0 -0.414213 0.33578 -0.75 0.74995 -0.75 0.4143 0 0.75 0.335786 0.75 0.75V2.23595c1.416 0.26692 2.5028 1.43251 2.6276 2.90096 0.1014 1.19267 0.1327 2.27823 0.1327 2.7742 0 0.4959 -0.0313 1.58024 -0.1326 2.77199 -0.1329 1.563 -1.3557 2.7829 -2.9052 2.9412 -1.5898 0.1623 -3.02514 0.2107 -3.71217 0.2107 -0.68702 0 -2.12236 -0.0484 -3.71216 -0.2107C1.73834 13.466 0.515581 12.2461 0.382648 10.6831 0.281291 9.49137 0.25 8.40702 0.25 7.91111c0 -0.49599 0.031302 -1.58155 0.132704 -2.77421C0.50735 3.67085 1.59081 2.50666 3.00342 2.23726l0 -1.322221c0 -0.414213 0.33578 -0.75 0.75 -0.75 0.41421 0 0.75 0.335786 0.75 0.75V2.08975ZM3.5 5.58936c-0.34518 0 -0.625 0.27982 -0.625 0.625 0 0.34517 0.27982 0.625 0.625 0.625H4c0.34518 0 0.625 -0.27983 0.625 -0.625 0 -0.34518 -0.27982 -0.625 -0.625 -0.625h-0.5Zm-0.625 3.625c0 -0.34518 0.27982 -0.625 0.625 -0.625H4c0.34518 0 0.625 0.27982 0.625 0.625 0 0.34517 -0.27982 0.625 -0.625 0.625h-0.5c-0.34518 0 -0.625 -0.27983 -0.625 -0.625Zm3.875 -3.625c-0.34518 0 -0.625 0.27982 -0.625 0.625 0 0.34517 0.27982 0.625 0.625 0.625h0.5c0.34518 0 0.625 -0.27983 0.625 -0.625 0 -0.34518 -0.27982 -0.625 -0.625 -0.625h-0.5Zm2.625 0.625c0 -0.34518 0.27982 -0.625 0.625 -0.625h0.5c0.3452 0 0.625 0.27982 0.625 0.625 0 0.34517 -0.2798 0.625 -0.625 0.625H10c-0.34518 0 -0.625 -0.27983 -0.625 -0.625Zm-2.625 2.375c-0.34518 0 -0.625 0.27982 -0.625 0.625 0 0.34517 0.27982 0.625 0.625 0.625h0.5c0.34518 0 0.625 -0.27983 0.625 -0.625 0 -0.34518 -0.27982 -0.625 -0.625 -0.625h-0.5Z"
+      />
+    </svg>
+  );
+}
+
 /** ClickUp's Upgrade: a light bulb with sparkles. */
 export function UpgradeGlyph({ className }) {
   return (
@@ -77,24 +91,24 @@ export function HomeTile({ count, className }) {
 export function MoreCluster({ className }) {
   return (
     <span className={cn("grid grid-cols-2 gap-[3px]", className)} aria-hidden="true">
-      <span className="grid size-[0.95rem] place-items-center rounded-[4px] bg-[#4cb8f5]">
-        <svg viewBox="0 0 12 12" className="size-2.5" fill="none" stroke="white" strokeWidth="1.4" strokeLinecap="round">
-          <path d="M3 4h6M3 6h6M3 8h4" />
+      <span className="grid size-[0.8rem] place-items-center rounded-[3px] bg-[#4cb8f5]">
+        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round">
+          <path d="M2.5 3.5h7M2.5 6h7M2.5 8.5h4.5" />
         </svg>
       </span>
-      <span className="grid size-[0.95rem] place-items-center rounded-[4px] bg-[#b260d8]">
-        <svg viewBox="0 0 12 12" className="size-2.5" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round">
-          <path d="M3.5 9V7M6 9V4.5M8.5 9V3" />
+      <span className="grid size-[0.8rem] place-items-center rounded-[3px] bg-[#b260d8]">
+        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round">
+          <path d="M3 10V7.5M6 10V4.5M9 10V2" />
         </svg>
       </span>
-      <span className="grid size-[0.95rem] place-items-center rounded-[4px] bg-[#f6c544]">
-        <svg viewBox="0 0 12 12" className="size-2.5" fill="none" stroke="#3a2d00" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M2.5 8c1-3 2-3 2.5-1.5S6.5 8.5 7.5 5 9.5 4 9.5 5" />
+      <span className="grid size-[0.8rem] place-items-center rounded-[3px] bg-[#f6c544]">
+        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="#3a2d00" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M1.5 8.5c1.2-4 2.4-4 3-2s1.8 2.5 3 -1.5 2.5-1.5 3-.5" />
         </svg>
       </span>
-      <span className="grid size-[0.95rem] place-items-center rounded-full bg-white">
-        <svg viewBox="0 0 12 12" className="size-2.5" fill="none" stroke="#141414" strokeWidth="1.8" strokeLinecap="round">
-          <path d="M6 3v6M3 6h6" />
+      <span className="grid size-[0.8rem] place-items-center rounded-full bg-white">
+        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="#141414" strokeWidth="2" strokeLinecap="round">
+          <path d="M6 2.5v7M2.5 6h7" />
         </svg>
       </span>
     </span>

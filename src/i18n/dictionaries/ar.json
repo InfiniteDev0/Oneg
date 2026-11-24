@@ -343,7 +343,7 @@
       "title": "Oneg"
     },
     "workspace": {
-      "name": "صحة أمينة",
+      "name": "صحة {name}",
       "meta": "{count} أعضاء",
       "plan": "مجاني",
       "upgrade": "ترقية",
@@ -450,7 +450,15 @@
       "pin": "ثبّت في الشريط العلوي",
       "logout": "تسجيل الخروج",
       "signedOut": "تم تسجيل الخروج",
-      "signedOutBody": "نراك في المرة القادمة."
+      "signedOutBody": "نراك في المرة القادمة.",
+      "profile": "الملف الشخصي",
+      "utilities": "الأدوات",
+      "reminder": "أنشئ تذكيرًا",
+      "records": "السجلات الصحية",
+      "family": "اعرض العائلة",
+      "dashboard": "لوحتي",
+      "lara": "محادثة لارا",
+      "trash": "المهملات"
     },
     "side": {
       "title": "الرئيسية",
@@ -509,6 +517,27 @@
     },
     "tray": {
       "priority": "{count} أولوية"
+    },
+    "themes": {
+      "title": "السمات",
+      "description": "كيف يبدو Oneg على هذا الجهاز.",
+      "appearance": "المظهر",
+      "light": "فاتح",
+      "dark": "داكن",
+      "auto": "تلقائي",
+      "colour": "لون السمة",
+      "colours": {
+        "black": "أسود",
+        "purple": "أرجواني",
+        "blue": "أزرق",
+        "pink": "وردي",
+        "violet": "بنفسجي",
+        "indigo": "نيلي",
+        "orange": "برتقالي",
+        "teal": "أزرق مخضر",
+        "bronze": "برونزي",
+        "mint": "نعناعي"
+      }
     }
   }
 }

@@ -4,6 +4,7 @@ import "../globals.css";
 import { getDirection, hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { Toaster } from "@/components/toaster";
+import { THEME_SCRIPT } from "@/lib/theme";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -32,7 +33,12 @@ export default async function RootLayout({ children, params }) {
 
   // Dark mode for now (Milo's dark colours), while the app is being built. Remove "dark" to go back to light mode.
   return (
-    <html lang={lang} dir={getDirection(lang)} className={`${albertSans.variable} dark antialiased`}>
+    // The Themes dialog's choice (light, dark or Auto) and theme colour go on <html>
+    // before the first paint (THEME_SCRIPT), so the class here is only the default.
+    <html lang={lang} dir={getDirection(lang)} className={`${albertSans.variable} dark antialiased`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       {/* Lara is added by app/[lang]/(site)/layout.js, so she isn't on the auth pages */}
       <body>
         {children}

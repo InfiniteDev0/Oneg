@@ -131,11 +131,10 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
     { icon: CalendarDays, label: s.chips.appointments },
     { icon: ClipboardList, label: s.chips.records },
     { icon: Pill, label: s.chips.prescriptions },
-    { icon: Stethoscope, label: s.chips.doctors },
     { icon: FileText, label: s.chips.articles },
   ];
   const CHIP =
-    "flex h-8 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border border-border px-3 text-sm text-foreground/85 transition-colors hover:bg-muted [&_svg]:size-4 [&_svg]:text-muted-foreground";
+    "flex h-7 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border border-border px-2.5 text-[0.8125rem] text-foreground/85 transition-colors hover:bg-muted [&_svg]:size-3.5 [&_svg]:text-muted-foreground";
 
   return (
     <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
@@ -144,12 +143,12 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
         <DialogPrimitive.Backdrop className="fixed inset-0 z-50" />
         <DialogPrimitive.Popup
           initialFocus={inputRef}
-          className="fixed start-1/2 top-[2.75rem] z-50 flex max-h-[calc(100svh-4rem)] w-[min(75rem,calc(100vw-1.5rem))] -translate-x-1/2 flex-col overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-[0_24px_60px_rgba(0,0,0,0.35)] outline-none duration-150 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-[0.98] data-closed:animate-out data-closed:fade-out-0 rtl:translate-x-1/2"
+          className="fixed start-1/2 top-[2.75rem] z-50 flex max-h-[calc(100svh-4rem)] w-[min(46rem,calc(100vw-1.5rem))] -translate-x-1/2 flex-col overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-[0_24px_60px_rgba(0,0,0,0.35)] outline-none duration-150 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-[0.98] data-closed:animate-out data-closed:fade-out-0 rtl:translate-x-1/2"
         >
           <DialogPrimitive.Title className="sr-only">{s.label}</DialogPrimitive.Title>
 
           {/* The field, and Ask Lara */}
-          <div className="flex items-center gap-3 ps-6 pe-3 pt-3">
+          <div className="flex items-center gap-3 ps-4 pe-2.5 pt-2">
             <input
               ref={inputRef}
               value={query}
@@ -157,12 +156,12 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
               onKeyDown={onKeyDown}
               placeholder={s.placeholder}
               aria-label={s.label}
-              className="h-12 min-w-0 flex-1 bg-transparent text-xl outline-none placeholder:text-muted-foreground/70"
+              className="h-11 min-w-0 flex-1 bg-transparent text-[1.05rem] outline-none placeholder:text-muted-foreground/70"
             />
             <button
               type="button"
               onClick={() => askLara(query.trim() || undefined)}
-              className="flex h-9 shrink-0 cursor-pointer items-center gap-2 rounded-lg border border-border px-3 text-[0.9375rem] font-medium transition-colors hover:bg-muted"
+              className="flex h-8 shrink-0 cursor-pointer items-center gap-2 rounded-lg border border-border px-2.5 text-sm font-medium transition-colors hover:bg-muted"
             >
               {s.askLara}
               <LaraMini />
@@ -170,16 +169,16 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
           </div>
 
           {/* Where to look */}
-          <div role="tablist" className="flex items-center gap-6 overflow-x-auto border-b border-border px-6 pt-2 [scrollbar-width:none]">
+          <div role="tablist" className="flex items-center gap-4 overflow-x-auto border-b border-border px-4 pt-1 [scrollbar-width:none]">
             {TABS.map((item, i) => (
-              <span key={item.id} className="flex items-center gap-6">
+              <span key={item.id} className="flex items-center gap-4">
                 <button
                   type="button"
                   role="tab"
                   aria-selected={tab === item.id}
                   onClick={() => setTab(item.id)}
                   className={cn(
-                    "relative flex h-10 shrink-0 cursor-pointer items-center gap-1.5 text-[0.9375rem] transition-colors",
+                    "relative flex h-9 shrink-0 cursor-pointer items-center gap-1.5 text-sm transition-colors",
                     tab === item.id ? "font-semibold text-foreground" : "text-foreground/80 hover:text-foreground"
                   )}
                 >
@@ -190,21 +189,21 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
                 {i === 1 && <span aria-hidden className="h-5 w-px bg-border" />}
               </span>
             ))}
-            <button type="button" className="flex h-10 shrink-0 cursor-pointer items-center gap-1.5 text-[0.9375rem] text-muted-foreground hover:text-foreground">
+            <button type="button" className="flex h-9 shrink-0 cursor-pointer items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
               <AppWindow className="size-4" />
               {s.tabs.apps}
             </button>
           </div>
 
           {/* What to look for */}
-          <div className="flex items-center gap-1.5 overflow-x-auto px-3 py-2.5 [scrollbar-width:none]">
+          <div className="flex items-center gap-1.5 overflow-x-auto px-3 py-2 [scrollbar-width:none]">
             {CHIPS.map(({ icon: Icon, label }) => (
               <button key={label} type="button" className={CHIP}>
                 <Icon />
                 {label}
               </button>
             ))}
-            <button type="button" aria-label={s.chips.more} className={cn(CHIP, "w-8 justify-center px-0")}>
+            <button type="button" aria-label={s.chips.more} className={cn(CHIP, "w-7 justify-center px-0")}>
               <MoreHorizontal />
             </button>
             <span aria-hidden className="mx-1.5 h-5 w-px shrink-0 bg-border" />
@@ -219,7 +218,7 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
           </div>
 
           {/* Commands and results */}
-          <div ref={listRef} role="listbox" className="min-h-0 flex-1 overflow-y-auto px-2 pb-2" style={{ maxHeight: "min(36rem, calc(100svh - 16rem))" }}>
+          <div ref={listRef} role="listbox" className="min-h-0 flex-1 overflow-y-auto px-2 pb-2" style={{ maxHeight: "min(24rem, calc(100svh - 14rem))" }}>
             {q && results.length === 0 && <p className="px-4 pt-3 pb-1 text-sm text-muted-foreground">{s.empty.replace("{query}", query.trim())}</p>}
             {rows.map((row, i) => {
               const Icon = row.icon;
@@ -233,11 +232,11 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
                   onMouseMove={() => setIndex(i)}
                   onClick={() => run(row)}
                   className={cn(
-                    "flex h-[3.1rem] w-full cursor-pointer items-center gap-4 rounded-lg px-4 text-start text-[1.05rem] transition-colors",
+                    "flex h-10 w-full cursor-pointer items-center gap-3 rounded-lg px-3 text-start text-[0.9375rem] transition-colors",
                     i === index ? "bg-muted" : "hover:bg-muted/60"
                   )}
                 >
-                  <span className="grid size-5 shrink-0 place-items-center text-muted-foreground [&>svg]:size-5">
+                  <span className="grid size-4.5 shrink-0 place-items-center text-muted-foreground [&>svg]:size-4.5">
                     <Icon />
                   </span>
                   <span className="truncate">{row.label}</span>
@@ -247,7 +246,7 @@ export function SearchDialog({ open, onOpenChange, t, lang, go, onToggleSidebar 
           </div>
 
           {/* Footer */}
-          <div className="flex h-12 shrink-0 items-center gap-3 border-t border-border ps-5 pe-3 text-sm text-muted-foreground">
+          <div className="flex h-10 shrink-0 items-center gap-3 border-t border-border ps-4 pe-2 text-xs text-muted-foreground">
             <button type="button" aria-label={s.back} className="cursor-pointer rounded p-0.5 hover:text-foreground">
               <ChevronLeft className="size-4 rtl:rotate-180" />
             </button>

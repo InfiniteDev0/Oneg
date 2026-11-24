@@ -343,7 +343,7 @@
       "title": "Oneg"
     },
     "workspace": {
-      "name": "Amina's health",
+      "name": "{name}'s health",
       "meta": "{count} members",
       "plan": "Free",
       "upgrade": "Upgrade",
@@ -450,7 +450,15 @@
       "pin": "Pin to the top bar",
       "logout": "Log out",
       "signedOut": "Signed out",
-      "signedOutBody": "See you next time."
+      "signedOutBody": "See you next time.",
+      "profile": "Profile",
+      "utilities": "Utilities",
+      "reminder": "Create reminder",
+      "records": "Health records",
+      "family": "View family",
+      "dashboard": "My dashboard",
+      "lara": "Lara chat",
+      "trash": "Trash"
     },
     "side": {
       "title": "Home",
@@ -509,6 +517,27 @@
     },
     "tray": {
       "priority": "{count} Priority"
+    },
+    "themes": {
+      "title": "Themes",
+      "description": "How Oneg looks on this device.",
+      "appearance": "Appearance",
+      "light": "Light",
+      "dark": "Dark",
+      "auto": "Auto",
+      "colour": "Theme colour",
+      "colours": {
+        "black": "Black",
+        "purple": "Purple",
+        "blue": "Blue",
+        "pink": "Pink",
+        "violet": "Violet",
+        "indigo": "Indigo",
+        "orange": "Orange",
+        "teal": "Teal",
+        "bronze": "Bronze",
+        "mint": "Mint"
+      }
     }
   }
 }

@@ -1,46 +1,44 @@
 "use client";
 
-// The signed-in app's frame, laid out as Barista's AdminShell and ClickUp:
-//   the top bar across the whole width (h-12)
-//   under it: ClickUp's icon rail (60px), Lenzro's side panel (280px, hides with »),
-//   and the main panel (rounded, only its contents scroll)
-//   along the bottom, ClickUp's tray ("1 Priority")
-// Search (Ctrl+K) and Lara (Ctrl+J, the "Ask Lara" pill, the AI rail button) open over it.
+// The signed-in app's frame, as Barista's AdminShell: the top bar across the
+// whole width (h-12), and under it the sidebar card (Barista's, with ClickUp's
+// items) beside the main panel, a rounded card with a border; only the panel's
+// contents scroll. Colours are Barista's (.oneg-app in globals.css). ClickUp's
+// "1 Priority" tray runs along the bottom.
+// Search (Ctrl+K) and Lara (Ctrl+J, the "Ask Lara" pill, the AI item) open over it.
 
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Flag } from "lucide-react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import LaraChat from "@/components/lara/lara-chat";
-import { cn } from "@/lib/utils";
-import { IconRail } from "./icon-rail";
+import { AppSidebar } from "./app-sidebar";
 import { SearchDialog } from "./search-dialog";
-import { SidePanel } from "./side-panel";
 import { TopBar } from "./top-bar";
 
-const PANEL_KEY = "oneg.app.panel";
+const SIDEBAR_KEY = "oneg.app.sidebar";
 
 export function AppShell({ t, lara, lang, children }) {
   const router = useRouter();
-  const [panelOpen, setPanelOpen] = useState(true);
+  // Folded to ClickUp's rail until you open it; remembered
+  const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
-  // the side panel stays as you left it
   useEffect(() => {
     try {
-      if (localStorage.getItem(PANEL_KEY) === "closed") setPanelOpen(false);
+      if (localStorage.getItem(SIDEBAR_KEY) === "open") setOpen(true);
     } catch {
-      // storage blocked: it starts open
+      // storage blocked: it starts folded
     }
   }, []);
-  const togglePanel = useCallback(() => {
-    setPanelOpen((open) => {
+  const toggle = useCallback(() => {
+    setOpen((was) => {
       try {
-        localStorage.setItem(PANEL_KEY, open ? "closed" : "open");
+        localStorage.setItem(SIDEBAR_KEY, was ? "folded" : "open");
       } catch {
         // not remembered
       }
-      return !open;
+      return !was;
     });
   }, []);
 
@@ -60,25 +58,17 @@ export function AppShell({ t, lara, lang, children }) {
 
   return (
     <TooltipProvider delay={300}>
-      <div className="flex h-svh flex-col overflow-hidden bg-background text-foreground">
+      <div className="oneg-app flex h-svh flex-col overflow-hidden bg-background text-foreground">
         <TopBar t={t} lang={lang} onSearch={() => setSearchOpen(true)} />
 
         <div className="flex min-h-0 flex-1">
-          <IconRail t={t} lang={lang} panelOpen={panelOpen} onTogglePanel={togglePanel} />
+          <AppSidebar t={t} lang={lang} open={open} onToggle={toggle} />
 
-          <div className="flex min-h-0 min-w-0 flex-1 flex-col pe-1.5">
-            {/* Lenzro's body: the panel and the page side by side, 4px apart */}
-            <div className="flex min-h-0 flex-1 gap-1">
-              <div
-                className={cn(
-                  "shrink-0 overflow-hidden rounded-xl bg-muted-foreground/10 transition-[width] duration-200",
-                  panelOpen ? "w-[280px]" : "w-0"
-                )}
-              >
-                <SidePanel t={t} lang={lang} go={go} />
-              </div>
-              <main className="scrollbar-pill min-h-0 min-w-0 flex-1 overflow-y-auto rounded-xl bg-muted-foreground/10">{children}</main>
-            </div>
+          <div className="flex min-h-0 min-w-0 flex-1 flex-col pe-2">
+            {/* Barista's SidebarInset: a rounded, bordered panel in the canvas colour */}
+            <main className="scrollbar-pill min-h-0 min-w-0 flex-1 overflow-y-auto rounded-lg border border-border bg-canvas">
+              <div className="mx-auto w-full max-w-[96rem] px-4 py-6 lg:px-6">{children}</div>
+            </main>
 
             {/* ClickUp's tray along the bottom */}
             <div className="flex h-10 shrink-0 items-center">
@@ -94,8 +84,8 @@ export function AppShell({ t, lara, lang, children }) {
           </div>
         </div>
 
-        <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} t={t} lang={lang} go={go} onToggleSidebar={togglePanel} />
-        {/* Lara, without her floating face: the top bar and the rail open her */}
+        <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} t={t} lang={lang} go={go} onToggleSidebar={toggle} />
+        {/* Lara, without her floating face: the top bar and the sidebar open her */}
         <LaraChat label={lara.label} t={lara.chat} lang={lang} button={false} />
       </div>
     </TooltipProvider>

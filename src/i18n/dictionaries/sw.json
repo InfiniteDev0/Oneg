@@ -343,7 +343,7 @@
       "title": "Oneg"
     },
     "workspace": {
-      "name": "Afya ya Amina",
+      "name": "Afya ya {name}",
       "meta": "Wanachama {count}",
       "plan": "Bure",
       "upgrade": "Pandisha daraja",
@@ -450,7 +450,15 @@
       "pin": "Bandika kwenye upau wa juu",
       "logout": "Toka",
       "signedOut": "Umetoka",
-      "signedOutBody": "Tuonane wakati mwingine."
+      "signedOutBody": "Tuonane wakati mwingine.",
+      "profile": "Wasifu",
+      "utilities": "Zana",
+      "reminder": "Unda kikumbusho",
+      "records": "Rekodi za afya",
+      "family": "Tazama familia",
+      "dashboard": "Dashibodi yangu",
+      "lara": "Mazungumzo na Lara",
+      "trash": "Tupio"
     },
     "side": {
       "title": "Nyumbani",
@@ -509,6 +517,27 @@
     },
     "tray": {
       "priority": "Kipaumbele {count}"
+    },
+    "themes": {
+      "title": "Mandhari",
+      "description": "Jinsi Oneg inavyoonekana kwenye kifaa hiki.",
+      "appearance": "Mwonekano",
+      "light": "Mwanga",
+      "dark": "Giza",
+      "auto": "Otomatiki",
+      "colour": "Rangi ya mandhari",
+      "colours": {
+        "black": "Nyeusi",
+        "purple": "Zambarau",
+        "blue": "Buluu",
+        "pink": "Waridi",
+        "violet": "Urujuani",
+        "indigo": "Nili",
+        "orange": "Chungwa",
+        "teal": "Kijani-buluu",
+        "bronze": "Shaba",
+        "mint": "Kijani-mnanaa"
+      }
     }
   }
 }
