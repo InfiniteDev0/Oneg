@@ -5,27 +5,29 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
   ArrowRight,
-  BadgeCheck,
   Building2,
   ChevronDown,
   HeartPulse,
-  LayoutDashboard,
   Network,
 } from "lucide-react";
+import { VerifiedBadgeIcon } from "@/components/icons/verified-badge";
 import { WalletIcon } from "@/components/icons/wallet";
+import { WidgetIcon } from "@/components/icons/widget";
 import { EyeTracker } from "@/components/lara/eye-tracker";
 import { EASE_OUT } from "@/lib/ease";
 import { cn } from "@/lib/utils";
 import { navLinkClass } from "./nav-links";
 
-// Icon tiles for the "Featured" column (icons can't be passed from the server, so they're named)
+// Icon tiles for the "Featured" column (icons can't be passed from the server, so they're named).
+// One cyan-to-blue gradient for all of them; the wallet is black, like Lara's chip.
+const CYAN_BLUE = "bg-gradient-to-br from-[#2ec5ea] to-oneg-blue";
 const FEATURED_ICONS = {
   ai: {}, // Lara: drawn with her face, see FeaturedColumn
-  wallet: { Icon: WalletIcon, tile: "bg-gradient-to-br from-oneg-green to-[#1f9d6b]" },
-  doctorDashboard: { Icon: LayoutDashboard, tile: "bg-gradient-to-br from-[#5b8def] to-oneg-blue" },
-  verified: { Icon: BadgeCheck, tile: "bg-gradient-to-br from-oneg-cyan to-[#1f9d6b]" },
-  hospitalDashboard: { Icon: Building2, tile: "bg-gradient-to-br from-[#7c6cf0] to-oneg-blue" },
-  network: { Icon: Network, tile: "bg-gradient-to-br from-[#ff7aa8] to-[#e5484d]" },
+  wallet: { Icon: WalletIcon, tile: "bg-[#141414]" },
+  doctorDashboard: { Icon: WidgetIcon, tile: CYAN_BLUE },
+  verified: { Icon: VerifiedBadgeIcon, tile: CYAN_BLUE, size: "size-7" },
+  hospitalDashboard: { Icon: Building2, tile: CYAN_BLUE },
+  network: { Icon: Network, tile: CYAN_BLUE },
 };
 
 
@@ -177,7 +179,7 @@ function FeaturedColumn({ featured, onNavigate }) {
       <ColumnTitle>{featured.title}</ColumnTitle>
       <ul className="flex flex-col gap-3">
         {featured.items.map((item) => {
-          const { Icon, tile } = FEATURED_ICONS[item.icon];
+          const { Icon, tile, size } = FEATURED_ICONS[item.icon];
           return (
             <li key={item.href + item.title}>
               <Link
@@ -187,12 +189,12 @@ function FeaturedColumn({ featured, onNavigate }) {
               >
                 {item.icon === "ai" ? (
                   // Lara's own face (black chip, white eyes that follow the pointer), not an icon
-                  <span className="oneg-lara-face size-12 rounded-xl shadow-sm">
+                  <span className="oneg-lara-face size-12 rounded-xl">
                     <EyeTracker size={48} follow={25} eyeScale={1.5} within="body" decorative label="Lara" />
                   </span>
                 ) : (
-                  <span className={cn("grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-sm", tile)}>
-                    <Icon className="size-6" />
+                  <span className={cn("grid size-12 shrink-0 place-items-center rounded-xl text-white", tile)}>
+                    <Icon className={size ?? "size-6"} />
                   </span>
                 )}
                 <span className="min-w-0">
