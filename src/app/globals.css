@@ -463,3 +463,13 @@ html:lang(ar) {
 .oneg-tile-soft {
   background: linear-gradient(145deg, #dfe8fd, #f2f3ff);
 }
+
+/* ── Lara's answers (Markdown) ──────────────────────────────── */
+.oneg-lara-md > * + * { margin-top: 0.6em; }
+.oneg-lara-md ul { list-style: disc; padding-inline-start: 1.25rem; }
+.oneg-lara-md ol { list-style: decimal; padding-inline-start: 1.25rem; }
+.oneg-lara-md li + li { margin-top: 0.25em; }
+.oneg-lara-md li > p + p { margin-top: 0.3em; }
+.oneg-lara-md strong { font-weight: 600; color: var(--foreground); }
+.oneg-lara-md code { font-family: var(--font-mono); font-size: 0.9em; padding: 0.1em 0.3em; border-radius: 4px; background: var(--muted); }
+.oneg-lara-md blockquote { border-inline-start: 2px solid var(--border); padding-inline-start: 0.75rem; color: var(--muted-foreground); }

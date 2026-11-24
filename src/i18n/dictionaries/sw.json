@@ -194,7 +194,7 @@
         "book": "Weka miadi ya ushauri",
         "library": "Soma maktaba ya afya"
       },
-      "placeholder": "Uliza Lara",
+      "placeholder": "Muulize Lara chochote kuhusu afya yako",
       "add": "Ongeza",
       "send": "Tuma",
       "steps": [
@@ -217,6 +217,72 @@
         "cta": "{signup} au {login} ili tuendelee na mazungumzo yetu.",
         "signup": "Fungua akaunti",
         "login": "ingia"
+      },
+      "disclaimer": "Lara anaweza kukosea. Hakikisha taarifa muhimu. Katika dharura, piga 999 au 112.",
+      "thinkingPhrases": [
+        "Ninafikiri",
+        "Ninasoma swali lako",
+        "Ninakagua miongozo ya kitabibu inayoaminika",
+        "Ninaandaa jibu salama"
+      ],
+      "step": {
+        "web": "Nimetafuta mtandaoni “{label}”",
+        "read": "Nimesoma {label}",
+        "oneg": "Nimetafuta Oneg “{label}”"
+      },
+      "attach": {
+        "add": "Ongeza kwenye ujumbe",
+        "image": "Ongeza picha",
+        "imageDesc": "Upele, jeraha, pakiti ya dawa au cheti cha dawa.",
+        "file": "Ongeza hati",
+        "fileDesc": "Majibu ya maabara au barua ya daktari (PDF).",
+        "remove": "Ondoa",
+        "tooBig": "Faili hilo ni kubwa mno. Picha hadi MB 5, PDF hadi MB 10.",
+        "wrongType": "Lara anaweza kusoma picha (JPG, PNG, WebP) na hati za PDF."
+      },
+      "ask": {
+        "other": "Au andika jibu lako hapa chini."
+      },
+      "sources": "Vyanzo",
+      "actions": {
+        "copy": "Nakili",
+        "copied": "Imenakiliwa",
+        "edit": "Hariri ujumbe",
+        "cancel": "Ghairi",
+        "save": "Tuma",
+        "share": "Shiriki",
+        "good": "Jibu zuri",
+        "bad": "Jibu baya",
+        "thanks": "Asante kwa maoni yako",
+        "read": "Soma kwa sauti",
+        "stopReading": "Acha kusoma",
+        "more": "Zaidi",
+        "retry": "Jaribu tena",
+        "stop": "Simamisha",
+        "stopped": "Umesimamisha jibu hili."
+      },
+      "errors": {
+        "failed": "Kuna hitilafu. Tafadhali jaribu tena.",
+        "busy": "Lara ana shughuli nyingi sasa. Tafadhali jaribu tena baada ya dakika moja.",
+        "not_configured": "Lara bado hajaunganishwa. Ongeza ufunguo wa API wa Anthropic kwenye seva ili kumwasha.",
+        "refused": "Siwezi kusaidia na hilo. Kama ni kuhusu afya yako, tafadhali zungumza na daktari kwenye Oneg.",
+        "too_many": "Umetuma jumbe nyingi kwa muda mfupi. Tafadhali subiri dakika chache.",
+        "offline": "Inaonekana huna mtandao. Angalia muunganisho wako kisha ujaribu tena."
+      },
+      "history": {
+        "title": "Mazungumzo ya awali",
+        "recent": "Mazungumzo ya hivi karibuni",
+        "empty": "Mazungumzo yako yataonekana hapa.",
+        "untitled": "Mazungumzo mapya",
+        "delete": "Futa mazungumzo"
+      },
+      "newChatKeys": "Ctrl+Shift+;",
+      "menu": {
+        "copyLink": "Nakili kiungo",
+        "sidebar": "Upande",
+        "floating": "Inayoelea",
+        "fullscreen": "Skrini nzima",
+        "linkCopied": "Kiungo kimenakiliwa"
       }
     }
   },

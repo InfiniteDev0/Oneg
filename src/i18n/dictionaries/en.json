@@ -194,7 +194,7 @@
         "book": "Book a consultation",
         "library": "Read the health library"
       },
-      "placeholder": "Ask Lara",
+      "placeholder": "Ask Lara anything about your health",
       "add": "Add",
       "send": "Send",
       "steps": [
@@ -217,6 +217,72 @@
         "cta": "{signup} or {login} so we can continue our conversation.",
         "signup": "Create an account",
         "login": "log in"
+      },
+      "disclaimer": "Lara can make mistakes. Check important info. In an emergency, call 999 or 112.",
+      "thinkingPhrases": [
+        "Thinking",
+        "Reading your question",
+        "Checking trusted medical guidance",
+        "Preparing a safe answer"
+      ],
+      "step": {
+        "web": "Searched the web for “{label}”",
+        "read": "Read {label}",
+        "oneg": "Searched Oneg for “{label}”"
+      },
+      "attach": {
+        "add": "Add to message",
+        "image": "Add a photo",
+        "imageDesc": "A rash, a wound, a medicine pack or a prescription.",
+        "file": "Add a document",
+        "fileDesc": "A lab result or a medical letter (PDF).",
+        "remove": "Remove",
+        "tooBig": "That file is too big. Photos up to 5 MB, PDFs up to 10 MB.",
+        "wrongType": "Lara can read photos (JPG, PNG, WebP) and PDF documents."
+      },
+      "ask": {
+        "other": "Or type your own answer below."
+      },
+      "sources": "Sources",
+      "actions": {
+        "copy": "Copy",
+        "copied": "Copied",
+        "edit": "Edit message",
+        "cancel": "Cancel",
+        "save": "Send",
+        "share": "Share",
+        "good": "Good response",
+        "bad": "Bad response",
+        "thanks": "Thanks for the feedback",
+        "read": "Read aloud",
+        "stopReading": "Stop reading",
+        "more": "More",
+        "retry": "Retry",
+        "stop": "Stop",
+        "stopped": "You stopped this reply."
+      },
+      "errors": {
+        "failed": "Something went wrong. Please try again.",
+        "busy": "Lara is very busy right now. Please try again in a minute.",
+        "not_configured": "Lara isn't connected yet. Add an Anthropic API key to the server to switch her on.",
+        "refused": "I can't help with that one. If it's about your health, please talk to a doctor on Oneg.",
+        "too_many": "You've sent a lot of messages in a short time. Please wait a few minutes.",
+        "offline": "You seem to be offline. Check your connection and try again."
+      },
+      "history": {
+        "title": "Previous chats",
+        "recent": "Recent chats",
+        "empty": "Your chats will show up here.",
+        "untitled": "New chat",
+        "delete": "Delete chat"
+      },
+      "newChatKeys": "Ctrl+Shift+;",
+      "menu": {
+        "copyLink": "Copy link",
+        "sidebar": "Sidebar",
+        "floating": "Floating",
+        "fullscreen": "Full screen",
+        "linkCopied": "Link copied"
       }
     }
   },

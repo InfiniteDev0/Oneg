@@ -194,7 +194,7 @@
         "book": "Ballanso la-tashi",
         "library": "Akhri maktabadda caafimaadka"
       },
-      "placeholder": "Weydii Lara",
+      "placeholder": "Lara wax kasta ka weydii caafimaadkaaga",
       "add": "Ku dar",
       "send": "Dir",
       "steps": [
@@ -217,6 +217,72 @@
         "cta": "{signup} ama {login} si aan u sii wadno sheekadeena.",
         "signup": "Samee koonto",
         "login": "gal"
+      },
+      "disclaimer": "Lara waa qaladi kartaa. Hubi macluumaadka muhiimka ah. Xaalad degdeg ah, wac 999 ama 112.",
+      "thinkingPhrases": [
+        "Waan fakarayaa",
+        "Waxaan akhrinayaa su'aashaada",
+        "Waxaan hubinayaa hagaha caafimaadka",
+        "Waxaan diyaarinayaa jawaab ammaan ah"
+      ],
+      "step": {
+        "web": "Waxaan internetka ka raadiyay “{label}”",
+        "read": "Waxaan akhriyay {label}",
+        "oneg": "Waxaan Oneg ka raadiyay “{label}”"
+      },
+      "attach": {
+        "add": "Ku dar fariinta",
+        "image": "Ku dar sawir",
+        "imageDesc": "Finan, dhaawac, baakadda daawada ama warqadda dhakhtarka.",
+        "file": "Ku dar dukumenti",
+        "fileDesc": "Natiijada shaybaarka ama warqad caafimaad (PDF).",
+        "remove": "Ka saar",
+        "tooBig": "Faylkaas aad buu u weyn yahay. Sawirro ilaa 5 MB, PDF ilaa 10 MB.",
+        "wrongType": "Lara waxay akhrin kartaa sawirro (JPG, PNG, WebP) iyo dukumentiyo PDF ah."
+      },
+      "ask": {
+        "other": "Ama hoos ku qor jawaabtaada."
+      },
+      "sources": "Ilaha",
+      "actions": {
+        "copy": "Koobiyee",
+        "copied": "Waa la koobiyeeyay",
+        "edit": "Wax ka beddel fariinta",
+        "cancel": "Jooji",
+        "save": "Dir",
+        "share": "La wadaag",
+        "good": "Jawaab wanaagsan",
+        "bad": "Jawaab xun",
+        "thanks": "Mahadsanid jawaab celintaada",
+        "read": "Kor u akhri",
+        "stopReading": "Jooji akhriska",
+        "more": "Wax kale",
+        "retry": "Isku day mar kale",
+        "stop": "Jooji",
+        "stopped": "Waad joojisay jawaabtan."
+      },
+      "errors": {
+        "failed": "Wax baa khaldamay. Fadlan mar kale isku day.",
+        "busy": "Lara aad bay mashquul u tahay hadda. Fadlan isku day daqiiqad kadib.",
+        "not_configured": "Lara weli lama xidhin. Ku dar furaha API ee Anthropic server-ka si aad u shidto.",
+        "refused": "Arrintaas kuma caawin karo. Haddii ay caafimaadkaaga khusayso, fadlan la hadal dhakhtar Oneg ku jira.",
+        "too_many": "Fariimo badan ayaad dirtay muddo gaaban. Fadlan sug dhowr daqiiqo.",
+        "offline": "Waxay u egtahay inaadan internet haysan. Hubi xidhiidhkaaga oo mar kale isku day."
+      },
+      "history": {
+        "title": "Sheekooyinkii hore",
+        "recent": "Sheekooyinkii u dambeeyay",
+        "empty": "Sheekooyinkaagu halkan ayay ka muuqan doonaan.",
+        "untitled": "Sheeko cusub",
+        "delete": "Tirtir sheekada"
+      },
+      "newChatKeys": "Ctrl+Shift+;",
+      "menu": {
+        "copyLink": "Koobiyee xiriirka",
+        "sidebar": "Dhinac",
+        "floating": "Sabeynaya",
+        "fullscreen": "Shaashad buuxda",
+        "linkCopied": "Xiriirka waa la koobiyeeyay"
       }
     }
   },

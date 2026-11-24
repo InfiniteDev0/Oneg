@@ -1,4 +1,4 @@
-// From beUI's Agent Activity (MIT, https://beui.dev/components/agents/agent-activity),
+// From beUI's Agent Loading States (MIT, https://beui.dev/components/agents/loading-states),
 // converted from TypeScript to JavaScript for Oneg (types removed, nothing else changed).
 "use client";
 import { TextShimmer } from "@/components/motion/text-shimmer";
