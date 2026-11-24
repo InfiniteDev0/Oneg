@@ -19,15 +19,16 @@ import { cn } from "@/lib/utils";
 import { navLinkClass } from "./nav-links";
 
 // Icon tiles for the "Featured" column (icons can't be passed from the server, so they're named).
-// One cyan-to-blue gradient for all of them; the wallet is black, like Lara's chip.
-const CYAN_BLUE = "bg-gradient-to-br from-[#2ec5ea] to-oneg-blue";
+// Styled as ClickUp's: a blurred cyan-and-blue glow with a white icon (.oneg-tile-glow), or a
+// pale blue square with a two-tone icon (.oneg-tile-soft). The wallet is black, like Lara's chip.
+const GLOW = "oneg-tile-glow text-white";
 const FEATURED_ICONS = {
   ai: {}, // Lara: drawn with her face, see FeaturedColumn
-  wallet: { Icon: WalletIcon, tile: "bg-[#141414]" },
-  doctorDashboard: { Icon: WidgetIcon, tile: CYAN_BLUE },
-  verified: { Icon: VerifiedBadgeIcon, tile: CYAN_BLUE, size: "size-7" },
-  hospitalDashboard: { Icon: Building2, tile: CYAN_BLUE },
-  network: { Icon: Network, tile: CYAN_BLUE },
+  wallet: { Icon: WalletIcon, tile: "bg-[#141414] text-white" },
+  doctorDashboard: { Icon: WidgetIcon, tile: GLOW },
+  verified: { Icon: VerifiedBadgeIcon, tile: "oneg-tile-soft text-[#8fbffa]", size: "size-8" },
+  hospitalDashboard: { Icon: Building2, tile: GLOW },
+  network: { Icon: Network, tile: GLOW },
 };
 
 
@@ -189,11 +190,11 @@ function FeaturedColumn({ featured, onNavigate }) {
               >
                 {item.icon === "ai" ? (
                   // Lara's own face (black chip, white eyes that follow the pointer), not an icon
-                  <span className="oneg-lara-face size-12 rounded-xl">
+                  <span className="oneg-lara-face size-12 rounded-[14px]">
                     <EyeTracker size={48} follow={25} eyeScale={1.5} within="body" decorative label="Lara" />
                   </span>
                 ) : (
-                  <span className={cn("grid size-12 shrink-0 place-items-center rounded-xl text-white", tile)}>
+                  <span className={cn("grid size-12 shrink-0 place-items-center rounded-[14px]", tile)}>
                     <Icon className={size ?? "size-6"} />
                   </span>
                 )}

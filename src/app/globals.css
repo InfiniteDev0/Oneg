@@ -418,3 +418,27 @@ html:lang(ar) {
   width: auto;
   height: auto;
 }
+
+/* ── Menu "Featured" tiles, after ClickUp's ────────────────────
+   Glow: a conic gradient blurred inside a rounded square (ClickUp's
+   Small Business Suite tile), in Oneg's cyans and blues.
+   Soft: a pale blue square for two-tone icons (their Custom agents tile). */
+.oneg-tile-glow {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.oneg-tile-glow::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  z-index: -1;
+  background: conic-gradient(from 90deg, #00ddff 0deg, #2064b6 135deg, #38bdf8 190deg, #3b5bdb 270deg, #00ddff 360deg);
+  filter: blur(8px);
+  transform: rotate(-38deg) scaleX(1.25);
+}
+
+.oneg-tile-soft {
+  background: linear-gradient(145deg, #dfe8fd, #f2f3ff);
+}
