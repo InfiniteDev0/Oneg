@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { defaultLocale, hasLocale, LOCALE_COOKIE, locales } from "@/i18n/config";
+import { DEMO_COOKIE } from "@/lib/demo-account";
 
 // Pick a language: the visitor's saved choice first, then their browser's language list.
 function getLocale(request) {
@@ -20,12 +21,26 @@ function getLocale(request) {
 }
 
 // Sends any URL without a language (e.g. "/" or "/auth") to the right one ("/sw" or "/sw/auth").
+// The signed-in app (/[lang]/app) needs the demo account's cookie for now; without it,
+// you're sent to the login page.
 export function proxy(request) {
   const { pathname } = request.nextUrl;
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
-  );
-  if (pathnameHasLocale) return;
+  const locale = locales.find((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`));
+
+  if (locale) {
+    const inApp = pathname === `/${locale}/app` || pathname.startsWith(`/${locale}/app/`);
+    const signedIn = Boolean(request.cookies.get(DEMO_COOKIE)?.value);
+    if (inApp && !signedIn) {
+      request.nextUrl.pathname = `/${locale}/auth`;
+      return NextResponse.redirect(request.nextUrl);
+    }
+    // Already logged in (remembered for 30 days): the login page goes straight to the app
+    if (signedIn && pathname === `/${locale}/auth` && request.nextUrl.searchParams.get("mode") !== "signup") {
+      request.nextUrl.pathname = `/${locale}/app`;
+      return NextResponse.redirect(request.nextUrl);
+    }
+    return;
+  }
 
   request.nextUrl.pathname = `/${getLocale(request)}${pathname}`;
   return NextResponse.redirect(request.nextUrl);

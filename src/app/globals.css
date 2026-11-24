@@ -464,6 +464,64 @@ html:lang(ar) {
   background: linear-gradient(145deg, #dfe8fd, #f2f3ff);
 }
 
+/* ── The app's search bar and its "Ask Lara" pill ───────────────
+   The bar is a solid grey (not see-through) so the pill can fill its inside
+   with the same colour. The pill shows a plain outline at rest and, on hover,
+   the "Try personal care" pill's spinning gradient border (ClickUp's Imagine). */
+:root { --searchbar: #e3e6e8; --searchbar-hover: #dadee1; }
+:root.dark { --searchbar: oklch(0.215 0.004 84.4); --searchbar-hover: oklch(0.245 0.004 84.4); }
+.oneg-search-bar { background: var(--searchbar); transition: background-color 150ms; }
+.oneg-search-bar:hover { background: var(--searchbar-hover); }
+.oneg-lara-pill { --pill-fill: var(--searchbar); }
+.oneg-search-bar:hover .oneg-lara-pill { --pill-fill: var(--searchbar-hover); }
+.oneg-lara-pill {
+  position: relative;
+  display: inline-flex;
+  border-radius: 9999px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.oneg-lara-pill::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 400px;
+  z-index: 0;
+  background: conic-gradient(from 0deg, #00ddff 0deg, #0091ff 60deg, #ff02f0 130deg, #fc6d2d 190deg, #6647f0 270deg, #00ddff 360deg);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 250ms;
+  animation: oneg-pill-spin 2.5s linear infinite;
+}
+.oneg-lara-pill:hover::before,
+.oneg-lara-pill:focus-visible::before { opacity: 1; }
+.oneg-lara-pill:hover { box-shadow: 0 0 14px rgb(160 80 255 / 0.35); }
+.oneg-lara-pill::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  z-index: 1;
+  border-radius: 9999px;
+  background: var(--pill-fill);
+}
+.oneg-lara-pill > * { position: relative; z-index: 2; }
+@media (prefers-reduced-motion: reduce) { .oneg-lara-pill::before { animation: none; } }
+
+/* Lenzro's thin pill scrollbar (as Lenzro's globals.css) */
+.scrollbar-pill { scrollbar-width: thin; scrollbar-color: color-mix(in oklch, var(--muted-foreground) 45%, transparent) transparent; }
+.scrollbar-pill::-webkit-scrollbar { width: 6px; }
+.scrollbar-pill::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-pill::-webkit-scrollbar-thumb { background: #52525b; border-radius: 100px; }
+.scrollbar-pill::-webkit-scrollbar-button { display: none; }
+
+/* Toasts (goey-toast) take Oneg's font, as Barista's do */
+[data-sonner-toaster][data-sonner-toaster],
+[data-sonner-toaster] .gooey-wrapper { font-family: var(--font-sans); }
+[data-sonner-toaster] .gooey-timestamp { display: none; }
+
 /* ── Lara's answers (Markdown) ──────────────────────────────── */
 .oneg-lara-md > * + * { margin-top: 0.6em; }
 .oneg-lara-md ul { list-style: disc; padding-inline-start: 1.25rem; }

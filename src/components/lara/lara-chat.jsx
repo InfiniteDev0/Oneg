@@ -112,7 +112,11 @@ function ChatList({ history, activeId, t, onOpen, onDelete, className }) {
   );
 }
 
-export default function LaraChat({ label, t, lang }) {
+// Anything can open Lara (the app's "Ask Lara" pill, the AI rail button, search):
+// window.dispatchEvent(new CustomEvent(OPEN_LARA, { detail: { ask: "optional question" } }))
+export const OPEN_LARA = "oneg:open-lara";
+
+export default function LaraChat({ label, t, lang, button = true }) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState("sidebar");
   const [historyOpen, setHistoryOpen] = useState(false);
@@ -164,6 +168,21 @@ export default function LaraChat({ label, t, lang }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [newChat]);
+
+  // Opened from elsewhere, maybe with a question to ask straight away
+  const sendRef = useRef(lara.send);
+  useEffect(() => {
+    sendRef.current = lara.send;
+  });
+  useEffect(() => {
+    const onOpen = (e) => {
+      setOpen(true);
+      const ask = e.detail?.ask?.trim();
+      if (ask) window.setTimeout(() => sendRef.current(ask), 0);
+    };
+    window.addEventListener(OPEN_LARA, onOpen);
+    return () => window.removeEventListener(OPEN_LARA, onOpen);
+  }, []);
 
   // keep the newest words in view while Lara writes
   const lastText = chat?.ui.at(-1)?.text;
@@ -311,7 +330,7 @@ export default function LaraChat({ label, t, lang }) {
 
   return (
     <>
-      <LaraButton label={label} open={open} onOpen={() => setOpen(true)} />
+      {button && <LaraButton label={label} open={open} onOpen={() => setOpen(true)} />}
 
       <Sheet
         side={VIEWS[view]}

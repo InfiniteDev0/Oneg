@@ -305,7 +305,16 @@
       "submit": "Gal",
       "google": "Ku gal Google",
       "noAccount": "Koonto ma lihid?",
-      "switch": "Is diiwaangeli"
+      "switch": "Is diiwaangeli",
+      "toast": {
+        "loading": "Waa lagu soo gelinayaa…",
+        "loadingBody": "Waxaan hubinaynaa xogtaada.",
+        "success": "Ku soo dhowow",
+        "successBody": "Waxaan furaynaa meeshaada caafimaadka.",
+        "error": "Iimaylka ama furaha sirta ah waa khalad",
+        "errorBody": "Hubi oo mar kale isku day.",
+        "retry": "Isku day mar kale"
+      }
     },
     "signup": {
       "title": "Samee koontadaada",
@@ -328,5 +337,178 @@
       "Xooggan",
       "Aad u xooggan"
     ]
+  },
+  "app": {
+    "meta": {
+      "title": "Oneg"
+    },
+    "workspace": {
+      "name": "Caafimaadka Amina",
+      "meta": "{count} xubnood",
+      "plan": "Bilaash",
+      "upgrade": "Kor u qaad",
+      "settings": "Dejinta",
+      "people": "Qoyska",
+      "manage": "Maamul",
+      "apps": "Abka",
+      "records": "Diiwaannada caafimaadka",
+      "prescriptions": "Warqadaha daawada",
+      "reminders": "Xasuusin",
+      "wallet": "Boorsada",
+      "switch": "Beddel profile-ka",
+      "create": "Ku dar xubin qoyska ah"
+    },
+    "top": {
+      "calendar": "Kalandarka",
+      "create": "Ballan la-tashi qabso",
+      "video": "Bilow la-tashi muuqaal ah",
+      "voice": "La hadal Lara",
+      "account": "Koontadaada"
+    },
+    "search": {
+      "label": "Raadi",
+      "keys": "Ctrl K",
+      "askLara": "Weydii Lara",
+      "askLaraTip": "Fur sheekooyinkaaga Lara",
+      "askLaraKeys": "Ctrl J",
+      "placeholder": "Raadi, fuli amar, ama weydii su'aal…",
+      "tabs": {
+        "all": "Dhammaan",
+        "oneg": "Oneg",
+        "doctors": "Dhakhaatiir",
+        "hospitals": "Isbitaallo",
+        "pharmacies": "Farmasiyo",
+        "library": "Maktabad",
+        "apps": "Abka"
+      },
+      "chips": {
+        "appointments": "Ballamo",
+        "records": "Diiwaanno",
+        "prescriptions": "Warqadaha daawada",
+        "doctors": "Dhakhaatiir",
+        "articles": "Maqaallo",
+        "more": "Wax kale"
+      },
+      "filter": "Shaandhee",
+      "sort": "Kala sooc",
+      "tip": "Talo",
+      "tipText": "wuxuu ku fuliyaa amar natiijo",
+      "back": "Dib",
+      "forward": "Hore",
+      "settings": "Dejinta raadinta",
+      "empty": "Waxba lagama helin “{query}”.",
+      "askAbout": "Weydii Lara “{query}”",
+      "commands": {
+        "switchFamily": "U beddel profile-ka qoyska Hassan",
+        "apps": "Fur Xarunta Abka",
+        "book": "Ballan la-tashi qabso",
+        "findDoctor": "Hel dhakhtar",
+        "records": "Fur diiwaannada caafimaadka",
+        "prescriptions": "Fur warqadaha daawada",
+        "wallet": "Fur Boorsada Caafimaadka Oneg",
+        "reminder": "Deji xasuusinta daawada",
+        "recordVideo": "Duub muuqaal calaamadaha",
+        "reportBug": "Soo sheeg cillad",
+        "toggleSidebar": "Muuji ama qari baarka dhinaca",
+        "askLara": "Weydii Lara",
+        "settings": "Fur dejinta",
+        "shortcuts": "Gaagaabinta kiiboodhka"
+      }
+    },
+    "rail": {
+      "expand": "Muuji baarka dhinaca",
+      "collapse": "Qari baarka dhinaca",
+      "home": "Hoyga",
+      "planner": "Qorshe",
+      "ai": "AI",
+      "more": "Wax kale",
+      "moreTip": "Ku dar abka, xarumo iyo isku xidhka",
+      "labs": "Shaybaar",
+      "install": "Ku rakib",
+      "invite": "Casuun",
+      "upgrade": "Kor u qaad"
+    },
+    "profile": {
+      "online": "Online",
+      "setStatus": "Deji xaaladda",
+      "mute": "Aamusi ogeysiisyada",
+      "settings": "Dejinta",
+      "notifications": "Ogeysiisyada",
+      "themes": "Muuqaalka",
+      "labs": "Shaybaarka Oneg",
+      "shortcuts": "Gaagaabinta kiiboodhka",
+      "download": "Soo deji Oneg",
+      "help": "Caawimaad",
+      "reportBug": "Soo sheeg cillad",
+      "personal": "Qalabkaaga",
+      "book": "Ballan la-tashi qabso",
+      "myHealth": "Caafimaadkayga",
+      "medicines": "La soco daawooyinka",
+      "notepad": "Buug qoraal",
+      "record": "Duub muuqaal calaamadaha",
+      "talk": "Hadal u beddel qoraal",
+      "pin": "Ku dheji baarka sare",
+      "logout": "Ka bax",
+      "signedOut": "Waad ka baxday",
+      "signedOutBody": "Mar kale ayaan ku arki doonnaa."
+    },
+    "side": {
+      "title": "Hoyga",
+      "add": "Samee",
+      "create": {
+        "heading": "Samee",
+        "appointment": "Ballan",
+        "reminder": "Xasuusin",
+        "note": "Qoraal caafimaad",
+        "noteSub": "Qor calaamadaha, su'aalaha ama sida aad dareemayso",
+        "record": "Diiwaan caafimaad",
+        "recordSub": "Ku dar natiijo baadhis, sawir ama warqad",
+        "family": "Xubin qoyska ah",
+        "familySub": "Daryeel ilmo ama waalid",
+        "customize": "Habee baarkaaga dhinaca"
+      },
+      "pages": "Bogag",
+      "favorites": "Kuwa la jecel yahay",
+      "items": {
+        "dashboard": "Dashboard",
+        "appointments": "Ballamo",
+        "consultations": "La-tashiyo",
+        "records": "Diiwaannada caafimaadka",
+        "prescriptions": "Warqadaha daawada",
+        "wallet": "Boorsada"
+      },
+      "favs": {
+        "labs": "Natiijooyinka baadhista dhiigga",
+        "plan": "Qorshahayga daryeelka"
+      },
+      "settings": "Dejinta",
+      "marketplace": "Farmasi",
+      "trash": "Qashinka",
+      "rowMenu": {
+        "page": "Bog",
+        "favorite": "Ku dar kuwa la jecel yahay",
+        "copyLink": "Koobiyee xiriirka",
+        "newTab": "Ku fur tab cusub",
+        "more": "Wax kale"
+      },
+      "addInside": "Ku dar bog gudaha",
+      "addPage": "Ku dar bog",
+      "sectionMenu": "Doorashooyinka qaybta",
+      "hide": "Qari qaybta"
+    },
+    "home": {
+      "greeting": "Ku soo dhowow, {name}",
+      "subtitle": "Caafimaadkaaga, hal meel.",
+      "emptyTitle": "Weli waxba halkan kuma jiraan",
+      "emptyBody": "Ballamahaaga, natiijooyinka iyo xasuusinta halkan ayay ka muuqan doonaan.",
+      "ask": "Weydii Lara"
+    },
+    "soon": {
+      "title": "Dhowaan",
+      "body": "Waxaan dhisaynaa boggan."
+    },
+    "tray": {
+      "priority": "{count} Mudnaan"
+    }
   }
 }

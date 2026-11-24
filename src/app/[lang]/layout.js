@@ -3,6 +3,7 @@ import { Albert_Sans } from "next/font/google";
 import "../globals.css";
 import { getDirection, hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { Toaster } from "@/components/toaster";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -33,7 +34,10 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={lang} dir={getDirection(lang)} className={`${albertSans.variable} dark antialiased`}>
       {/* Lara is added by app/[lang]/(site)/layout.js, so she isn't on the auth pages */}
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
   );
 }

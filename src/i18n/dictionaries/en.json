@@ -305,7 +305,16 @@
       "submit": "Login",
       "google": "Sign in with Google",
       "noAccount": "Don't have an account?",
-      "switch": "Sign up"
+      "switch": "Sign up",
+      "toast": {
+        "loading": "Signing you in…",
+        "loadingBody": "Checking your details.",
+        "success": "Welcome back",
+        "successBody": "Opening your health space.",
+        "error": "Wrong email or password",
+        "errorBody": "Check them and try again.",
+        "retry": "Try again"
+      }
     },
     "signup": {
       "title": "Create your account",
@@ -328,5 +337,178 @@
       "Strong",
       "Very strong"
     ]
+  },
+  "app": {
+    "meta": {
+      "title": "Oneg"
+    },
+    "workspace": {
+      "name": "Amina's health",
+      "meta": "{count} members",
+      "plan": "Free",
+      "upgrade": "Upgrade",
+      "settings": "Settings",
+      "people": "Family",
+      "manage": "Manage",
+      "apps": "Apps",
+      "records": "Health records",
+      "prescriptions": "Prescriptions",
+      "reminders": "Reminders",
+      "wallet": "Wallet",
+      "switch": "Switch profiles",
+      "create": "Add a family member"
+    },
+    "top": {
+      "calendar": "Calendar",
+      "create": "Book a consultation",
+      "video": "Start a video consultation",
+      "voice": "Talk to Lara",
+      "account": "Your account"
+    },
+    "search": {
+      "label": "Search",
+      "keys": "Ctrl K",
+      "askLara": "Ask Lara",
+      "askLaraTip": "Open your Lara chats",
+      "askLaraKeys": "Ctrl J",
+      "placeholder": "Search, run a command, or ask a question…",
+      "tabs": {
+        "all": "All",
+        "oneg": "Oneg",
+        "doctors": "Doctors",
+        "hospitals": "Hospitals",
+        "pharmacies": "Pharmacies",
+        "library": "Library",
+        "apps": "Apps"
+      },
+      "chips": {
+        "appointments": "Appointments",
+        "records": "Records",
+        "prescriptions": "Prescriptions",
+        "doctors": "Doctors",
+        "articles": "Articles",
+        "more": "More"
+      },
+      "filter": "Filter",
+      "sort": "Sort",
+      "tip": "Tip",
+      "tipText": "runs a command on a result",
+      "back": "Back",
+      "forward": "Forward",
+      "settings": "Search settings",
+      "empty": "Nothing found for “{query}”.",
+      "askAbout": "Ask Lara about “{query}”",
+      "commands": {
+        "switchFamily": "Switch to the Hassan family profile",
+        "apps": "Open App Center",
+        "book": "Book a consultation",
+        "findDoctor": "Find a doctor",
+        "records": "Open health records",
+        "prescriptions": "Open prescriptions",
+        "wallet": "Open the Oneg Health Care Wallet",
+        "reminder": "Set a medicine reminder",
+        "recordVideo": "Record a symptom video",
+        "reportBug": "Report a bug",
+        "toggleSidebar": "Toggle sidebar",
+        "askLara": "Ask Lara",
+        "settings": "Open settings",
+        "shortcuts": "Keyboard shortcuts"
+      }
+    },
+    "rail": {
+      "expand": "Show sidebar",
+      "collapse": "Hide sidebar",
+      "home": "Home",
+      "planner": "Planner",
+      "ai": "AI",
+      "more": "More",
+      "moreTip": "Add apps, hubs and integrations",
+      "labs": "Labs",
+      "install": "Install",
+      "invite": "Invite",
+      "upgrade": "Upgrade"
+    },
+    "profile": {
+      "online": "Online",
+      "setStatus": "Set status",
+      "mute": "Mute notifications",
+      "settings": "Settings",
+      "notifications": "Notifications",
+      "themes": "Themes",
+      "labs": "Oneg Labs",
+      "shortcuts": "Keyboard shortcuts",
+      "download": "Download Oneg",
+      "help": "Help",
+      "reportBug": "Report a bug",
+      "personal": "Personal tools",
+      "book": "Book a consultation",
+      "myHealth": "My health",
+      "medicines": "Track medicines",
+      "notepad": "Notepad",
+      "record": "Record a symptom video",
+      "talk": "Talk to text",
+      "pin": "Pin to the top bar",
+      "logout": "Log out",
+      "signedOut": "Signed out",
+      "signedOutBody": "See you next time."
+    },
+    "side": {
+      "title": "Home",
+      "add": "Create",
+      "create": {
+        "heading": "Create",
+        "appointment": "Appointment",
+        "reminder": "Reminder",
+        "note": "Health note",
+        "noteSub": "Write down symptoms, questions or how you feel",
+        "record": "Health record",
+        "recordSub": "Add a test result, scan or letter",
+        "family": "Family member",
+        "familySub": "Look after a child or a parent",
+        "customize": "Customize your sidebar"
+      },
+      "pages": "Pages",
+      "favorites": "Favorites",
+      "items": {
+        "dashboard": "Dashboard",
+        "appointments": "Appointments",
+        "consultations": "Consultations",
+        "records": "Health records",
+        "prescriptions": "Prescriptions",
+        "wallet": "Wallet"
+      },
+      "favs": {
+        "labs": "Blood test results",
+        "plan": "My care plan"
+      },
+      "settings": "Settings",
+      "marketplace": "Pharmacy",
+      "trash": "Trash",
+      "rowMenu": {
+        "page": "Page",
+        "favorite": "Add to favorites",
+        "copyLink": "Copy link",
+        "newTab": "Open in new tab",
+        "more": "More"
+      },
+      "addInside": "Add a page inside",
+      "addPage": "Add a page",
+      "sectionMenu": "Section options",
+      "hide": "Hide section"
+    },
+    "home": {
+      "greeting": "Good to see you, {name}",
+      "subtitle": "Your health, all in one place.",
+      "emptyTitle": "Nothing here yet",
+      "emptyBody": "Your appointments, results and reminders will show up here.",
+      "ask": "Ask Lara"
+    },
+    "soon": {
+      "title": "Coming soon",
+      "body": "We're building this page."
+    },
+    "tray": {
+      "priority": "{count} Priority"
+    }
   }
 }

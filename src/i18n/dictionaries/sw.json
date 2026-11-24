@@ -305,7 +305,16 @@
       "submit": "Ingia",
       "google": "Ingia na Google",
       "noAccount": "Huna akaunti?",
-      "switch": "Jisajili"
+      "switch": "Jisajili",
+      "toast": {
+        "loading": "Tunakuingiza…",
+        "loadingBody": "Tunakagua taarifa zako.",
+        "success": "Karibu tena",
+        "successBody": "Tunafungua sehemu yako ya afya.",
+        "error": "Barua pepe au nenosiri si sahihi",
+        "errorBody": "Zikague kisha ujaribu tena.",
+        "retry": "Jaribu tena"
+      }
     },
     "signup": {
       "title": "Fungua akaunti yako",
@@ -328,5 +337,178 @@
       "Imara",
       "Imara sana"
     ]
+  },
+  "app": {
+    "meta": {
+      "title": "Oneg"
+    },
+    "workspace": {
+      "name": "Afya ya Amina",
+      "meta": "Wanachama {count}",
+      "plan": "Bure",
+      "upgrade": "Pandisha daraja",
+      "settings": "Mipangilio",
+      "people": "Familia",
+      "manage": "Simamia",
+      "apps": "Programu",
+      "records": "Rekodi za afya",
+      "prescriptions": "Maagizo ya dawa",
+      "reminders": "Vikumbusho",
+      "wallet": "Pochi",
+      "switch": "Badilisha wasifu",
+      "create": "Ongeza mwanafamilia"
+    },
+    "top": {
+      "calendar": "Kalenda",
+      "create": "Weka miadi ya ushauri",
+      "video": "Anza ushauri kwa video",
+      "voice": "Ongea na Lara",
+      "account": "Akaunti yako"
+    },
+    "search": {
+      "label": "Tafuta",
+      "keys": "Ctrl K",
+      "askLara": "Muulize Lara",
+      "askLaraTip": "Fungua mazungumzo yako na Lara",
+      "askLaraKeys": "Ctrl J",
+      "placeholder": "Tafuta, endesha amri, au uliza swali…",
+      "tabs": {
+        "all": "Zote",
+        "oneg": "Oneg",
+        "doctors": "Madaktari",
+        "hospitals": "Hospitali",
+        "pharmacies": "Maduka ya dawa",
+        "library": "Maktaba",
+        "apps": "Programu"
+      },
+      "chips": {
+        "appointments": "Miadi",
+        "records": "Rekodi",
+        "prescriptions": "Maagizo ya dawa",
+        "doctors": "Madaktari",
+        "articles": "Makala",
+        "more": "Zaidi"
+      },
+      "filter": "Chuja",
+      "sort": "Panga",
+      "tip": "Kidokezo",
+      "tipText": "huendesha amri kwenye tokeo",
+      "back": "Nyuma",
+      "forward": "Mbele",
+      "settings": "Mipangilio ya utafutaji",
+      "empty": "Hakuna kilichopatikana kwa “{query}”.",
+      "askAbout": "Muulize Lara kuhusu “{query}”",
+      "commands": {
+        "switchFamily": "Badilisha hadi wasifu wa familia ya Hassan",
+        "apps": "Fungua Kituo cha Programu",
+        "book": "Weka miadi ya ushauri",
+        "findDoctor": "Tafuta daktari",
+        "records": "Fungua rekodi za afya",
+        "prescriptions": "Fungua maagizo ya dawa",
+        "wallet": "Fungua Pochi ya Afya ya Oneg",
+        "reminder": "Weka kikumbusho cha dawa",
+        "recordVideo": "Rekodi video ya dalili",
+        "reportBug": "Ripoti hitilafu",
+        "toggleSidebar": "Onyesha au ficha upau wa pembeni",
+        "askLara": "Muulize Lara",
+        "settings": "Fungua mipangilio",
+        "shortcuts": "Njia za mkato za kibodi"
+      }
+    },
+    "rail": {
+      "expand": "Onyesha upau wa pembeni",
+      "collapse": "Ficha upau wa pembeni",
+      "home": "Nyumbani",
+      "planner": "Ratiba",
+      "ai": "AI",
+      "more": "Zaidi",
+      "moreTip": "Ongeza programu, vituo na miunganisho",
+      "labs": "Maabara",
+      "install": "Sakinisha",
+      "invite": "Alika",
+      "upgrade": "Pandisha"
+    },
+    "profile": {
+      "online": "Mtandaoni",
+      "setStatus": "Weka hali",
+      "mute": "Zima arifa",
+      "settings": "Mipangilio",
+      "notifications": "Arifa",
+      "themes": "Mandhari",
+      "labs": "Maabara ya Oneg",
+      "shortcuts": "Njia za mkato za kibodi",
+      "download": "Pakua Oneg",
+      "help": "Msaada",
+      "reportBug": "Ripoti hitilafu",
+      "personal": "Zana zako",
+      "book": "Weka miadi ya ushauri",
+      "myHealth": "Afya yangu",
+      "medicines": "Fuatilia dawa",
+      "notepad": "Daftari",
+      "record": "Rekodi video ya dalili",
+      "talk": "Ongea kuandika",
+      "pin": "Bandika kwenye upau wa juu",
+      "logout": "Toka",
+      "signedOut": "Umetoka",
+      "signedOutBody": "Tuonane wakati mwingine."
+    },
+    "side": {
+      "title": "Nyumbani",
+      "add": "Unda",
+      "create": {
+        "heading": "Unda",
+        "appointment": "Miadi",
+        "reminder": "Kikumbusho",
+        "note": "Dokezo la afya",
+        "noteSub": "Andika dalili, maswali au jinsi unavyojisikia",
+        "record": "Rekodi ya afya",
+        "recordSub": "Ongeza majibu ya kipimo, picha au barua",
+        "family": "Mwanafamilia",
+        "familySub": "Mhudumie mtoto au mzazi",
+        "customize": "Rekebisha upau wako wa pembeni"
+      },
+      "pages": "Kurasa",
+      "favorites": "Vipendwa",
+      "items": {
+        "dashboard": "Dashibodi",
+        "appointments": "Miadi",
+        "consultations": "Mashauriano",
+        "records": "Rekodi za afya",
+        "prescriptions": "Maagizo ya dawa",
+        "wallet": "Pochi"
+      },
+      "favs": {
+        "labs": "Majibu ya vipimo vya damu",
+        "plan": "Mpango wangu wa matunzo"
+      },
+      "settings": "Mipangilio",
+      "marketplace": "Duka la dawa",
+      "trash": "Tupio",
+      "rowMenu": {
+        "page": "Ukurasa",
+        "favorite": "Ongeza kwenye vipendwa",
+        "copyLink": "Nakili kiungo",
+        "newTab": "Fungua kwenye kichupo kipya",
+        "more": "Zaidi"
+      },
+      "addInside": "Ongeza ukurasa ndani",
+      "addPage": "Ongeza ukurasa",
+      "sectionMenu": "Chaguo za sehemu",
+      "hide": "Ficha sehemu"
+    },
+    "home": {
+      "greeting": "Karibu tena, {name}",
+      "subtitle": "Afya yako, yote mahali pamoja.",
+      "emptyTitle": "Bado hakuna kitu hapa",
+      "emptyBody": "Miadi yako, majibu na vikumbusho vitaonekana hapa.",
+      "ask": "Muulize Lara"
+    },
+    "soon": {
+      "title": "Inakuja hivi karibuni",
+      "body": "Tunaunda ukurasa huu."
+    },
+    "tray": {
+      "priority": "Kipaumbele {count}"
+    }
   }
 }
