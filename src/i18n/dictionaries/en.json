@@ -38,7 +38,7 @@
             "hospitals": "Nearby hospitals",
             "pharmacies": "Nearby pharmacies"
           },
-          "seeAll": "See all for patients"
+          "seeAll": "Explore Oneg for patients"
         },
         "featured": {
           "ai": {
@@ -75,7 +75,7 @@
             "payouts": "Earnings & payouts",
             "fees": "Set your fees"
           },
-          "seeAll": "See all for doctors"
+          "seeAll": "Explore Oneg for doctors"
         },
         "featured": {
           "dashboard": {
@@ -105,7 +105,7 @@
             "telemedicine": "Telemedicine for clinics",
             "beds": "Bed & ER availability"
           },
-          "seeAll": "See all for hospitals"
+          "seeAll": "Explore Oneg for hospitals"
         },
         "featured": {
           "dashboard": {

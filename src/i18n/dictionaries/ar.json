@@ -38,7 +38,7 @@
             "hospitals": "مستشفيات قريبة",
             "pharmacies": "صيدليات قريبة"
           },
-          "seeAll": "كل ما يخص المرضى"
+          "seeAll": "اكتشف Oneg للمرضى"
         },
         "featured": {
           "ai": {
@@ -75,7 +75,7 @@
             "payouts": "الأرباح والمدفوعات",
             "fees": "حدّد أتعابك"
           },
-          "seeAll": "كل ما يخص الأطباء"
+          "seeAll": "اكتشف Oneg للأطباء"
         },
         "featured": {
           "dashboard": {
@@ -105,7 +105,7 @@
             "telemedicine": "الطب عن بُعد للعيادات",
             "beds": "توفر الأسرّة والطوارئ"
           },
-          "seeAll": "كل ما يخص المستشفيات"
+          "seeAll": "اكتشف Oneg للمستشفيات"
         },
         "featured": {
           "dashboard": {

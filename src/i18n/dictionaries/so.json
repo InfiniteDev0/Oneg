@@ -38,7 +38,7 @@
             "hospitals": "Isbitaalada kuu dhow",
             "pharmacies": "Farmashiyeyaasha kuu dhow"
           },
-          "seeAll": "Dhammaan bukaannada"
+          "seeAll": "Waxa Oneg u hayso bukaannada"
         },
         "featured": {
           "ai": {
@@ -75,7 +75,7 @@
             "payouts": "Dakhliga iyo lacag-bixinta",
             "fees": "Dejiso khidmadahaaga"
           },
-          "seeAll": "Dhammaan dhakhaatiirta"
+          "seeAll": "Waxa Oneg u hayso dhakhaatiirta"
         },
         "featured": {
           "dashboard": {
@@ -105,7 +105,7 @@
             "telemedicine": "Daryeel online ah oo loogu talagalay rugaha caafimaadka",
             "beds": "Sariiraha iyo qaybta degdegga"
           },
-          "seeAll": "Dhammaan isbitaalada"
+          "seeAll": "Waxa Oneg u hayso isbitaalada"
         },
         "featured": {
           "dashboard": {

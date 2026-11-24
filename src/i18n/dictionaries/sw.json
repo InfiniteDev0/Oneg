@@ -38,7 +38,7 @@
             "hospitals": "Hospitali zilizo karibu",
             "pharmacies": "Maduka ya dawa yaliyo karibu"
           },
-          "seeAll": "Yote kwa wagonjwa"
+          "seeAll": "Gundua Oneg kwa wagonjwa"
         },
         "featured": {
           "ai": {
@@ -75,7 +75,7 @@
             "payouts": "Mapato na malipo",
             "fees": "Weka ada zako"
           },
-          "seeAll": "Yote kwa madaktari"
+          "seeAll": "Gundua Oneg kwa madaktari"
         },
         "featured": {
           "dashboard": {
@@ -105,7 +105,7 @@
             "telemedicine": "Huduma za mtandaoni kwa kliniki",
             "beds": "Vitanda na nafasi za dharura"
           },
-          "seeAll": "Yote kwa hospitali"
+          "seeAll": "Gundua Oneg kwa hospitali"
         },
         "featured": {
           "dashboard": {
