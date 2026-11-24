@@ -5,7 +5,7 @@ import { HeartPulseGradientIcon } from "@/components/icons/heart-pulse-gradient"
 
 // ─── Hero images ────────────────────────────────────────────────────────────
 // Paste an image URL between the quotes to fill a slot. Empty slots show a grey box.
-// The images only appear on laptop-width screens and up (1280px+) so they never cover the text.
+// The images appear on laptop-width screens and up (1024px+), smaller below 1280px, so they never cover the text.
 const HERO_IMAGES = {
   leftTop: "/hero.jpg", // from web/frontend/public/hero1.jpg
   leftBottom: "/hero2.jpg",
@@ -22,10 +22,11 @@ export default function Hero({ lang, dict }) {
     // fits on the first screen without scrolling.
     <section className="relative overflow-hidden px-4 pt-[clamp(1.5rem,6vh,3.5rem)] pb-12 sm:px-6">
       {/* Side images (decorative). Slots are anchored to the physical left/right edges. */}
-      <HeroImage src={HERO_IMAGES.leftTop} className="top-0 left-14 h-80 w-58" />
-      <HeroImage src={HERO_IMAGES.leftBottom} className="top-58 left-0 h-80 w-38" />
-      <HeroImage src={HERO_IMAGES.rightTop} className="top-9 right-0 h-64 w-66" />
-      <HeroImage src={HERO_IMAGES.rightBottom} className="top-73 right-0 h-66 w-42" />
+      {/* smaller on laptops (lg), full size on wide screens (xl) */}
+      <HeroImage src={HERO_IMAGES.leftTop} className="top-0 left-8 h-56 w-40 xl:left-14 xl:h-80 xl:w-58" />
+      <HeroImage src={HERO_IMAGES.leftBottom} className="top-40 left-0 h-56 w-26 xl:top-58 xl:h-80 xl:w-38" />
+      <HeroImage src={HERO_IMAGES.rightTop} className="top-6 right-0 h-44 w-46 xl:top-9 xl:h-64 xl:w-66" />
+      <HeroImage src={HERO_IMAGES.rightBottom} className="top-50 right-0 h-46 w-30 xl:top-73 xl:h-66 xl:w-42" />
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center">
         <TryPill href={to("/symptom-check")} label={t.tryPill} />
@@ -66,7 +67,7 @@ export default function Hero({ lang, dict }) {
 // One image slot: the photo if a URL is set, otherwise a grey placeholder box.
 function HeroImage({ src, className }) {
   return (
-    <div aria-hidden="true" className={`absolute hidden overflow-hidden bg-oneg-mist xl:block ${className}`}>
+    <div aria-hidden="true" className={`absolute hidden overflow-hidden bg-oneg-mist lg:block ${className}`}>
       {src && (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt="" className="size-full object-cover" />

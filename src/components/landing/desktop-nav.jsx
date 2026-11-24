@@ -11,17 +11,17 @@ import {
   HeartPulse,
   LayoutDashboard,
   Network,
-  Smartphone,
-  Sparkles,
 } from "lucide-react";
+import { WalletIcon } from "@/components/icons/wallet";
+import { EyeTracker } from "@/components/lara/eye-tracker";
 import { EASE_OUT } from "@/lib/ease";
 import { cn } from "@/lib/utils";
 import { navLinkClass } from "./nav-links";
 
 // Icon tiles for the "Featured" column (icons can't be passed from the server, so they're named)
 const FEATURED_ICONS = {
-  ai: { Icon: Sparkles, tile: "bg-gradient-to-br from-oneg-cyan to-oneg-blue" },
-  mpesa: { Icon: Smartphone, tile: "bg-gradient-to-br from-oneg-green to-[#1f9d6b]" },
+  ai: {}, // Lara: drawn with her face, see FeaturedColumn
+  wallet: { Icon: WalletIcon, tile: "bg-gradient-to-br from-oneg-green to-[#1f9d6b]" },
   doctorDashboard: { Icon: LayoutDashboard, tile: "bg-gradient-to-br from-[#5b8def] to-oneg-blue" },
   verified: { Icon: BadgeCheck, tile: "bg-gradient-to-br from-oneg-cyan to-[#1f9d6b]" },
   hospitalDashboard: { Icon: Building2, tile: "bg-gradient-to-br from-[#7c6cf0] to-oneg-blue" },
@@ -185,9 +185,16 @@ function FeaturedColumn({ featured, onNavigate }) {
                 onClick={onNavigate}
                 className="-mx-2 flex items-center gap-4 rounded-xl px-2 py-2 transition-colors hover:bg-field"
               >
-                <span className={cn("grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-sm", tile)}>
-                  <Icon className="size-6" />
-                </span>
+                {item.icon === "ai" ? (
+                  // Lara's own face (black chip, white eyes that follow the pointer), not an icon
+                  <span className="oneg-lara-face size-12 rounded-xl shadow-sm">
+                    <EyeTracker size={48} follow={25} eyeScale={1.5} within="body" decorative label="Lara" />
+                  </span>
+                ) : (
+                  <span className={cn("grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-sm", tile)}>
+                    <Icon className="size-6" />
+                  </span>
+                )}
                 <span className="min-w-0">
                   <span className="flex items-center gap-2 text-[1.05rem] text-foreground">
                     {item.title}

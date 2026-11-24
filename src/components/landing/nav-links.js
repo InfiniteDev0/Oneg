@@ -12,7 +12,7 @@ const MENUS = [
     ],
     featured: [
       { key: "ai", icon: "ai", href: "/symptom-check", isNew: true },
-      { key: "mpesa", icon: "mpesa", href: "/pricing" },
+      { key: "wallet", icon: "wallet", href: "/wallet" },
     ],
   },
   {

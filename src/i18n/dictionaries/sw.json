@@ -45,9 +45,9 @@
             "title": "Lara",
             "desc": "Angalia dalili zako na upate daktari kwa dakika chache"
           },
-          "mpesa": {
-            "title": "Malipo kwa M-Pesa",
-            "desc": "Lipia mashauriano moja kwa moja kutoka kwa simu yako"
+          "wallet": {
+            "title": "Pochi ya Afya ya Oneg",
+            "desc": "Weka pesa mara moja na ulipie mashauriano kwa mguso mmoja"
           }
         }
       },

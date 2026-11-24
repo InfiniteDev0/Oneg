@@ -45,9 +45,9 @@
             "title": "Lara",
             "desc": "Hubi calaamadahaaga oo hel dhakhtar daqiiqado gudahood"
           },
-          "mpesa": {
-            "title": "Lacag-bixinta M-Pesa",
-            "desc": "Si toos ah uga bixi la-tashiga taleefankaaga"
+          "wallet": {
+            "title": "Boorsada Caafimaadka Oneg",
+            "desc": "Hal mar ku shub lacag oo la-tashiga ku bixi hal taabasho"
           }
         }
       },

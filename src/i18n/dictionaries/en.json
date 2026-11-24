@@ -45,9 +45,9 @@
             "title": "Lara",
             "desc": "Check your symptoms and get a doctor in minutes"
           },
-          "mpesa": {
-            "title": "M-Pesa payments",
-            "desc": "Pay for consultations straight from your phone"
+          "wallet": {
+            "title": "Oneg Health Care Wallet",
+            "desc": "Top up once and pay for consultations in a tap"
           }
         }
       },
