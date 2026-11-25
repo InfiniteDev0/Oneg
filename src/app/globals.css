@@ -21,6 +21,9 @@
 }
 
 @theme inline {
+  /* the app's action colour (Twitter's blue, or your theme colour) */
+  --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-navbar: var(--navbar);
@@ -511,6 +514,44 @@ html:lang(ar) {
 .oneg-lara-pill > * { position: relative; z-index: 2; }
 @media (prefers-reduced-motion: reduce) { .oneg-lara-pill::before { animation: none; } }
 
+/* The same ring for a card that asks Lara (the topic pages' quick questions):
+   a quiet border at rest, the pill's colours spinning round it under the pointer. */
+.oneg-lara-card {
+  --card-fill: color-mix(in oklab, var(--foreground) 3%, var(--canvas, var(--background)));
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 0.75rem;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.oneg-lara-card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1000px;
+  height: 1000px;
+  z-index: 0;
+  background: conic-gradient(from 0deg, #00ddff 0deg, #0091ff 60deg, #ff02f0 130deg, #fc6d2d 190deg, #6647f0 270deg, #00ddff 360deg);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 250ms;
+  animation: oneg-pill-spin 4s linear infinite;
+}
+.oneg-lara-card:hover::before,
+.oneg-lara-card:focus-visible::before { opacity: 1; }
+.oneg-lara-card:hover { box-shadow: 0 0 16px rgb(160 80 255 / 0.25); }
+.oneg-lara-card::after {
+  content: "";
+  position: absolute;
+  inset: 1.5px;
+  z-index: 1;
+  border-radius: calc(0.75rem - 1.5px);
+  background: var(--card-fill);
+}
+.oneg-lara-card > * { position: relative; z-index: 2; }
+@media (prefers-reduced-motion: reduce) { .oneg-lara-card::before { animation: none; } }
+
 /* ── The signed-in app: Barista's colours ───────────────────────
    Barista's admin (styles/globals.css): a white page, the sidebar a black card,
    the main panel #f4f4f5; in dark, the page oklch(0.145), the sidebar the grey of
@@ -609,3 +650,82 @@ html:lang(ar) {
 .oneg-lara-md strong { font-weight: 600; color: var(--foreground); }
 .oneg-lara-md code { font-family: var(--font-mono); font-size: 0.9em; padding: 0.1em 0.3em; border-radius: 4px; background: var(--muted); }
 .oneg-lara-md blockquote { border-inline-start: 2px solid var(--border); padding-inline-start: 0.75rem; color: var(--muted-foreground); }
+/* The search page's map (health-map.jsx): its ground in the panel's colour
+   while tiles load, Leaflet's zoom buttons in the app's look, and you as a
+   pulsing blue dot */
+.oneg-map.leaflet-container {
+  background: var(--color-canvas);
+  font: inherit;
+}
+.oneg-map .leaflet-bar {
+  border: 1px solid var(--color-border);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  box-shadow: none;
+}
+.oneg-map .leaflet-bar a {
+  background: var(--color-popover);
+  color: var(--color-foreground);
+  border-color: var(--color-border);
+}
+.oneg-map .leaflet-bar a:hover {
+  background: var(--color-muted);
+}
+.oneg-map .leaflet-control-attribution {
+  background: color-mix(in oklab, var(--color-canvas) 75%, transparent);
+  color: var(--color-muted-foreground);
+  font-size: 0.625rem;
+}
+.oneg-map .leaflet-control-attribution a {
+  color: inherit;
+}
+.oneg-me {
+  position: relative;
+}
+.oneg-me-dot,
+.oneg-me-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+}
+.oneg-me-dot {
+  inset: 2px;
+  background: var(--action);
+  border: 2px solid #fff;
+}
+.oneg-me-pulse {
+  background: color-mix(in oklab, var(--action) 35%, transparent);
+  animation: oneg-me-pulse 1.8s ease-out infinite;
+}
+@keyframes oneg-me-pulse {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* The app's action colour — the pen, Post, links, Follow's blue, the map's dot:
+   Twitter's blue as it ships, your theme colour once you've picked one.
+   And while you're in the app (data-app on <html>, set by AppShell), menus
+   drawn outside its frame highlight in neutral grey, or a tint of your theme
+   colour — not the landing page's teal. */
+:root {
+  --action: #1d9bf0;
+  --action-hover: #1a8cd8;
+}
+:root[data-accent] {
+  --action: var(--theme-colour);
+  --action-hover: color-mix(in oklab, var(--theme-colour) 85%, black);
+}
+:root[data-app]:not(.dark) {
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+}
+:root[data-app][data-accent] {
+  --accent: color-mix(in oklab, var(--theme-colour) 16%, var(--background));
+  --accent-foreground: var(--foreground);
+}

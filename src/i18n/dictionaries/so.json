@@ -283,6 +283,12 @@
         "floating": "Sabeynaya",
         "fullscreen": "Shaashad buuxda",
         "linkCopied": "Xiriirka waa la koobiyeeyay"
+      },
+      "starterHints": {
+        "symptoms": "U sheeg Lara sida aad dareemayso",
+        "findDoctor": "Dhakhaatiir la xaqiijiyay oo kuu dhow",
+        "book": "Dooro waqti dhakhtar",
+        "library": "Cudurrada, daawooyinka iyo daryeelka"
       }
     }
   },
@@ -379,7 +385,9 @@
         "hospitals": "Isbitaallo",
         "pharmacies": "Farmasiyo",
         "library": "Maktabad",
-        "apps": "Abka"
+        "apps": "Abka",
+        "clinics": "Rugag",
+        "nursing": "Daryeel kalkaalin"
       },
       "chips": {
         "appointments": "Ballamo",
@@ -413,6 +421,141 @@
         "askLara": "Weydii Lara",
         "settings": "Fur dejinta",
         "shortcuts": "Gaagaabinta kiiboodhka"
+      },
+      "heading": "Maxaad rabtaa inaad hesho?",
+      "close": "Xir",
+      "location": {
+        "finding": "Waxaa la raadinayaa meesha aad joogto…",
+        "set": "Isticmaal goobtayda",
+        "denied": "Goobta waa damsan tahay",
+        "refresh": "Mar kale raadi meesha aan joogo"
+      },
+      "mapSoon": "Khariidado ayaa dhowaan imanaya",
+      "history": {
+        "title": "Taariikh",
+        "empty": "Raadintaadu halkan ayay ka muuqan doontaa.",
+        "clear": "Tirtir taariikhda"
+      },
+      "placeholders": {
+        "doctors": "Weydii Lara inay kuu hesho dhakhtarka ugu fiican…",
+        "hospitals": "Weydii Lara inay kuu hesho isbitaalka ugu fiican…",
+        "pharmacies": "Weydii Lara inay kuu hesho farmashiye…",
+        "clinics": "Weydii Lara inay kuu hesho rugta saxda ah…",
+        "nursing": "Weydii Lara inay kuu hesho daryeel kalkaalin…",
+        "library": "Ka raadi maktabadda caafimaadka…"
+      },
+      "providers": {
+        "specialty": "Takhasus",
+        "servicesLabel": "Adeegyo",
+        "availability": "Helitaan",
+        "distance": "Masaafo",
+        "kenya": "Kenya oo dhan",
+        "sort": "Kala saar",
+        "any": "Mid kasta",
+        "anyTime": "Waqti kasta",
+        "anyDistance": "Masaafo kasta",
+        "within": "Gudaha {n} km",
+        "nearest": "Kuwa ugu dhow marka hore",
+        "az": "A ilaa Z",
+        "clear": "Tirtir shaandheynta",
+        "when": {
+          "today": "La heli karo maanta",
+          "video": "La-tashi muuqaal",
+          "weekend": "Dhammaadka toddobaadka",
+          "now": "Hadda furan",
+          "h24": "Furan 24 saac"
+        },
+        "specialties": {
+          "general": "Dhakhtar guud",
+          "paediatrics": "Carruurta",
+          "obgyn": "Caafimaadka haweenka iyo uurka",
+          "internal": "Cudurrada gudaha",
+          "surgery": "Qalliin",
+          "dermatology": "Maqaarka",
+          "psychiatry": "Caafimaadka maskaxda",
+          "dentistry": "Ilkaha",
+          "cardiology": "Wadnaha",
+          "ent": "Dhegta, sanka iyo cunaha",
+          "eyes": "Indhaha",
+          "orthopaedics": "Lafaha iyo xubnaha"
+        },
+        "services": {
+          "hospitals": {
+            "emergency": "Gurmad 24 saac",
+            "maternity": "Umulisada",
+            "surgery": "Qalliin",
+            "lab": "Shaybaar",
+            "imaging": "Raajo iyo sawirro",
+            "dialysis": "Kelyaha (dialysis)",
+            "icu": "Qaybta xaaladaha culus",
+            "outpatient": "Bukaan-socod"
+          },
+          "pharmacies": {
+            "prescriptions": "Daawooyinka warqadda",
+            "delivery": "Keenis",
+            "otc": "Daawo aan warqad u baahnayn",
+            "vaccines": "Tallaal"
+          },
+          "clinics": {
+            "dental": "Ilkaha",
+            "eyes": "Indhaha",
+            "mch": "Hooyada iyo ilmaha",
+            "hivtb": "Daryeelka HIV iyo qaaxada",
+            "familyPlanning": "Qorshaynta qoyska",
+            "physio": "Jimicsiga daaweynta",
+            "mental": "Caafimaadka maskaxda"
+          },
+          "nursing": {
+            "homeNursing": "Kalkaalin guriga",
+            "elderly": "Daryeelka waayeelka",
+            "palliative": "Daryeel xanuun-yareyn",
+            "postSurgery": "Qalliinka kadib"
+          }
+        },
+        "needs": "Waxa aan u baahanahay: {list}.",
+        "ask": {
+          "doctors": "I caawi inaan helo dhakhtarka igu habboon ee u dhow {place}. {needs}",
+          "hospitals": "I caawi inaan helo isbitaalka igu habboon ee u dhow {place}. {needs}",
+          "pharmacies": "I caawi inaan helo farmashiye fiican oo u dhow {place}. {needs}",
+          "clinics": "I caawi inaan helo rugta igu habboon ee u dhow {place}. {needs}",
+          "nursing": "I caawi inaan helo daryeel kalkaalin oo u dhow {place}. {needs}",
+          "library": "Si fudud iigu sharax mawduucan caafimaadka. {needs}"
+        },
+        "empty": {
+          "doctors": {
+            "title": "Dhakhaatiirtu waxay ku soo biirayaan Oneg",
+            "body": "Dhakhaatiirta la xaqiijiyay halkan iyo khariidadda ayay ka muuqan doonaan, takhasuskooda, masaafada iyo goorta ay bannaan yihiin. Ilaa markaas, Lara ayaa kuu raadin karta.",
+            "ask": "Weydii Lara inay hesho dhakhtar"
+          },
+          "hospitals": {
+            "title": "Isbitaallada waxay ku soo biirayaan Oneg",
+            "body": "Isbitaallada Oneg ku jira halkan iyo khariidadda ayay ka muuqan doonaan, saacadahooda, adeegyada, dhakhaatiirta iyo siyaasadaha. Ilaa markaas, Lara ayaa kuu raadin karta.",
+            "ask": "Weydii Lara inay hesho isbitaal"
+          },
+          "pharmacies": {
+            "title": "Farmashiyeyaashu waxay ku soo biirayaan Oneg",
+            "body": "Farmashiyeyaasha halkan iyo khariidadda ayay ka muuqan doonaan, waxa ay haystaan, keenista iyo saacadaha furitaanka. Ilaa markaas, Lara ayaa kuu raadin karta.",
+            "ask": "Weydii Lara inay hesho farmashiye"
+          },
+          "clinics": {
+            "title": "Rugaha waxay ku soo biirayaan Oneg",
+            "body": "Rugaha halkan iyo khariidadda ayay ka muuqan doonaan, waxa ay qabtaan, masaafada iyo goorta ay furan yihiin. Ilaa markaas, Lara ayaa kuu raadin karta.",
+            "ask": "Weydii Lara inay hesho rug"
+          },
+          "nursing": {
+            "title": "Daryeelka kalkaalinta wuxuu ku soo biirayaa Oneg",
+            "body": "Kalkaaliyeyaasha iyo xarumaha daryeelka halkan iyo khariidadda ayay ka muuqan doonaan, daryeelka ay bixiyaan iyo goorta ay bannaan yihiin. Ilaa markaas, Lara ayaa kuu raadin karta.",
+            "ask": "Weydii Lara inay hesho kalkaalin"
+          },
+          "library": {
+            "title": "Maktabadda caafimaadka way imanaysaa",
+            "body": "Hagayaasha iyo casharrada maktabadda waxbarashada Milo halkan ayaa laga raadin doonaa. Ilaa markaas, Lara ayaa sharxi karta mawduuc kasta oo caafimaad.",
+            "ask": "Weydii Lara bedelkeeda"
+          }
+        },
+        "allOf": "{country} oo dhan",
+        "changeCountry": "Beddel dalka",
+        "countries": "Dalal"
       }
     },
     "rail": {
@@ -509,7 +652,213 @@
       "subtitle": "Caafimaadkaaga, hal meel.",
       "emptyTitle": "Weli waxba halkan kuma jiraan",
       "emptyBody": "Ballamahaaga, natiijooyinka iyo xasuusinta halkan ayay ka muuqan doonaan.",
-      "ask": "Weydii Lara"
+      "ask": "Weydii Lara",
+      "resize": "Jiid si aad u beddesho cabbirka",
+      "views": {
+        "forYou": "Adiga Kuu Gaar Ah",
+        "education": "Waxbarasho",
+        "choose": "Dooro muuqaal",
+        "following": "Kuwa aad raacdo"
+      },
+      "feed": {
+        "askLara": "Weydii Lara",
+        "laraAsk": "Iigu sharax wararkan caafimaadka erayo fudud, iyo waxa ay ii la macno yihiin: \"{title}\" ({url})",
+        "like": "Jecel",
+        "liked": "Waad jeclaatay",
+        "save": "Kaydi",
+        "saved": "La kaydiyay",
+        "share": "La wadaag",
+        "copied": "Xiriirka waa la koobiyeeyay",
+        "error": "Wararka caafimaadka lama soo rari karin.",
+        "retry": "Isku day mar kale",
+        "empty": "Hadda ma jiraan war caafimaad.",
+        "end": "Dhammaan waad aragtay",
+        "showing": "Waxaa la muujinayaa",
+        "clear": "Muuji dhammaan",
+        "noMatch": "Weli war arrintan ku saabsan ma jiro.",
+        "more": "Muuji war dheeraad ah",
+        "followingEmpty": "Raac dhowr ilood oo hoose, waraadoodana halkan ayay ka soo muuqan doonaan.",
+        "composer": {
+          "placeholder": "Maxaa ka socda caafimaadkaaga?",
+          "post": "Daabac",
+          "photo": "Sawir",
+          "emoji": "Emoji",
+          "bold": "Far adag",
+          "italic": "Far janjeer",
+          "removePhoto": "Ka saar sawirka",
+          "photoFailed": "Sawirkaas lama dari karin.",
+          "noRoom": "Biraawsarkan meel uma hayo qoraalkaas. Isku day sawir ka yar.",
+          "delete": "Tirtir",
+          "write": "Qor qoraal"
+        }
+      },
+      "side": {
+        "whoToFollow": "Kuwa la raaco",
+        "follow": "Raac",
+        "following": "Waad raacdaa",
+        "unfollow": "Jooji raacista",
+        "showMore": "Muuji wax badan",
+        "showLess": "Muuji wax yar",
+        "trends": "Waxa caafimaadka ka socda",
+        "trending": "Caan ah",
+        "story": "1 war",
+        "stories": "{n} war",
+        "kinds": {
+          "outbreaks": "Faafitaan",
+          "conditions": "Cudurro",
+          "care": "Daryeel",
+          "system": "Nidaamka caafimaadka"
+        },
+        "topics": {
+          "ebola": "Ebola",
+          "mpox": "Mpox",
+          "cholera": "Daacuun",
+          "malaria": "Duumo",
+          "measles": "Jadeeco",
+          "flu": "Hargab",
+          "covid": "COVID-19",
+          "hiv": "HIV",
+          "tb": "Qaaxo",
+          "cancer": "Kansar",
+          "diabetes": "Sonkorow",
+          "mental": "Caafimaadka maskaxda",
+          "heart": "Caafimaadka wadnaha",
+          "maternal": "Hooyada iyo ilmaha",
+          "vaccines": "Tallaal",
+          "nutrition": "Nafaqo",
+          "strike": "Shaqo joojin",
+          "sha": "SHA (Hay'adda Caafimaadka Bulshada)",
+          "funding": "Maalgelinta caafimaadka",
+          "nhs": "NHS"
+        }
+      },
+      "edu": {
+        "ask": "I bar aasaaska {topic} erayo fudud, iyo waxa ay caafimaadkayga u tahay.",
+        "sections": {
+          "study": "Baro caafimaadka",
+          "life": "Sayniska nolosha",
+          "chemistry": "Kimistariga iyo daawooyinka",
+          "mind": "Maskaxda",
+          "body": "Jidhka iyo cudurrada",
+          "family": "Haweenka, carruurta iyo qoyska",
+          "living": "Nolol caafimaad leh",
+          "public": "Caafimaadka bulshada",
+          "careers": "Shaqooyinka caafimaadka"
+        },
+        "topics": {
+          "biology": "Bayoolaji",
+          "anatomy": "Anatomi",
+          "physiology": "Fisiyoolaji",
+          "genetics": "Hidde-sideyaal",
+          "microbiology": "Mikro-bayoolaji",
+          "immunology": "Difaaca jidhka",
+          "chemistry": "Kimistari",
+          "biochemistry": "Bayo-kimistari",
+          "pharmacology": "Daawooyinka",
+          "toxicology": "Sunta",
+          "labScience": "Sayniska shaybaarka",
+          "psychology": "Cilmi-nafsiga",
+          "neuroscience": "Sayniska dareemayaasha",
+          "mentalHealth": "Caafimaadka maskaxda",
+          "sleep": "Hurdo",
+          "heart": "Wadnaha iyo dhiigga",
+          "diabetes": "Sonkorow",
+          "cancer": "Kansar",
+          "infections": "Infekshanno",
+          "eyesEars": "Indhaha iyo dhegaha",
+          "skin": "Maqaarka",
+          "pregnancy": "Uurka iyo dhalmada",
+          "childHealth": "Caafimaadka ilmaha",
+          "puberty": "Qaangaarka",
+          "familyPlanning": "Qorshaynta qoyska",
+          "menopause": "Joojinta caadada",
+          "nutrition": "Nafaqo",
+          "fitness": "Jimicsi",
+          "firstAid": "Gargaarka degdegga",
+          "hygiene": "Nadaafadda iyo biyo nadiif ah",
+          "ageing": "Gabow wanaagsan",
+          "outbreaks": "Faafitaanno",
+          "vaccines": "Tallaal",
+          "globalHealth": "Caafimaadka adduunka",
+          "healthSystems": "Nidaamyada caafimaadka",
+          "environment": "Deegaanka iyo caafimaadka",
+          "medicine": "Dhakhtarnimo",
+          "nursing": "Kalkaalin",
+          "pharmacy": "Farmashiye",
+          "publicHealth": "Caafimaadka bulshada",
+          "medicalSchools": "Kulliyadaha caafimaadka",
+          "nursingSchools": "Tababarka kalkaalinta iyo caafimaadka",
+          "scholarships": "Deeqo waxbarasho",
+          "attachments": "Tababar isbitaal",
+          "entry": "Shuruudaha gelitaanka",
+          "abroad": "Wax ku baro dibadda"
+        },
+        "back": "Waxbarasho",
+        "askLara": "Weydii Lara",
+        "askHeading": "Weydii Lara wax ku saabsan {topic}",
+        "prompts": {
+          "basics": {
+            "label": "Aasaaska, si fudud",
+            "ask": "I bar aasaaska {topic} erayo fudud, iyo waxa ay caafimaadkayga u tahay."
+          },
+          "questions": {
+            "label": "Su'aalaha caadiga ah",
+            "ask": "Waa maxay su'aalaha dadku ugu badan weydiiyaan {topic}? Mid kasta si fudud uga jawaab."
+          },
+          "myths": {
+            "label": "Khuraafaad iyo xaqiiqo",
+            "ask": "Waa maxay khuraafaadka caadiga ah ee ku saabsan {topic}, xaqiiqduna waa maxay?"
+          },
+          "study": {
+            "label": "Iga caawi inaan barto",
+            "ask": "Waxaan ahay arday. Iga caawi inaan barto {topic}: fikradaha muhiimka ah, iyo habab fudud oo lagu xasuusto."
+          }
+        },
+        "libraryTitle": "Casharro ayaa imanaya",
+        "libraryBody": "Casharro ku saabsan {topic} oo ka yimid maktabadda waxbarashada Milo halkan ayay ku jiri doonaan. Ilaa markaas, Lara ayaa ku bari karta.",
+        "related": "Wax badan oo ku jira {section}",
+        "lists": {
+          "medicalSchools": "Kulliyadaha caafimaadka ee Kenya",
+          "nursingSchools": "Meelaha lagu barto kalkaalinta iyo caafimaadka",
+          "scholarships": "Deeqo iyo maalgelin waxbarasho"
+        },
+        "listNote": "Meelo caan ah oo laga bilaabo. Weydii Lara shuruudaha gelitaanka, khidmadaha iyo waqtiyada kama dambaysta ah ee hadda jira oo ka yimid ilo rasmi ah.",
+        "listAsk": {
+          "school": "Iga warran {name}: koorsooyinka caafimaadka ee ay bixiso, shuruudaha gelitaanka, khidmadaha iyo sida loo codsado. Isticmaal ilo rasmi ah oo hadda jira oo i sii xiriirada.",
+          "scholarship": "Iga warran {name} ee ardayda caafimaadka: cidda codsan karta, waxa ay daboosho, waqtiga kama dambaysta ah ee xiga iyo sida loo codsado. Isticmaal ilo rasmi ah oo hadda jira oo i sii xiriirada."
+        },
+        "tabs": {
+          "books": "Buugaag",
+          "universities": "Jaamacado",
+          "courses": "Koorsooyin"
+        },
+        "books": {
+          "title": "Buugaag ayaa imanaya",
+          "body": "Buugaag iyo casharro ku saabsan {topic} oo ka yimid maktabadda waxbarashada Milo halkan ayay ku jiri doonaan. Ilaa markaas, Lara ayaa ku bari karta, ama kugu tilmaami karta buugaag wanaagsan.",
+          "askLabel": "Weydii Lara buugaag wanaagsan",
+          "ask": "Iigu tali buugaagta ugu fiican ee lagu barto {topic}, bilow ilaa heer sare, oo sheeg mid kasta cidda loogu talagalay."
+        },
+        "universities": {
+          "title": "Jaamacaduhu waxay ku soo biirayaan Oneg",
+          "body": "Jaamacadaha iyo kulliyadaha dhiga {topic} halkan ayay ku jiri doonaan, koorsooyinkooda, khidmadaha iyo sida loo codsado. Ilaa markaas, Lara ayaa kuu raadin karta.",
+          "askLabel": "Weydii Lara meesha lagu barto",
+          "ask": "Waa maxay jaamacadaha iyo kulliyadaha Kenya iyo Bariga Afrika ee ku fiican barashada {topic}? Sii shuruudaha gelitaanka iyo sida loo codsado, ilo rasmi ah oo hadda jira, iyo xiriirro."
+        },
+        "courses": {
+          "title": "Koorsooyin ayaa imanaya",
+          "body": "Koorsooyin iyo shahaadooyin {topic} ah, online iyo kuu dhow, halkan ayay ku jiri doonaan. Ilaa markaas, Lara ayaa kuu heli karta.",
+          "askLabel": "Weydii Lara koorsooyin",
+          "ask": "Waa maxay koorsooyinka iyo shahaadooyinka aan ku qaadan karo {topic}, online ama Kenya? Ku dar kuwa bilaashka ah, muddada ay qaadanayaan iyo xiriirro, ilo hadda jira."
+        },
+        "studyLines": {
+          "medicalSchools": "Meesha lagu barto dhakhtarnimada Kenya",
+          "nursingSchools": "Kalkaalin, umulisnimo iyo tababar caafimaad",
+          "scholarships": "Maalgelin, amaah iyo deeqo",
+          "attachments": "Meelaha tababarka ardayda caafimaadka",
+          "entry": "Dhibcaha iyo waraaqaha aad u baahan tahay",
+          "abroad": "Barashada caafimaadka meel ka baxsan Kenya"
+        }
+      }
     },
     "soon": {
       "title": "Dhowaan",
@@ -538,6 +887,100 @@
         "bronze": "Naxaas",
         "mint": "Cagaar khafiif"
       }
+    },
+    "notifications": {
+      "title": "Ogeysiisyo",
+      "labelUnread": "Ogeysiisyo, {n} aan la akhrin",
+      "unread": "Lama akhrin",
+      "clearAll": "Tirtir dhammaan",
+      "markAll": "Calaamadee dhammaan inay akhrisan yihiin",
+      "close": "Xir",
+      "clear": "Tirtir",
+      "clearedOne": "\"{title}\" waa la tirtiray",
+      "clearedMany": "{n} ogeysiis ayaa la tirtiray",
+      "undo": "Dib u celi",
+      "back": "Waa la celiyay",
+      "caughtUp": "Dhammaan waad aragtay",
+      "caughtUpBody": "Digniinaha caafimaadka, xasuusinta iyo warbixinnada dhakhaatiirtaada halkan ayay ka muuqan doonaan.",
+      "welcome": {
+        "title": "Ku soo dhowow Oneg",
+        "label": "Lara",
+        "value": "Way diyaar tahay",
+        "action": "Salaan Lara"
+      },
+      "profile": {
+        "title": "Dhammaystir xogtaada caafimaadka",
+        "label": "Faahfaahinta caafimaadka",
+        "value": "Weli lama buuxin",
+        "action": "Fur diiwaannadayda"
+      },
+      "alert": {
+        "title": "Digniin caafimaad: {topic}",
+        "inNews": "Wararka",
+        "latest": "Ugu dambeeyay",
+        "story": "1 war",
+        "stories": "{n} war",
+        "action": "Weydii Lara waxa la ogaado",
+        "ask": "Maxaan ka ogaadaa {topic} hadda, sideen isaga ilaaliyaa?"
+      },
+      "reminders": "Xasuusin",
+      "today": "Maanta",
+      "earlier": "Hore",
+      "yesterday": "Shalay",
+      "daysAgo": "{n} maalmood ka hor",
+      "open": "Fur",
+      "remindersEmpty": "Weli xasuusin ma jirto",
+      "remindersBody": "Waqtiyada daawada, ballamaha iyo baaritaannada aad dejiso halkan ayay ka muuqan doonaan.",
+      "remindersCta": "Deji xasuusin daawo"
+    },
+    "emergency": {
+      "title": "Degdeg",
+      "body": "Haddii nolosha qof ay khatar ku jirto, hadda wac.",
+      "call": "Wac",
+      "numbers": {
+        "police": "Booliska, ambalaaska iyo dab-damiska",
+        "any": "Degdeg, telefoon kasta",
+        "redCross": "Ambalaaska Laanqayrta Cas ee Kenya"
+      },
+      "firstAid": "Weydii Lara gargaarka degdegga ah",
+      "firstAidAsk": "Tani waa xaalad degdeg ah. I sii tillaabooyin cad oo gargaar degdeg ah inta aan sugayo caawimaad.",
+      "where": "Lambarrada Kenya."
+    },
+    "more": {
+      "apps": {
+        "notes": "Qoraallo"
+      },
+      "customize": "Habee hagidda"
+    },
+    "notes": {
+      "title": "Qoraallo",
+      "new": "Qoraal cusub",
+      "search": "Raadi qoraallada",
+      "all": "Qaybaha oo dhan",
+      "general": "Qayb la'aan",
+      "untitled": "Cinwaan la'aan",
+      "noText": "Weli qoraal ma jiro",
+      "noMatch": "Qoraal u dhigma ma jiro.",
+      "empty": {
+        "title": "Weli qoraallo ma jiraan",
+        "body": "Dooro qayb oo qor inta aad baranayso koorso ama akhrinayso buug."
+      },
+      "pick": "Dooro qoraal, ama bilow mid cusub.",
+      "titlePlaceholder": "Cinwaan",
+      "bodyPlaceholder": "Bilow qorista…",
+      "category": "Qayb",
+      "from": "Laga keenay",
+      "fromPlaceholder": "Buugga ama koorsada aad baranayso (ikhtiyaari)",
+      "delete": "Tirtir qoraalka",
+      "deleted": "Qoraalka waa la tirtiray",
+      "undo": "Dib u celi",
+      "back": "Dib",
+      "saved": "La kaydiyay {time}",
+      "take": "Qor qoraallo",
+      "panelTitle": "Qoraallo · {topic}",
+      "noneHere": "Weli qoraallo {topic} ah ma jiraan.",
+      "allNotes": "Dhammaan qoraalladaada",
+      "close": "Xir"
     }
   }
 }

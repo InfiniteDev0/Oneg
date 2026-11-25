@@ -6,9 +6,16 @@
 // conversation, and beUI's Prompt Input with Milo's glowing border, where "+"
 // adds a photo or a PDF. Lara is Claude, through /api/lara (see that route).
 // In Sidebar and Full screen the rest of the app blurs behind the panel; the
-// Floating window leaves the page usable.
+// Floating window leaves the page usable. Inside the signed-in app, Full screen
+// is ClickUp Brain's: Lara takes the main panel itself (the app hands her that
+// spot as `inlineTarget`), with the box, suggestions under it and recent chats.
+// Something can also hand her a place of its own (OPEN_LARA with `dock`): the
+// search page does, and she takes its right pane, at that size, until she's put
+// away (then `onClose` lets it show itself again) or UNDOCK_LARA sends her off.
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog";
 import {
   BookOpen,
@@ -115,8 +122,11 @@ function ChatList({ history, activeId, t, onOpen, onDelete, className }) {
 // Anything can open Lara (the app's "Ask Lara" pill, the AI rail button, search):
 // window.dispatchEvent(new CustomEvent(OPEN_LARA, { detail: { ask: "optional question" } }))
 export const OPEN_LARA = "oneg:open-lara";
+// With { detail: { dock: element, onClose } } she opens inside that element.
+// This puts a docked Lara away (its place is going):
+export const UNDOCK_LARA = "oneg:undock-lara";
 
-export default function LaraChat({ label, t, lang, button = true }) {
+export default function LaraChat({ label, t, lang, button = true, inlineTarget = null, onFullChange }) {
   const [open, setOpen] = useState(false);
   const [view, setView] = useState("sidebar");
   const [historyOpen, setHistoryOpen] = useState(false);
@@ -129,6 +139,46 @@ export default function LaraChat({ label, t, lang, button = true }) {
   const scrollRef = useRef(null);
   const lara = useLaraChat({ lang });
   const { chat, history, busy } = lara;
+  // a place someone handed her (the search page's right pane), and what to tell them when she leaves it
+  const [dock, setDock] = useState(null);
+  const dockClose = useRef(null);
+  const docked = !!dock;
+  const full = view === "fullscreen" && !docked;
+  // Full screen in the app: in the main panel, not over the whole window
+  const inline = full && !!inlineTarget;
+  // in a place of the page (not a sheet over it)
+  const inPanel = inline || docked;
+
+  // Full screen in the app lives in the address (?lara), so a refresh brings
+  // her back; the app hears of it too (its sidebar lights AI)
+  const urlRead = useRef(false);
+  useEffect(() => {
+    if (!inlineTarget) return;
+    if (!urlRead.current) {
+      urlRead.current = true;
+      if (new URLSearchParams(window.location.search).has("lara")) {
+        setView("fullscreen");
+        setOpen(true);
+        return;
+      }
+    }
+    const url = new URL(window.location.href);
+    const want = open && inline;
+    if (url.searchParams.has("lara") === want) return;
+    if (want) url.searchParams.set("lara", "");
+    else url.searchParams.delete("lara");
+    window.history.replaceState(null, "", `${url.pathname}${url.search.replace(/=(?=&|$)/g, "")}${url.hash}`);
+  }, [open, inline, inlineTarget]);
+  useEffect(() => {
+    onFullChange?.(open && inline);
+  }, [open, inline, onFullChange]);
+  // leave the dock, telling whoever lent it
+  const undock = () => {
+    const tell = dockClose.current;
+    dockClose.current = null;
+    setDock(null);
+    tell?.();
+  };
 
   // remember the chosen view; open straight away when the link ends in #lara
   useEffect(() => {
@@ -144,6 +194,8 @@ export default function LaraChat({ label, t, lang, button = true }) {
   const chooseView = (next) => {
     setView(next);
     setMoreOpen(false);
+    // docked, picking a view takes her out to it
+    if (dock) undock();
     try {
       localStorage.setItem(VIEW_KEY, next);
     } catch {
@@ -176,13 +228,57 @@ export default function LaraChat({ label, t, lang, button = true }) {
   });
   useEffect(() => {
     const onOpen = (e) => {
+      if (e.detail?.dock) {
+        setDock(e.detail.dock);
+        dockClose.current = e.detail.onClose ?? null;
+      } else {
+        // opened the usual way: out of any dock
+        undock();
+      }
       setOpen(true);
       const ask = e.detail?.ask?.trim();
       if (ask) window.setTimeout(() => sendRef.current(ask), 0);
     };
+    // her place is going: put away, no one to tell
+    const onUndock = () => {
+      dockClose.current = null;
+      setDock(null);
+      setOpen(false);
+    };
     window.addEventListener(OPEN_LARA, onOpen);
-    return () => window.removeEventListener(OPEN_LARA, onOpen);
+    window.addEventListener(UNDOCK_LARA, onUndock);
+    return () => {
+      window.removeEventListener(OPEN_LARA, onOpen);
+      window.removeEventListener(UNDOCK_LARA, onUndock);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // put away while docked (✕, Esc, Ctrl+J): the dock's owner shows itself again
+  useEffect(() => {
+    if (!open && dock) undock();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, dock]);
+
+  // In the panel: going to another page puts her away, as does Escape (when no
+  // menu of hers is open); opened, the box takes the typing
+  const pathname = usePathname();
+  const lastPath = useRef(pathname);
+  useEffect(() => {
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
+    if (inPanel) setOpen(false);
+  }, [pathname, inPanel]);
+  useEffect(() => {
+    if (!inPanel || !open) return;
+    composerRef.current?.querySelector("textarea")?.focus();
+    const onKey = (e) => {
+      if (e.key !== "Escape" || e.defaultPrevented || document.querySelector("[data-morph-popover-portal]")) return;
+      setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [inPanel, open]);
 
   // keep the newest words in view while Lara writes
   const lastText = chat?.ui.at(-1)?.text;
@@ -197,10 +293,10 @@ export default function LaraChat({ label, t, lang, button = true }) {
   }, [chat?.id, open]);
 
   const STARTERS = [
-    { icon: Stethoscope, label: t.starters.symptoms },
-    { icon: UserSearch, label: t.starters.findDoctor },
-    { icon: CalendarPlus, label: t.starters.book },
-    { icon: BookOpen, label: t.starters.library },
+    { key: "symptoms", icon: Stethoscope, label: t.starters.symptoms },
+    { key: "findDoctor", icon: UserSearch, label: t.starters.findDoctor },
+    { key: "book", icon: CalendarPlus, label: t.starters.book },
+    { key: "library", icon: BookOpen, label: t.starters.library },
   ];
 
   // ── Photos and PDFs ──
@@ -261,7 +357,6 @@ export default function LaraChat({ label, t, lang, button = true }) {
     }
   };
 
-  const full = view === "fullscreen";
   const empty = !chat || chat.ui.length === 0;
 
   const composer = (
@@ -295,7 +390,7 @@ export default function LaraChat({ label, t, lang, button = true }) {
 
       <div className="relative rounded-2xl">
         {/* Milo's glowing border (Aceternity), always on, turning to face the pointer */}
-        <GlowingEffect spread={40} glow disabled={false} alwaysOn proximity={64} inactiveZone={0.01} borderWidth={2} />
+        <GlowingEffect variant="lara" spread={40} glow disabled={false} alwaysOn proximity={64} inactiveZone={0.01} borderWidth={2} />
         <PromptInput
           onSubmit={submit}
           loading={busy}
@@ -328,27 +423,10 @@ export default function LaraChat({ label, t, lang, button = true }) {
     </div>
   );
 
-  return (
-    <>
-      {button && <LaraButton label={label} open={open} onOpen={() => setOpen(true)} />}
-
-      <Sheet
-        side={VIEWS[view]}
-        floating={view === "floating"}
-        open={open}
-        onOpenChange={(next, details) => {
-          // a click in one of the panel's own menus (drawn outside it) isn't a click outside
-          if (!next && details?.event?.target?.closest?.("[data-morph-popover-portal]")) {
-            details.cancel?.();
-            return;
-          }
-          setOpen(next);
-        }}
-        initialFocus={() => composerRef.current?.querySelector("textarea") ?? true}
-        className="border border-border bg-white dark:bg-card"
-      >
-        <DialogPrimitive.Title className="sr-only">Lara</DialogPrimitive.Title>
-
+  // The panel itself: header, then the conversation (or, before you've asked
+  // anything, Lara's welcome) and the box. In the Sheet, or in the main panel.
+  const panel = (
+      <>
         {/* ── Header ── */}
         <div className="flex h-12 shrink-0 items-center gap-1 px-3">
           <MorphPopover open={historyOpen} onOpenChange={setHistoryOpen}>
@@ -409,8 +487,12 @@ export default function LaraChat({ label, t, lang, button = true }) {
           </MorphPopover>
 
           <TooltipProvider delay={300}>
-            <HeaderButton label={t.hide} keys="Ctrl+J" render={<DialogPrimitive.Close />}>
-              <ChevronsRight className="size-[18px] rtl:rotate-180" />
+            <HeaderButton
+              label={t.hide}
+              keys="Ctrl+J"
+              render={inPanel ? <button type="button" onClick={() => setOpen(false)} /> : <DialogPrimitive.Close />}
+            >
+              {inPanel ? <X className="size-[18px]" /> : <ChevronsRight className="size-[18px] rtl:rotate-180" />}
             </HeaderButton>
           </TooltipProvider>
         </div>
@@ -422,8 +504,22 @@ export default function LaraChat({ label, t, lang, button = true }) {
             <Face size={72} className="mb-4 rounded-[18px]" />
             <h2 className="mb-6 text-2xl font-semibold">{t.heading}</h2>
             <div className="w-full max-w-3xl">{composer}</div>
+            <div className="mt-4 grid w-full max-w-3xl grid-cols-2 gap-2.5 px-4 sm:grid-cols-4">
+              {STARTERS.map(({ key, icon: Icon, label: starter }) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => submit(starter)}
+                  className="flex min-w-0 cursor-pointer flex-col items-start gap-1 rounded-xl border border-border bg-foreground/[0.03] p-3.5 text-start outline-none transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <Icon className="mb-1.5 size-[18px] shrink-0 text-muted-foreground" />
+                  <span className="w-full truncate text-sm font-semibold">{starter}</span>
+                  <span className="w-full truncate text-sm text-muted-foreground">{t.starterHints?.[key]}</span>
+                </button>
+              ))}
+            </div>
             {history.length > 0 && (
-              <div className="mt-8 w-full max-w-3xl px-4">
+              <div className="mt-10 w-full max-w-3xl px-1.5">
                 <p className="mb-2 px-2.5 text-sm text-muted-foreground">{t.history.recent}</p>
                 <ChatList history={history} activeId={chat?.id} t={t} onOpen={lara.openChat} onDelete={lara.deleteChat} />
               </div>
@@ -477,7 +573,52 @@ export default function LaraChat({ label, t, lang, button = true }) {
             {composer}
           </>
         )}
+      </>
+  );
+
+  return (
+    <>
+      {button && <LaraButton label={label} open={open} onOpen={() => setOpen(true)} />}
+
+      {docked ? (
+        open &&
+        createPortal(
+          <section aria-label="Lara" className="flex min-h-0 flex-1 flex-col duration-150 animate-in fade-in-0">
+            {panel}
+          </section>,
+          dock
+        )
+      ) : inline ? (
+        open &&
+        createPortal(
+          <section
+            aria-label="Lara"
+            className="flex size-full flex-col overflow-hidden rounded-lg border border-border bg-canvas duration-150 animate-in fade-in-0"
+          >
+            {panel}
+          </section>,
+          inlineTarget
+        )
+      ) : (
+      <Sheet
+        side={VIEWS[view]}
+        floating={view === "floating"}
+        open={open}
+        onOpenChange={(next, details) => {
+          // a click in one of the panel's own menus (drawn outside it) isn't a click outside
+          if (!next && details?.event?.target?.closest?.("[data-morph-popover-portal]")) {
+            details.cancel?.();
+            return;
+          }
+          setOpen(next);
+        }}
+        initialFocus={() => composerRef.current?.querySelector("textarea") ?? true}
+        className="border border-border bg-white dark:bg-card"
+      >
+        <DialogPrimitive.Title className="sr-only">Lara</DialogPrimitive.Title>
+        {panel}
       </Sheet>
+      )}
     </>
   );
 }

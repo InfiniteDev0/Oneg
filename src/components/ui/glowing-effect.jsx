@@ -129,7 +129,10 @@ const GlowingEffect = memo(
               "--repeating-conic-gradient-times": "5",
 
               "--gradient":
-                variant === "white"
+                // Oneg: "lara" is the Ask Lara pill's ring (.oneg-lara-pill in globals.css)
+                variant === "lara"
+                  ? `conic-gradient(from 0deg at 50% 50%, #00ddff 0deg, #0091ff 60deg, #ff02f0 130deg, #fc6d2d 190deg, #6647f0 270deg, #00ddff 360deg)`
+                  : variant === "white"
                   ? `repeating-conic-gradient(
                   from 236.84deg at 50% 50%,
                   var(--black),

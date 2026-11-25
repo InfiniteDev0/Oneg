@@ -283,6 +283,12 @@
         "floating": "Floating",
         "fullscreen": "Full screen",
         "linkCopied": "Link copied"
+      },
+      "starterHints": {
+        "symptoms": "Tell Lara how you're feeling",
+        "findDoctor": "Verified doctors near you",
+        "book": "Pick a time with a doctor",
+        "library": "Conditions, medicines and care"
       }
     }
   },
@@ -379,7 +385,9 @@
         "hospitals": "Hospitals",
         "pharmacies": "Pharmacies",
         "library": "Library",
-        "apps": "Apps"
+        "apps": "Apps",
+        "clinics": "Clinics",
+        "nursing": "Nursing care"
       },
       "chips": {
         "appointments": "Appointments",
@@ -413,6 +421,141 @@
         "askLara": "Ask Lara",
         "settings": "Open settings",
         "shortcuts": "Keyboard shortcuts"
+      },
+      "heading": "What do you want to find?",
+      "close": "Close",
+      "location": {
+        "finding": "Finding where you are…",
+        "set": "Use my location",
+        "denied": "Location is off",
+        "refresh": "Find where I am again"
+      },
+      "mapSoon": "Maps are coming soon",
+      "history": {
+        "title": "History",
+        "empty": "Your searches will show up here.",
+        "clear": "Clear history"
+      },
+      "placeholders": {
+        "doctors": "Ask Lara to find you the best doctor…",
+        "hospitals": "Ask Lara to find you the best hospital…",
+        "pharmacies": "Ask Lara to find you a pharmacy…",
+        "clinics": "Ask Lara to find you the right clinic…",
+        "nursing": "Ask Lara to find you nursing care…",
+        "library": "Search the health library…"
+      },
+      "providers": {
+        "specialty": "Specialty",
+        "servicesLabel": "Services",
+        "availability": "Availability",
+        "distance": "Distance",
+        "kenya": "All of Kenya",
+        "sort": "Sort",
+        "any": "Any",
+        "anyTime": "Any time",
+        "anyDistance": "Any distance",
+        "within": "Within {n} km",
+        "nearest": "Nearest first",
+        "az": "A to Z",
+        "clear": "Clear filters",
+        "when": {
+          "today": "Available today",
+          "video": "Video consults",
+          "weekend": "Weekends",
+          "now": "Open now",
+          "h24": "Open 24 hours"
+        },
+        "specialties": {
+          "general": "General practice",
+          "paediatrics": "Paediatrics",
+          "obgyn": "Women's health and pregnancy",
+          "internal": "Internal medicine",
+          "surgery": "Surgery",
+          "dermatology": "Skin (dermatology)",
+          "psychiatry": "Mental health (psychiatry)",
+          "dentistry": "Dentistry",
+          "cardiology": "Heart (cardiology)",
+          "ent": "Ear, nose and throat",
+          "eyes": "Eyes",
+          "orthopaedics": "Bones and joints"
+        },
+        "services": {
+          "hospitals": {
+            "emergency": "24-hour emergency",
+            "maternity": "Maternity",
+            "surgery": "Surgery",
+            "lab": "Laboratory",
+            "imaging": "X-ray and scans",
+            "dialysis": "Dialysis",
+            "icu": "Intensive care",
+            "outpatient": "Outpatient"
+          },
+          "pharmacies": {
+            "prescriptions": "Prescriptions",
+            "delivery": "Delivery",
+            "otc": "Over the counter",
+            "vaccines": "Vaccinations"
+          },
+          "clinics": {
+            "dental": "Dental",
+            "eyes": "Eyes",
+            "mch": "Mothers and children",
+            "hivtb": "HIV and TB care",
+            "familyPlanning": "Family planning",
+            "physio": "Physiotherapy",
+            "mental": "Mental health"
+          },
+          "nursing": {
+            "homeNursing": "Home nursing",
+            "elderly": "Elderly care",
+            "palliative": "Palliative care",
+            "postSurgery": "After surgery"
+          }
+        },
+        "needs": "What I need: {list}.",
+        "ask": {
+          "doctors": "Help me find the best doctor for me near {place}. {needs}",
+          "hospitals": "Help me find the best hospital for me near {place}. {needs}",
+          "pharmacies": "Help me find a good pharmacy near {place}. {needs}",
+          "clinics": "Help me find the right clinic for me near {place}. {needs}",
+          "nursing": "Help me find nursing care near {place}. {needs}",
+          "library": "Explain this health topic to me simply. {needs}"
+        },
+        "empty": {
+          "doctors": {
+            "title": "Doctors are joining Oneg",
+            "body": "Verified doctors will show here and on the map, with their specialty, how close they are and when they're free. Until then, Lara can look for you.",
+            "ask": "Ask Lara to find a doctor"
+          },
+          "hospitals": {
+            "title": "Hospitals are joining Oneg",
+            "body": "Hospitals on Oneg will show here and on the map, with their hours, services, doctors and policies. Until then, Lara can look for you.",
+            "ask": "Ask Lara to find a hospital"
+          },
+          "pharmacies": {
+            "title": "Pharmacies are joining Oneg",
+            "body": "Pharmacies will show here and on the map, with what they stock, delivery and opening hours. Until then, Lara can look for you.",
+            "ask": "Ask Lara to find a pharmacy"
+          },
+          "clinics": {
+            "title": "Clinics are joining Oneg",
+            "body": "Clinics will show here and on the map, with what they do, how close they are and when they're open. Until then, Lara can look for you.",
+            "ask": "Ask Lara to find a clinic"
+          },
+          "nursing": {
+            "title": "Nursing care is joining Oneg",
+            "body": "Nurses and care homes will show here and on the map, with the care they give and when they're free. Until then, Lara can look for you.",
+            "ask": "Ask Lara to find nursing care"
+          },
+          "library": {
+            "title": "The health library is coming",
+            "body": "Guides and lessons from the Milo education library will be searchable here. Until then, Lara can explain any health topic.",
+            "ask": "Ask Lara instead"
+          }
+        },
+        "allOf": "All of {country}",
+        "changeCountry": "Change country",
+        "countries": "Countries"
       }
     },
     "rail": {
@@ -509,7 +652,213 @@
       "subtitle": "Your health, all in one place.",
       "emptyTitle": "Nothing here yet",
       "emptyBody": "Your appointments, results and reminders will show up here.",
-      "ask": "Ask Lara"
+      "ask": "Ask Lara",
+      "resize": "Drag to resize",
+      "views": {
+        "forYou": "For You",
+        "education": "Educational",
+        "choose": "Choose a view",
+        "following": "Following"
+      },
+      "feed": {
+        "askLara": "Ask Lara",
+        "laraAsk": "Explain this health news to me in simple words, and what it means for me: \"{title}\" ({url})",
+        "like": "Like",
+        "liked": "Liked",
+        "save": "Save",
+        "saved": "Saved",
+        "share": "Share",
+        "copied": "Link copied",
+        "error": "Couldn't load the health news.",
+        "retry": "Try again",
+        "empty": "No health news right now.",
+        "end": "You're all caught up",
+        "showing": "Showing",
+        "clear": "Show everything",
+        "noMatch": "No stories about this yet.",
+        "more": "Show more stories",
+        "followingEmpty": "Follow a few sources below, and their stories show up here.",
+        "composer": {
+          "placeholder": "What's happening with your health?",
+          "post": "Post",
+          "photo": "Photo",
+          "emoji": "Emoji",
+          "bold": "Bold",
+          "italic": "Italic",
+          "removePhoto": "Remove photo",
+          "photoFailed": "Couldn't add that photo.",
+          "noRoom": "No room left in this browser for that post. Try a smaller photo.",
+          "delete": "Delete",
+          "write": "Write a post"
+        }
+      },
+      "side": {
+        "whoToFollow": "Who to follow",
+        "follow": "Follow",
+        "following": "Following",
+        "unfollow": "Unfollow",
+        "showMore": "Show more",
+        "showLess": "Show less",
+        "trends": "Trending in health",
+        "trending": "Trending",
+        "story": "1 story",
+        "stories": "{n} stories",
+        "kinds": {
+          "outbreaks": "Outbreaks",
+          "conditions": "Conditions",
+          "care": "Care",
+          "system": "Health system"
+        },
+        "topics": {
+          "ebola": "Ebola",
+          "mpox": "Mpox",
+          "cholera": "Cholera",
+          "malaria": "Malaria",
+          "measles": "Measles",
+          "flu": "Flu",
+          "covid": "COVID-19",
+          "hiv": "HIV",
+          "tb": "Tuberculosis",
+          "cancer": "Cancer",
+          "diabetes": "Diabetes",
+          "mental": "Mental health",
+          "heart": "Heart health",
+          "maternal": "Mothers and babies",
+          "vaccines": "Vaccines",
+          "nutrition": "Nutrition",
+          "strike": "Strikes",
+          "sha": "SHA (Social Health Authority)",
+          "funding": "Health funding",
+          "nhs": "NHS"
+        }
+      },
+      "edu": {
+        "ask": "Teach me the basics of {topic} in simple words, with what it means for my health.",
+        "sections": {
+          "study": "Study health",
+          "life": "Life sciences",
+          "chemistry": "Chemistry & medicines",
+          "mind": "Mind & brain",
+          "body": "Body & conditions",
+          "family": "Women, children & family",
+          "living": "Healthy living",
+          "public": "Public health",
+          "careers": "Careers in health"
+        },
+        "topics": {
+          "biology": "Biology",
+          "anatomy": "Anatomy",
+          "physiology": "Physiology",
+          "genetics": "Genetics",
+          "microbiology": "Microbiology",
+          "immunology": "Immunology",
+          "chemistry": "Chemistry",
+          "biochemistry": "Biochemistry",
+          "pharmacology": "Medicines (pharmacology)",
+          "toxicology": "Poisons (toxicology)",
+          "labScience": "Lab science",
+          "psychology": "Psychology",
+          "neuroscience": "Neuroscience",
+          "mentalHealth": "Mental health",
+          "sleep": "Sleep",
+          "heart": "Heart & blood",
+          "diabetes": "Diabetes",
+          "cancer": "Cancer",
+          "infections": "Infections",
+          "eyesEars": "Eyes & ears",
+          "skin": "Skin",
+          "pregnancy": "Pregnancy & birth",
+          "childHealth": "Child health",
+          "puberty": "Growing up",
+          "familyPlanning": "Family planning",
+          "menopause": "Menopause",
+          "nutrition": "Nutrition",
+          "fitness": "Fitness",
+          "firstAid": "First aid",
+          "hygiene": "Hygiene & clean water",
+          "ageing": "Ageing well",
+          "outbreaks": "Outbreaks",
+          "vaccines": "Vaccines",
+          "globalHealth": "Global health",
+          "healthSystems": "Health systems",
+          "environment": "Environment & health",
+          "medicine": "Medicine",
+          "nursing": "Nursing",
+          "pharmacy": "Pharmacy",
+          "publicHealth": "Public health",
+          "medicalSchools": "Medical schools",
+          "nursingSchools": "Nursing & health training",
+          "scholarships": "Scholarships",
+          "attachments": "Hospital attachments",
+          "entry": "Entry requirements",
+          "abroad": "Study abroad"
+        },
+        "back": "Educational",
+        "askLara": "Ask Lara",
+        "askHeading": "Ask Lara about {topic}",
+        "prompts": {
+          "basics": {
+            "label": "The basics, simply",
+            "ask": "Teach me the basics of {topic} in simple words, with what it means for my health."
+          },
+          "questions": {
+            "label": "Common questions",
+            "ask": "What are the questions people ask most about {topic}? Answer each one simply."
+          },
+          "myths": {
+            "label": "Myths and facts",
+            "ask": "What are common myths about {topic}, and what are the facts?"
+          },
+          "study": {
+            "label": "Help me study it",
+            "ask": "I'm a student. Help me study {topic}: the key ideas, and simple ways to remember them."
+          }
+        },
+        "libraryTitle": "Lessons are coming",
+        "libraryBody": "Lessons on {topic} from the Milo education library will be here. Until then, Lara can teach you.",
+        "related": "More in {section}",
+        "lists": {
+          "medicalSchools": "Medical schools in Kenya",
+          "nursingSchools": "Where to train in nursing and health",
+          "scholarships": "Scholarships and funding"
+        },
+        "listNote": "Well-known places to start. Ask Lara for current entry requirements, fees and deadlines from official sources.",
+        "listAsk": {
+          "school": "Tell me about {name}: the health courses it offers, entry requirements, fees and how to apply. Use current official sources and give me the links.",
+          "scholarship": "Tell me about {name} for students of medicine or health: who can apply, what it covers, the next deadline and how to apply. Use current official sources and give me the links."
+        },
+        "tabs": {
+          "books": "Books",
+          "universities": "Universities",
+          "courses": "Courses"
+        },
+        "books": {
+          "title": "Books are coming",
+          "body": "Books and lessons on {topic} from the Milo education library will be here. Until then, Lara can teach you, or point you to good books.",
+          "askLabel": "Ask Lara for good books",
+          "ask": "Recommend the best books for learning {topic}, from beginner to advanced, and say who each one is for."
+        },
+        "universities": {
+          "title": "Universities are joining Oneg",
+          "body": "Universities and colleges that teach {topic} will be here, with their courses, fees and how to apply. Until then, Lara can look for you.",
+          "askLabel": "Ask Lara where to study it",
+          "ask": "Which universities and colleges in Kenya and East Africa are good for studying {topic}? Give entry requirements and how to apply, from current official sources, with links."
+        },
+        "courses": {
+          "title": "Courses are coming",
+          "body": "Courses and certificates in {topic}, online and near you, will be here. Until then, Lara can find them for you.",
+          "askLabel": "Ask Lara for courses",
+          "ask": "What courses and certificates can I take in {topic}, online or in Kenya? Include free ones, how long they take and links, from current sources."
+        },
+        "studyLines": {
+          "medicalSchools": "Where to study medicine in Kenya",
+          "nursingSchools": "Nursing, midwifery and clinical training",
+          "scholarships": "Funding, loans and bursaries",
+          "attachments": "Placements for health students",
+          "entry": "Grades and papers you need",
+          "abroad": "Studying health outside Kenya"
+        }
+      }
     },
     "soon": {
       "title": "Coming soon",
@@ -538,6 +887,100 @@
         "bronze": "Bronze",
         "mint": "Mint"
       }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "labelUnread": "Notifications, {n} unread",
+      "unread": "Unread",
+      "clearAll": "Clear all",
+      "markAll": "Mark all as read",
+      "close": "Close",
+      "clear": "Clear",
+      "clearedOne": "\"{title}\" cleared",
+      "clearedMany": "{n} notifications cleared",
+      "undo": "Undo",
+      "back": "Back",
+      "caughtUp": "You're all caught up",
+      "caughtUpBody": "Health alerts, reminders and updates from your doctors show up here.",
+      "welcome": {
+        "title": "Welcome to Oneg",
+        "label": "Lara",
+        "value": "Ready when you are",
+        "action": "Say hello to Lara"
+      },
+      "profile": {
+        "title": "Finish your health profile",
+        "label": "Health details",
+        "value": "Not filled in yet",
+        "action": "Open my records"
+      },
+      "alert": {
+        "title": "Health alert: {topic}",
+        "inNews": "In the news",
+        "latest": "Latest from",
+        "story": "1 story",
+        "stories": "{n} stories",
+        "action": "Ask Lara what to know",
+        "ask": "What should I know about {topic} right now, and how do I stay safe?"
+      },
+      "reminders": "Reminders",
+      "today": "Today",
+      "earlier": "Earlier",
+      "yesterday": "Yesterday",
+      "daysAgo": "{n} days ago",
+      "open": "Open",
+      "remindersEmpty": "No reminders yet",
+      "remindersBody": "Medicine times, appointments and check-ups you set show up here.",
+      "remindersCta": "Set a medicine reminder"
+    },
+    "emergency": {
+      "title": "Emergency",
+      "body": "If someone's life is in danger, call now.",
+      "call": "Call",
+      "numbers": {
+        "police": "Police, ambulance and fire",
+        "any": "Emergency, from any phone",
+        "redCross": "Kenya Red Cross ambulance"
+      },
+      "firstAid": "Ask Lara for first aid",
+      "firstAidAsk": "This is an emergency. Give me clear first aid steps while I wait for help.",
+      "where": "Numbers for Kenya."
+    },
+    "more": {
+      "apps": {
+        "notes": "Notes"
+      },
+      "customize": "Customize navigation"
+    },
+    "notes": {
+      "title": "Notes",
+      "new": "New note",
+      "search": "Search notes",
+      "all": "All categories",
+      "general": "No category",
+      "untitled": "Untitled",
+      "noText": "No text yet",
+      "noMatch": "No notes match.",
+      "empty": {
+        "title": "No notes yet",
+        "body": "Pick a category and write while you study a course or read a book."
+      },
+      "pick": "Pick a note, or start a new one.",
+      "titlePlaceholder": "Title",
+      "bodyPlaceholder": "Start writing…",
+      "category": "Category",
+      "from": "From",
+      "fromPlaceholder": "The book or course you're studying (optional)",
+      "delete": "Delete note",
+      "deleted": "Note deleted",
+      "undo": "Undo",
+      "back": "Back",
+      "saved": "Saved {time}",
+      "take": "Take notes",
+      "panelTitle": "Notes · {topic}",
+      "noneHere": "No notes on {topic} yet.",
+      "allNotes": "All your notes",
+      "close": "Close"
     }
   }
 }

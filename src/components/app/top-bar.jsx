@@ -24,7 +24,6 @@ import {
   Keyboard,
   LayoutDashboard,
   LogOut,
-  Mic,
   Palette,
   Pill,
   Plus,
@@ -46,6 +45,8 @@ import { OPEN_LARA } from "@/components/lara/lara-chat";
 import { DEMO_ACCOUNT, endDemoSession } from "@/lib/demo-account";
 import { cn } from "@/lib/utils";
 import { AvatarBadge, CalendarMark, CreateGlyph, WorkspaceBadge } from "./app-icons";
+import { EmergencyButton } from "./emergency-button";
+import { NotificationsButton } from "./notifications-button";
 import { ThemesDialog } from "./themes-dialog";
 
 /** Barista's bar icons: just the grey icon, a soft square only under the pointer. */
@@ -299,7 +300,7 @@ function ProfileMenu({ t, lang }) {
   );
 }
 
-export function TopBar({ t, lang, onSearch }) {
+export function TopBar({ t, lang, onSearch, searching = false }) {
   const s = t.search;
   const router = useRouter();
 
@@ -312,8 +313,12 @@ export function TopBar({ t, lang, onSearch }) {
         </button>
       </BarTip>
 
-      {/* Search in the middle of the bar, and Ctrl+K anywhere */}
+      {/* Search in the middle of the bar, and Ctrl+K anywhere; while the search
+          page is open, its question stands there instead */}
       <div className="pointer-events-none absolute inset-x-0 hidden justify-center lg:flex">
+        {searching ? (
+          <p className="flex h-9 items-center text-[0.9375rem] font-semibold">{s.heading}</p>
+        ) : (
         <div className="oneg-search-bar pointer-events-auto flex h-9 w-[22rem] items-center gap-1 rounded-full ps-3 pe-1 xl:w-96">
           <button
             type="button"
@@ -339,6 +344,7 @@ export function TopBar({ t, lang, onSearch }) {
             </button>
           </BarTip>
         </div>
+        )}
       </div>
 
       <div className="ms-auto flex items-center gap-1">
@@ -347,16 +353,9 @@ export function TopBar({ t, lang, onSearch }) {
             <CreateGlyph />
           </button>
         </BarTip>
-        <BarTip label={t.top.video}>
-          <button type="button" aria-label={t.top.video} onClick={() => router.push(`/${lang}/app/consultations/video`)} className={BAR_ICON}>
-            <Video />
-          </button>
-        </BarTip>
-        <BarTip label={t.top.voice}>
-          <button type="button" aria-label={t.top.voice} onClick={() => openLara()} className={BAR_ICON}>
-            <Mic />
-          </button>
-        </BarTip>
+        {/* Emergency numbers, and Barista's bell */}
+        <EmergencyButton t={t} />
+        <NotificationsButton t={t} lang={lang} />
         <ProfileMenu t={t} lang={lang} />
       </div>
     </div>

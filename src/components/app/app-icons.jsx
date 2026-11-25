@@ -90,24 +90,24 @@ export function HomeTile({ count, className }) {
 /** ClickUp's More: four app tiles (a doc, a chart, a whiteboard, and +). */
 export function MoreCluster({ className }) {
   return (
-    <span className={cn("grid grid-cols-2 gap-[3px]", className)} aria-hidden="true">
-      <span className="grid size-[0.8rem] place-items-center rounded-[3px] bg-[#4cb8f5]">
-        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round">
+    <span className={cn("grid grid-cols-2 gap-[2px]", className)} aria-hidden="true">
+      <span className="grid size-[0.62rem] place-items-center rounded-[2.5px] -rotate-12 bg-[#4cb8f5]">
+        <svg viewBox="0 0 12 12" className="size-[0.4rem]" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round">
           <path d="M2.5 3.5h7M2.5 6h7M2.5 8.5h4.5" />
         </svg>
       </span>
-      <span className="grid size-[0.8rem] place-items-center rounded-[3px] bg-[#b260d8]">
-        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round">
+      <span className="grid size-[0.62rem] place-items-center rounded-[2.5px] rotate-12 bg-[#b260d8]">
+        <svg viewBox="0 0 12 12" className="size-[0.4rem]" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round">
           <path d="M3 10V7.5M6 10V4.5M9 10V2" />
         </svg>
       </span>
-      <span className="grid size-[0.8rem] place-items-center rounded-[3px] bg-[#f6c544]">
-        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="#3a2d00" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <span className="grid size-[0.62rem] place-items-center rounded-[2.5px] rotate-12 bg-[#f6c544]">
+        <svg viewBox="0 0 12 12" className="size-[0.4rem]" fill="none" stroke="#3a2d00" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
           <path d="M1.5 8.5c1.2-4 2.4-4 3-2s1.8 2.5 3 -1.5 2.5-1.5 3-.5" />
         </svg>
       </span>
-      <span className="grid size-[0.8rem] place-items-center rounded-full bg-white">
-        <svg viewBox="0 0 12 12" className="size-[0.5rem]" fill="none" stroke="#141414" strokeWidth="2" strokeLinecap="round">
+      <span className="grid size-[0.62rem] place-items-center rounded-full -rotate-12 bg-white">
+        <svg viewBox="0 0 12 12" className="size-[0.4rem]" fill="none" stroke="#141414" strokeWidth="2" strokeLinecap="round">
           <path d="M6 2.5v7M2.5 6h7" />
         </svg>
       </span>

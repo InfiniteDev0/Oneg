@@ -283,6 +283,12 @@
         "floating": "Inayoelea",
         "fullscreen": "Skrini nzima",
         "linkCopied": "Kiungo kimenakiliwa"
+      },
+      "starterHints": {
+        "symptoms": "Mwambie Lara unavyojisikia",
+        "findDoctor": "Madaktari waliothibitishwa karibu nawe",
+        "book": "Chagua muda na daktari",
+        "library": "Magonjwa, dawa na huduma"
       }
     }
   },
@@ -379,7 +385,9 @@
         "hospitals": "Hospitali",
         "pharmacies": "Maduka ya dawa",
         "library": "Maktaba",
-        "apps": "Programu"
+        "apps": "Programu",
+        "clinics": "Kliniki",
+        "nursing": "Huduma za uuguzi"
       },
       "chips": {
         "appointments": "Miadi",
@@ -413,6 +421,141 @@
         "askLara": "Muulize Lara",
         "settings": "Fungua mipangilio",
         "shortcuts": "Njia za mkato za kibodi"
+      },
+      "heading": "Unataka kupata nini?",
+      "close": "Funga",
+      "location": {
+        "finding": "Inatafuta ulipo…",
+        "set": "Tumia mahali nilipo",
+        "denied": "Mahali pamezimwa",
+        "refresh": "Tafuta nilipo tena"
+      },
+      "mapSoon": "Ramani zinakuja hivi karibuni",
+      "history": {
+        "title": "Historia",
+        "empty": "Utafutaji wako utaonekana hapa.",
+        "clear": "Futa historia"
+      },
+      "placeholders": {
+        "doctors": "Muulize Lara akutafutie daktari bora…",
+        "hospitals": "Muulize Lara akutafutie hospitali bora…",
+        "pharmacies": "Muulize Lara akutafutie duka la dawa…",
+        "clinics": "Muulize Lara akutafutie kliniki inayofaa…",
+        "nursing": "Muulize Lara akutafutie huduma za uuguzi…",
+        "library": "Tafuta kwenye maktaba ya afya…"
+      },
+      "providers": {
+        "specialty": "Utaalamu",
+        "servicesLabel": "Huduma",
+        "availability": "Upatikanaji",
+        "distance": "Umbali",
+        "kenya": "Kenya nzima",
+        "sort": "Panga",
+        "any": "Yoyote",
+        "anyTime": "Wakati wowote",
+        "anyDistance": "Umbali wowote",
+        "within": "Ndani ya km {n}",
+        "nearest": "Karibu zaidi kwanza",
+        "az": "A hadi Z",
+        "clear": "Futa vichujio",
+        "when": {
+          "today": "Wanapatikana leo",
+          "video": "Ushauri kwa video",
+          "weekend": "Wikendi",
+          "now": "Wazi sasa",
+          "h24": "Wazi saa 24"
+        },
+        "specialties": {
+          "general": "Daktari wa jumla",
+          "paediatrics": "Watoto",
+          "obgyn": "Afya ya wanawake na ujauzito",
+          "internal": "Magonjwa ya ndani",
+          "surgery": "Upasuaji",
+          "dermatology": "Ngozi",
+          "psychiatry": "Afya ya akili",
+          "dentistry": "Meno",
+          "cardiology": "Moyo",
+          "ent": "Masikio, pua na koo",
+          "eyes": "Macho",
+          "orthopaedics": "Mifupa na viungo"
+        },
+        "services": {
+          "hospitals": {
+            "emergency": "Dharura saa 24",
+            "maternity": "Wodi ya uzazi",
+            "surgery": "Upasuaji",
+            "lab": "Maabara",
+            "imaging": "X-ray na vipimo vya picha",
+            "dialysis": "Dialisisi",
+            "icu": "Wodi ya wagonjwa mahututi",
+            "outpatient": "Wagonjwa wa nje"
+          },
+          "pharmacies": {
+            "prescriptions": "Dawa za maagizo",
+            "delivery": "Kuletewa",
+            "otc": "Dawa bila agizo",
+            "vaccines": "Chanjo"
+          },
+          "clinics": {
+            "dental": "Meno",
+            "eyes": "Macho",
+            "mch": "Mama na mtoto",
+            "hivtb": "Huduma za VVU na kifua kikuu",
+            "familyPlanning": "Uzazi wa mpango",
+            "physio": "Tiba ya viungo",
+            "mental": "Afya ya akili"
+          },
+          "nursing": {
+            "homeNursing": "Uuguzi nyumbani",
+            "elderly": "Huduma kwa wazee",
+            "palliative": "Huduma shufaa",
+            "postSurgery": "Baada ya upasuaji"
+          }
+        },
+        "needs": "Ninachohitaji: {list}.",
+        "ask": {
+          "doctors": "Nisaidie kupata daktari bora kwangu karibu na {place}. {needs}",
+          "hospitals": "Nisaidie kupata hospitali bora kwangu karibu na {place}. {needs}",
+          "pharmacies": "Nisaidie kupata duka zuri la dawa karibu na {place}. {needs}",
+          "clinics": "Nisaidie kupata kliniki inayonifaa karibu na {place}. {needs}",
+          "nursing": "Nisaidie kupata huduma za uuguzi karibu na {place}. {needs}",
+          "library": "Nieleze mada hii ya afya kwa urahisi. {needs}"
+        },
+        "empty": {
+          "doctors": {
+            "title": "Madaktari wanajiunga na Oneg",
+            "body": "Madaktari waliothibitishwa wataonekana hapa na kwenye ramani, na utaalamu wao, umbali na wakati wanapatikana. Hadi wakati huo, Lara anaweza kukutafutia.",
+            "ask": "Muulize Lara akutafutie daktari"
+          },
+          "hospitals": {
+            "title": "Hospitali zinajiunga na Oneg",
+            "body": "Hospitali zilizo Oneg zitaonekana hapa na kwenye ramani, na saa zao, huduma, madaktari na sera. Hadi wakati huo, Lara anaweza kukutafutia.",
+            "ask": "Muulize Lara akutafutie hospitali"
+          },
+          "pharmacies": {
+            "title": "Maduka ya dawa yanajiunga na Oneg",
+            "body": "Maduka ya dawa yataonekana hapa na kwenye ramani, na dawa walizonazo, kuletewa na saa za kufungua. Hadi wakati huo, Lara anaweza kukutafutia.",
+            "ask": "Muulize Lara akutafutie duka la dawa"
+          },
+          "clinics": {
+            "title": "Kliniki zinajiunga na Oneg",
+            "body": "Kliniki zitaonekana hapa na kwenye ramani, na huduma zao, umbali na saa za kufungua. Hadi wakati huo, Lara anaweza kukutafutia.",
+            "ask": "Muulize Lara akutafutie kliniki"
+          },
+          "nursing": {
+            "title": "Huduma za uuguzi zinajiunga na Oneg",
+            "body": "Wauguzi na nyumba za huduma wataonekana hapa na kwenye ramani, na huduma wanazotoa na wakati wanapatikana. Hadi wakati huo, Lara anaweza kukutafutia.",
+            "ask": "Muulize Lara akutafutie uuguzi"
+          },
+          "library": {
+            "title": "Maktaba ya afya inakuja",
+            "body": "Miongozo na masomo kutoka maktaba ya elimu ya Milo yatatafutwa hapa. Hadi wakati huo, Lara anaweza kueleza mada yoyote ya afya.",
+            "ask": "Muulize Lara badala yake"
+          }
+        },
+        "allOf": "{country} nzima",
+        "changeCountry": "Badilisha nchi",
+        "countries": "Nchi"
       }
     },
     "rail": {
@@ -509,7 +652,213 @@
       "subtitle": "Afya yako, yote mahali pamoja.",
       "emptyTitle": "Bado hakuna kitu hapa",
       "emptyBody": "Miadi yako, majibu na vikumbusho vitaonekana hapa.",
-      "ask": "Muulize Lara"
+      "ask": "Muulize Lara",
+      "resize": "Buruta ili kubadilisha ukubwa",
+      "views": {
+        "forYou": "Kwa Ajili Yako",
+        "education": "Elimu",
+        "choose": "Chagua mwonekano",
+        "following": "Unaowafuata"
+      },
+      "feed": {
+        "askLara": "Muulize Lara",
+        "laraAsk": "Nieleze habari hii ya afya kwa maneno rahisi, na maana yake kwangu: \"{title}\" ({url})",
+        "like": "Penda",
+        "liked": "Umependa",
+        "save": "Hifadhi",
+        "saved": "Imehifadhiwa",
+        "share": "Shiriki",
+        "copied": "Kiungo kimenakiliwa",
+        "error": "Imeshindikana kupakia habari za afya.",
+        "retry": "Jaribu tena",
+        "empty": "Hakuna habari za afya kwa sasa.",
+        "end": "Umeona zote",
+        "showing": "Inaonyesha",
+        "clear": "Onyesha zote",
+        "noMatch": "Bado hakuna habari kuhusu hili.",
+        "more": "Onyesha habari zaidi",
+        "followingEmpty": "Fuata vyanzo vichache hapa chini, na habari zao zitaonekana hapa.",
+        "composer": {
+          "placeholder": "Nini kinaendelea na afya yako?",
+          "post": "Chapisha",
+          "photo": "Picha",
+          "emoji": "Emoji",
+          "bold": "Herufi nzito",
+          "italic": "Herufi za mlalo",
+          "removePhoto": "Ondoa picha",
+          "photoFailed": "Imeshindikana kuongeza picha hiyo.",
+          "noRoom": "Hakuna nafasi kwenye kivinjari hiki kwa chapisho hilo. Jaribu picha ndogo.",
+          "delete": "Futa",
+          "write": "Andika chapisho"
+        }
+      },
+      "side": {
+        "whoToFollow": "Wa kufuata",
+        "follow": "Fuata",
+        "following": "Unafuata",
+        "unfollow": "Acha kufuata",
+        "showMore": "Onyesha zaidi",
+        "showLess": "Onyesha machache",
+        "trends": "Yanayovuma kwenye afya",
+        "trending": "Inavuma",
+        "story": "Habari 1",
+        "stories": "Habari {n}",
+        "kinds": {
+          "outbreaks": "Milipuko",
+          "conditions": "Magonjwa",
+          "care": "Huduma",
+          "system": "Mfumo wa afya"
+        },
+        "topics": {
+          "ebola": "Ebola",
+          "mpox": "Mpox",
+          "cholera": "Kipindupindu",
+          "malaria": "Malaria",
+          "measles": "Surua",
+          "flu": "Mafua",
+          "covid": "COVID-19",
+          "hiv": "VVU",
+          "tb": "Kifua kikuu",
+          "cancer": "Saratani",
+          "diabetes": "Kisukari",
+          "mental": "Afya ya akili",
+          "heart": "Afya ya moyo",
+          "maternal": "Mama na mtoto",
+          "vaccines": "Chanjo",
+          "nutrition": "Lishe",
+          "strike": "Migomo",
+          "sha": "SHA (Mamlaka ya Afya ya Jamii)",
+          "funding": "Ufadhili wa afya",
+          "nhs": "NHS"
+        }
+      },
+      "edu": {
+        "ask": "Nifundishe misingi ya {topic} kwa maneno rahisi, na maana yake kwa afya yangu.",
+        "sections": {
+          "study": "Soma afya",
+          "life": "Sayansi ya viumbe",
+          "chemistry": "Kemia na dawa",
+          "mind": "Akili na ubongo",
+          "body": "Mwili na magonjwa",
+          "family": "Wanawake, watoto na familia",
+          "living": "Maisha yenye afya",
+          "public": "Afya ya umma",
+          "careers": "Kazi za afya"
+        },
+        "topics": {
+          "biology": "Biolojia",
+          "anatomy": "Anatomia",
+          "physiology": "Fiziolojia",
+          "genetics": "Jenetiki",
+          "microbiology": "Mikrobiolojia",
+          "immunology": "Kinga ya mwili",
+          "chemistry": "Kemia",
+          "biochemistry": "Biokemia",
+          "pharmacology": "Dawa (famasia)",
+          "toxicology": "Sumu",
+          "labScience": "Sayansi ya maabara",
+          "psychology": "Saikolojia",
+          "neuroscience": "Sayansi ya neva",
+          "mentalHealth": "Afya ya akili",
+          "sleep": "Usingizi",
+          "heart": "Moyo na damu",
+          "diabetes": "Kisukari",
+          "cancer": "Saratani",
+          "infections": "Maambukizi",
+          "eyesEars": "Macho na masikio",
+          "skin": "Ngozi",
+          "pregnancy": "Ujauzito na kujifungua",
+          "childHealth": "Afya ya mtoto",
+          "puberty": "Kubalehe",
+          "familyPlanning": "Uzazi wa mpango",
+          "menopause": "Kukoma hedhi",
+          "nutrition": "Lishe",
+          "fitness": "Mazoezi",
+          "firstAid": "Huduma ya kwanza",
+          "hygiene": "Usafi na maji safi",
+          "ageing": "Kuzeeka vizuri",
+          "outbreaks": "Milipuko",
+          "vaccines": "Chanjo",
+          "globalHealth": "Afya ya dunia",
+          "healthSystems": "Mifumo ya afya",
+          "environment": "Mazingira na afya",
+          "medicine": "Udaktari",
+          "nursing": "Uuguzi",
+          "pharmacy": "Famasia",
+          "publicHealth": "Afya ya umma",
+          "medicalSchools": "Vyuo vya udaktari",
+          "nursingSchools": "Mafunzo ya uuguzi na afya",
+          "scholarships": "Ufadhili wa masomo",
+          "attachments": "Mafunzo ya vitendo hospitalini",
+          "entry": "Masharti ya kujiunga",
+          "abroad": "Kusoma nje ya nchi"
+        },
+        "back": "Elimu",
+        "askLara": "Muulize Lara",
+        "askHeading": "Muulize Lara kuhusu {topic}",
+        "prompts": {
+          "basics": {
+            "label": "Misingi, kwa urahisi",
+            "ask": "Nifundishe misingi ya {topic} kwa maneno rahisi, na maana yake kwa afya yangu."
+          },
+          "questions": {
+            "label": "Maswali ya kawaida",
+            "ask": "Ni maswali gani watu huuliza zaidi kuhusu {topic}? Jibu kila moja kwa urahisi."
+          },
+          "myths": {
+            "label": "Imani potofu na ukweli",
+            "ask": "Ni imani gani potofu za kawaida kuhusu {topic}, na ukweli ni upi?"
+          },
+          "study": {
+            "label": "Nisaidie kuisoma",
+            "ask": "Mimi ni mwanafunzi. Nisaidie kusoma {topic}: mawazo makuu, na njia rahisi za kuyakumbuka."
+          }
+        },
+        "libraryTitle": "Masomo yanakuja",
+        "libraryBody": "Masomo kuhusu {topic} kutoka maktaba ya elimu ya Milo yatakuwa hapa. Hadi wakati huo, Lara anaweza kukufundisha.",
+        "related": "Zaidi katika {section}",
+        "lists": {
+          "medicalSchools": "Vyuo vya udaktari nchini Kenya",
+          "nursingSchools": "Mahali pa kusomea uuguzi na afya",
+          "scholarships": "Ufadhili na misaada ya masomo"
+        },
+        "listNote": "Mahali panapojulikana pa kuanzia. Muulize Lara masharti ya sasa ya kujiunga, ada na tarehe za mwisho kutoka vyanzo rasmi.",
+        "listAsk": {
+          "school": "Niambie kuhusu {name}: kozi za afya inazotoa, masharti ya kujiunga, ada na jinsi ya kutuma maombi. Tumia vyanzo rasmi vya sasa na unipe viungo.",
+          "scholarship": "Niambie kuhusu {name} kwa wanafunzi wa udaktari au afya: nani anaweza kuomba, inagharamia nini, tarehe ya mwisho ijayo na jinsi ya kuomba. Tumia vyanzo rasmi vya sasa na unipe viungo."
+        },
+        "tabs": {
+          "books": "Vitabu",
+          "universities": "Vyuo vikuu",
+          "courses": "Kozi"
+        },
+        "books": {
+          "title": "Vitabu vinakuja",
+          "body": "Vitabu na masomo kuhusu {topic} kutoka maktaba ya elimu ya Milo vitakuwa hapa. Hadi wakati huo, Lara anaweza kukufundisha, au kukuelekeza kwa vitabu vizuri.",
+          "askLabel": "Muulize Lara vitabu vizuri",
+          "ask": "Nipendekezee vitabu bora vya kujifunza {topic}, kuanzia mwanzo hadi juu, na useme kila kimoja ni cha nani."
+        },
+        "universities": {
+          "title": "Vyuo vikuu vinajiunga na Oneg",
+          "body": "Vyuo vikuu na vyuo vinavyofundisha {topic} vitakuwa hapa, na kozi zao, ada na jinsi ya kuomba. Hadi wakati huo, Lara anaweza kukutafutia.",
+          "askLabel": "Muulize Lara mahali pa kusomea",
+          "ask": "Ni vyuo vikuu na vyuo gani nchini Kenya na Afrika Mashariki vizuri kwa kusoma {topic}? Toa masharti ya kujiunga na jinsi ya kuomba, kutoka vyanzo rasmi vya sasa, na viungo."
+        },
+        "courses": {
+          "title": "Kozi zinakuja",
+          "body": "Kozi na vyeti vya {topic}, mtandaoni na karibu nawe, vitakuwa hapa. Hadi wakati huo, Lara anaweza kukutafutia.",
+          "askLabel": "Muulize Lara kozi",
+          "ask": "Ni kozi na vyeti gani ninaweza kusoma katika {topic}, mtandaoni au nchini Kenya? Jumuisha za bure, muda wake na viungo, kutoka vyanzo vya sasa."
+        },
+        "studyLines": {
+          "medicalSchools": "Mahali pa kusomea udaktari Kenya",
+          "nursingSchools": "Uuguzi, ukunga na mafunzo ya kliniki",
+          "scholarships": "Ufadhili, mikopo na misaada",
+          "attachments": "Nafasi za mafunzo kwa wanafunzi wa afya",
+          "entry": "Alama na nyaraka unazohitaji",
+          "abroad": "Kusoma afya nje ya Kenya"
+        }
+      }
     },
     "soon": {
       "title": "Inakuja hivi karibuni",
@@ -538,6 +887,100 @@
         "bronze": "Shaba",
         "mint": "Kijani-mnanaa"
       }
+    },
+    "notifications": {
+      "title": "Arifa",
+      "labelUnread": "Arifa, {n} hazijasomwa",
+      "unread": "Haijasomwa",
+      "clearAll": "Futa zote",
+      "markAll": "Weka zote kuwa zimesomwa",
+      "close": "Funga",
+      "clear": "Futa",
+      "clearedOne": "\"{title}\" imefutwa",
+      "clearedMany": "Arifa {n} zimefutwa",
+      "undo": "Tendua",
+      "back": "Imerudi",
+      "caughtUp": "Umeona zote",
+      "caughtUpBody": "Tahadhari za afya, vikumbusho na taarifa kutoka kwa madaktari wako zitaonekana hapa.",
+      "welcome": {
+        "title": "Karibu Oneg",
+        "label": "Lara",
+        "value": "Yuko tayari",
+        "action": "Msalimie Lara"
+      },
+      "profile": {
+        "title": "Kamilisha wasifu wako wa afya",
+        "label": "Taarifa za afya",
+        "value": "Bado hazijajazwa",
+        "action": "Fungua rekodi zangu"
+      },
+      "alert": {
+        "title": "Tahadhari ya afya: {topic}",
+        "inNews": "Kwenye habari",
+        "latest": "Ya karibuni kutoka",
+        "story": "Habari 1",
+        "stories": "Habari {n}",
+        "action": "Muulize Lara cha kujua",
+        "ask": "Ninapaswa kujua nini kuhusu {topic} sasa hivi, na nitajikinga vipi?"
+      },
+      "reminders": "Vikumbusho",
+      "today": "Leo",
+      "earlier": "Awali",
+      "yesterday": "Jana",
+      "daysAgo": "Siku {n} zilizopita",
+      "open": "Fungua",
+      "remindersEmpty": "Bado hakuna vikumbusho",
+      "remindersBody": "Saa za dawa, miadi na uchunguzi unaoweka zitaonekana hapa.",
+      "remindersCta": "Weka kikumbusho cha dawa"
+    },
+    "emergency": {
+      "title": "Dharura",
+      "body": "Kama maisha ya mtu yako hatarini, piga simu sasa.",
+      "call": "Piga",
+      "numbers": {
+        "police": "Polisi, ambulensi na zimamoto",
+        "any": "Dharura, kutoka simu yoyote",
+        "redCross": "Ambulensi ya Shirika la Msalaba Mwekundu Kenya"
+      },
+      "firstAid": "Muulize Lara huduma ya kwanza",
+      "firstAidAsk": "Hii ni dharura. Nipe hatua wazi za huduma ya kwanza ninaposubiri msaada.",
+      "where": "Nambari za Kenya."
+    },
+    "more": {
+      "apps": {
+        "notes": "Madokezo"
+      },
+      "customize": "Badilisha urambazaji"
+    },
+    "notes": {
+      "title": "Madokezo",
+      "new": "Dokezo jipya",
+      "search": "Tafuta madokezo",
+      "all": "Kategoria zote",
+      "general": "Bila kategoria",
+      "untitled": "Bila kichwa",
+      "noText": "Bado hakuna maandishi",
+      "noMatch": "Hakuna madokezo yanayolingana.",
+      "empty": {
+        "title": "Bado hakuna madokezo",
+        "body": "Chagua kategoria na uandike unaposoma kozi au kitabu."
+      },
+      "pick": "Chagua dokezo, au anza jipya.",
+      "titlePlaceholder": "Kichwa",
+      "bodyPlaceholder": "Anza kuandika…",
+      "category": "Kategoria",
+      "from": "Kutoka",
+      "fromPlaceholder": "Kitabu au kozi unayosoma (si lazima)",
+      "delete": "Futa dokezo",
+      "deleted": "Dokezo limefutwa",
+      "undo": "Tendua",
+      "back": "Rudi",
+      "saved": "Imehifadhiwa {time}",
+      "take": "Andika madokezo",
+      "panelTitle": "Madokezo · {topic}",
+      "noneHere": "Bado hakuna madokezo ya {topic}.",
+      "allNotes": "Madokezo yako yote",
+      "close": "Funga"
     }
   }
 }

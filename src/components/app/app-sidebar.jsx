@@ -8,12 +8,12 @@
 //   card, no top padding.
 //   Header   Barista's toggle: "Collapse" with « open, » folded, and a short line
 //   Content  ClickUp's items: Home, Planner, AI (Lara), More
-//   Footer   ClickUp's Labs, Install, Invite, Upgrade
+//   Footer   ClickUp's Labs, Invite, Upgrade
 // Icons work as Barista's NavIcon: the image is only a mask, its colour comes
 // from the rail's tokens: grey at rest, yellow→pink under the pointer, yellow→
 // green on the page you're on (globals.css, --rail-icon*).
 // More is ClickUp's: nine dots that turn into the app tiles when you point at it,
-// with "Add apps, hubs and integrations".
+// opening the apps panel beside the sidebar (more-apps.jsx) — Notes first.
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,6 +22,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { OPEN_LARA } from "@/components/lara/lara-chat";
 import { cn } from "@/lib/utils";
 import { MoreCluster } from "./app-icons";
+import { MoreApps } from "./more-apps";
 
 // Barista's lib/mask.ts: the image's shape as a mask, its colour from CSS
 const mask = (name) => {
@@ -60,10 +61,11 @@ const ICON =
   "size-5 shrink-0 bg-(--rail-icon) group-hover/item:bg-(image:--rail-icon-hover) group-data-active/item:bg-(image:--rail-icon-active)!";
 const NAME = cn(
   "truncate",
-  "group-data-folded/sidebar:max-w-full group-data-folded/sidebar:px-0.5 group-data-folded/sidebar:text-[0.6875rem] group-data-folded/sidebar:leading-tight group-data-folded/sidebar:font-medium"
+  "group-data-folded/sidebar:max-w-full group-data-folded/sidebar:px-0 group-data-folded/sidebar:text-[0.6875rem] group-data-folded/sidebar:leading-tight group-data-folded/sidebar:font-medium"
 );
 
 function Item({ href, onClick, label, active, tip, children }) {
+  // a link's click still runs onClick (the app puts away what's covering the page)
   const props = { "data-active": active ? "" : undefined, className: ITEM };
   const inner = (
     <>
@@ -72,7 +74,7 @@ function Item({ href, onClick, label, active, tip, children }) {
     </>
   );
   const el = href ? (
-    <Link href={href} aria-current={active ? "page" : undefined} {...props}>
+    <Link href={href} onClick={onClick} aria-current={active ? "page" : undefined} {...props}>
       {inner}
     </Link>
   ) : (
@@ -91,13 +93,20 @@ function Item({ href, onClick, label, active, tip, children }) {
   );
 }
 
+// Open, and folded to the rail (its 3.25rem, the p-2 around the card, and 2px)
+export const SIDEBAR_WIDTH = { open: "18rem", folded: "calc(3.25rem + 1rem + 2px)" };
+
 const Icon = ({ name }) => <span aria-hidden style={mask(name)} className={ICON} />;
 
-export function AppSidebar({ t, lang, open, onToggle }) {
+// laraActive: Lara is open full screen — AI is where you are. covered: search
+// (or Lara) is over the page — nothing else is lit. onNavigate(to): a click, so
+// the app can put away what's covering the page ("lara" for AI).
+export function AppSidebar({ t, lang, open, onToggle, laraActive = false, covered = false, onNavigate }) {
   const r = t.rail;
   const pathname = usePathname();
   const base = `/${lang}/app`;
-  const at = (path) => (path ? pathname.startsWith(`${base}${path}`) : pathname === base);
+  const at = (path) => !laraActive && !covered && (path ? pathname.startsWith(`${base}${path}`) : pathname === base);
+  const go = () => onNavigate?.("page");
   const Toggle = open ? ChevronsLeft : ChevronsRight;
 
   return (
@@ -106,7 +115,8 @@ export function AppSidebar({ t, lang, open, onToggle }) {
     // (3.75rem) + that padding + 2px
     <div
       data-folded={open ? undefined : ""}
-      className={cn("group/sidebar shrink-0 p-2 pt-0 transition-[width] duration-200 ease-linear", open ? "w-72" : "w-[calc(3.75rem+1rem+2px)]")}
+      className={cn("group/sidebar shrink-0 p-2 pt-0 transition-[width] duration-200 ease-linear", open ? "w-(--sidebar-open)" : "w-(--sidebar-folded)")}
+      style={{ "--sidebar-open": SIDEBAR_WIDTH.open, "--sidebar-folded": SIDEBAR_WIDTH.folded }}
     >
       <div data-slot="sidebar-inner" className="flex size-full flex-col overflow-hidden rounded-sm bg-sidebar text-sidebar-foreground">
         {/* Header: Barista's SidebarToggle (p-2, then pt-2 and gap-3 inside) */}
@@ -127,44 +137,57 @@ export function AppSidebar({ t, lang, open, onToggle }) {
         </div>
 
         {/* Content: Barista's NavMain (gap-1; folded px-1 py-1 and gap-1.5) */}
-        <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto p-2 [scrollbar-width:none] group-data-folded/sidebar:items-center group-data-folded/sidebar:gap-1.5 group-data-folded/sidebar:px-1 group-data-folded/sidebar:py-1">
-          <Item href={base} label={r.home} active={at("")}>
+        <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto p-2 [scrollbar-width:none] group-data-folded/sidebar:items-center group-data-folded/sidebar:gap-1.5 group-data-folded/sidebar:px-0.5 group-data-folded/sidebar:py-1">
+          <Item onClick={go} href={base} label={r.home} active={at("")}>
             <Icon name="home" />
-            <span className="absolute -end-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-[#e5397f] px-1 text-[0.625rem] font-bold text-white ring-2 ring-sidebar group-data-folded/sidebar:-end-1.5 group-data-folded/sidebar:-top-1.5">
-              3
-            </span>
           </Item>
-          <Item href={`${base}/planner`} label={r.planner} active={at("/planner")}>
+          <Item onClick={go} href={`${base}/planner`} label={r.planner} active={at("/planner")}>
             <Icon name="planner" />
           </Item>
-          <Item onClick={() => window.dispatchEvent(new CustomEvent(OPEN_LARA))} label={r.ai}>
+          <Item
+            onClick={() => {
+              onNavigate?.("lara");
+              window.dispatchEvent(new CustomEvent(OPEN_LARA));
+            }}
+            label={r.ai}
+            active={laraActive && !covered}
+          >
             <Icon name="ai" />
           </Item>
-          <Item href={`${base}/apps`} label={r.more} active={at("/apps")} tip={r.moreTip}>
-            {/* nine dots at rest; under the pointer, ClickUp's app tiles spring in */}
-            <span className="relative grid size-5 place-items-center">
-              <span
-                aria-hidden
-                style={mask("more")}
-                className={cn(ICON, "absolute inset-0 transition-all duration-300 ease-out group-hover/item:scale-50 group-hover/item:opacity-0")}
-              />
-              <MoreCluster className="scale-50 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover/item:scale-100 group-hover/item:opacity-100" />
-            </span>
-          </Item>
+          {/* More: ClickUp's apps panel beside the sidebar (more-apps.jsx); lit while
+              you're in one of its apps (Notes…) */}
+          <MoreApps
+            t={t.more}
+            lang={lang}
+            onNavigate={go}
+            trigger={
+              <button type="button" aria-label={r.moreTip} data-active={at("/notes") ? "" : undefined} className={ITEM}>
+                <span className={TILE}>
+                  {/* nine dots at rest; under the pointer, ClickUp's app tiles spring in */}
+                  <span className="relative grid size-5 place-items-center">
+                    <span
+                      aria-hidden
+                      style={mask("more")}
+                      className={cn(ICON, "absolute inset-0 transition-all duration-300 ease-out group-hover/item:scale-50 group-hover/item:opacity-0")}
+                    />
+                    <MoreCluster className="scale-50 opacity-0 transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover/item:scale-100 group-hover/item:opacity-100" />
+                  </span>
+                </span>
+                <span className={NAME}>{r.more}</span>
+              </button>
+            }
+          />
         </nav>
 
         {/* Footer: ClickUp's bottom items */}
-        <div className="flex flex-col gap-1 p-2 pb-3 group-data-folded/sidebar:items-center group-data-folded/sidebar:gap-1.5 group-data-folded/sidebar:px-1">
-          <Item href={`${base}/labs`} label={r.labs} active={at("/labs")}>
+        <div className="flex flex-col gap-1 p-2 pb-3 group-data-folded/sidebar:items-center group-data-folded/sidebar:gap-1.5 group-data-folded/sidebar:px-0.5">
+          <Item onClick={go} href={`${base}/labs`} label={r.labs} active={at("/labs")}>
             <Icon name="labs" />
           </Item>
-          <Item href={`${base}/download`} label={r.install} active={at("/download")}>
-            <Icon name="install" />
-          </Item>
-          <Item href={`${base}/family`} label={r.invite} active={at("/family")}>
+          <Item onClick={go} href={`${base}/family`} label={r.invite} active={at("/family")}>
             <Icon name="invite" />
           </Item>
-          <Item href={`${base}/upgrade`} label={r.upgrade} active={at("/upgrade")}>
+          <Item onClick={go} href={`${base}/upgrade`} label={r.upgrade} active={at("/upgrade")}>
             <Icon name="upgrade" />
           </Item>
         </div>
