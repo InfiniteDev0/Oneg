@@ -11,6 +11,7 @@ import { useEffect, useRef } from "react";
 import { BookMarked, Trash2 } from "lucide-react";
 import { gooeyToast } from "goey-toast";
 import { cn } from "@/lib/utils";
+import { NoteEditor as MiloEditor } from "../note-editor";
 import { SECTIONS, TOPICS } from "../learn-data";
 
 export function when(time, lang) {
@@ -50,7 +51,8 @@ export function CategorySelect({ value, onChange, edu, t, allLabel, className, i
 /** A note in a list. */
 export function NoteRow({ note, active, onPick, edu, t, lang, showTopic = true }) {
   const topic = note.topic && TOPICS[note.topic];
-  const firstLine = note.body.split("\n").find((line) => line.trim()) ?? "";
+  // the body is the editor's HTML: its words, for the preview
+  const firstLine = note.body.replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
   return (
     <button
       type="button"
@@ -75,16 +77,8 @@ export function NoteRow({ note, active, onPick, edu, t, lang, showTopic = true }
 
 /** A note open: write in it; it's kept as you go. */
 export function NoteEditor({ note, store, edu, t, lang, autoFocus = false, onDeleted }) {
-  const body = useRef(null);
   const title = useRef(null);
 
-  // the box grows with what you write
-  useEffect(() => {
-    const el = body.current;
-    if (!el) return;
-    el.style.height = "auto";
-    el.style.height = `${Math.max(el.scrollHeight, 240)}px`;
-  }, [note.body, note.id]);
   useEffect(() => {
     if (autoFocus) title.current?.focus();
   }, [autoFocus, note.id]);
@@ -132,14 +126,10 @@ export function NoteEditor({ note, store, edu, t, lang, autoFocus = false, onDel
         aria-label={t.titlePlaceholder}
         className="w-full bg-transparent text-3xl font-bold tracking-tight outline-none placeholder:text-muted-foreground/60"
       />
-      <textarea
-        ref={body}
-        value={note.body}
-        onChange={(e) => store.update(note.id, { body: e.target.value })}
-        placeholder={t.bodyPlaceholder}
-        aria-label={t.bodyPlaceholder}
-        className="w-full resize-none bg-transparent text-[0.9375rem] leading-7 outline-none placeholder:text-muted-foreground/60"
-      />
+      {/* the body: Milo's editor (Tiptap's Simple Editor), its HTML kept as you write */}
+      <div className="oneg-note-body -mx-2">
+        <MiloEditor noteId={note.id} body={note.body} onChange={(html) => store.update(note.id, { body: html })} />
+      </div>
       <p className="text-xs text-muted-foreground">{t.saved.replace("{time}", when(note.updatedAt, lang))}</p>
     </article>
   );
