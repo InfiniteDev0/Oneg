@@ -1,10 +1,11 @@
-// Notes (More → Notes): your notes by category, and the one you picked open (NotesApp).
+// Notes (More → Notes): Milo's notes, with the Educational categories as Milo's blocks and
+// collections as Milo's categories (NotesShell).
 
 import { getDictionary } from "@/i18n/dictionaries";
-import { NotesApp } from "@/components/app/notes/notes-app";
+import { NotesShell } from "@/components/app/notes-shell";
 
 export default async function NotesPage({ params }) {
   const { lang } = await params;
   const app = (await getDictionary(lang)).app;
-  return <NotesApp t={app.notes} edu={app.home.edu} lang={lang} resizeLabel={app.home.resize} />;
+  return <NotesShell edu={app.home.edu} />;
 }

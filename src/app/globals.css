@@ -21,6 +21,10 @@
 }
 
 @theme inline {
+  /* Milo's notes: the chip (a raised label) and the ink on the app's chrome */
+  --color-chrome-ink: var(--chrome-ink);
+  --color-chip: var(--chip);
+  --color-chip-ink: var(--chip-ink);
   /* the app's action colour (Twitter's blue, or your theme colour) */
   --color-action: var(--action);
   --color-action-hover: var(--action-hover);
@@ -729,3 +733,52 @@ html:lang(ar) {
   --accent: color-mix(in oklab, var(--theme-colour) 16%, var(--background));
   --accent-foreground: var(--foreground);
 }
+
+/* ── Milo's notes (components/app/notes, from Milo's globals.css) ──
+   The chip and chrome ink, light and dark; a note's paper (its colour, set on the
+   card by lib/note-colours.js); and Milo's press: a solid drop shadow in the
+   element's own darker shade that collapses as you press it. */
+:root {
+  --chrome-ink: #ffffff;
+  --chip: #ffffff;
+  --chip-ink: #141414;
+}
+.dark {
+  --chrome-ink: #f6f4f1;
+  --chip: #f6f4f1;
+  --chip-ink: #16150f;
+}
+.milo-paper {
+  background-color: var(--paper);
+  --lift: var(--paper-lift);
+  --tt-toolbar-bg-color: transparent;
+  --tt-bg-color: transparent;
+}
+.dark .milo-paper {
+  background-color: var(--paper-dark);
+  --lift: var(--paper-lift-dark);
+}
+@media (min-width: 768px) {
+  .milo-paper .tiptap-toolbar {
+    background: transparent;
+    border-color: color-mix(in oklab, currentColor 10%, transparent);
+  }
+}
+.milo-lift {
+  box-shadow: 0 4px 0 var(--lift, rgb(0 0 0 / 0.2));
+  transition:
+    box-shadow 80ms ease,
+    transform 80ms ease,
+    opacity 300ms ease;
+}
+.milo-lift:active {
+  box-shadow: 0 0 0 var(--lift, transparent);
+  transform: translateY(4px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .milo-lift { transition: none; }
+  .milo-lift:active { transform: none; }
+}
+/* no scrollbar at all (Milo's) */
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
