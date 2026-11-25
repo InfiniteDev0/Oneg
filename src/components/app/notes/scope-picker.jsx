@@ -41,7 +41,7 @@ export function ScopePicker({ block, onPick }) {
         <div className="flex flex-col gap-1">
           <Choice active={!block} onClick={() => pick("day")}>
             <span className="size-2.5 shrink-0 rounded-full bg-foreground/20" />
-            Day notes
+            General notes
           </Choice>
           {choices.map((b) => (
             <Choice key={b.id} active={block?.id === b.id} onClick={() => pick(b.id)}>

@@ -71,7 +71,7 @@ export function NoteSettings({ note, onChange }) {
                     : "text-foreground/55 ring-1 ring-foreground/10 hover:text-foreground"
                 }`}
               >
-                Day note
+                General note
               </button>
               {choices.map((b) => (
                 <button

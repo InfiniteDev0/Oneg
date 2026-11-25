@@ -17,7 +17,8 @@ export const SlashCommand = Extension.create({
         // inside code a "/" is just a character
         allow: ({ state, range }) => !state.doc.resolve(range.from).parent.type.spec.code,
         items: ({ query }) => filterCommands(query),
-        command: ({ editor, range, props }) => props.run(editor.chain().focus().deleteRange(range)).run(),
+        // Oneg: the editor goes along too, so Lara's commands can write into it
+        command: ({ editor, range, props }) => props.run(editor.chain().focus().deleteRange(range), editor).run(),
         render: renderSlashMenu,
       }),
     ];

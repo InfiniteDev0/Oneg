@@ -8,6 +8,14 @@ import { BubbleMenu } from "@tiptap/react/menus";
 import { Bold, Code, Italic, Link2, Strikethrough, Underline } from "lucide-react";
 import { ColourPanel } from "./colour-panel";
 import { LinkPanel } from "./link-panel";
+import { laraWrite } from "./lara-writer";
+
+// Oneg: what Lara can do with the selected text (she writes after it; the selection stays)
+const LARA_ACTIONS = [
+  { action: "explain", label: "Explain this" },
+  { action: "simplify", label: "Say it simply" },
+  { action: "recap", label: "Summarise this" },
+];
 
 const MARKS = [
   { mark: "bold", label: "Bold", icon: Bold, run: (c) => c.toggleBold() },
@@ -106,7 +114,47 @@ export function SelectionMenu({ editor, appendTo }) {
             A
           </span>
         </button>
+
+        <span aria-hidden className="mx-1 h-5 w-px bg-foreground/10" />
+
+        {/* Oneg: Lara, for the selected text */}
+        <button
+          type="button"
+          onMouseDown={keep}
+          onClick={() => toggle("lara")}
+          aria-label="Ask Lara"
+          aria-pressed={panel === "lara"}
+          title="Ask Lara"
+          className={`flex h-8 cursor-pointer items-center gap-1.5 rounded-lg px-2 text-sm font-medium transition-colors hover:bg-foreground/8 ${panel === "lara" ? "bg-foreground/10" : "text-foreground/80"}`}
+        >
+          <span className="oneg-lara-face size-[1.05rem] shrink-0 rounded-[5px]" aria-hidden="true">
+            <span className="flex gap-[2px]">
+              <span className="h-[5px] w-[3px] rounded-full bg-white" />
+              <span className="h-[5px] w-[3px] rounded-full bg-white" />
+            </span>
+          </span>
+          Lara
+        </button>
       </div>
+
+      {panel === "lara" && (
+        <div className="flex flex-col gap-0.5 border-t border-foreground/8 p-1">
+          {LARA_ACTIONS.map(({ action, label }) => (
+            <button
+              key={action}
+              type="button"
+              onMouseDown={keep}
+              onClick={() => {
+                setPanel(null);
+                laraWrite(editor, action);
+              }}
+              className="flex h-8 cursor-pointer items-center rounded-lg px-2.5 text-start text-sm transition-colors hover:bg-foreground/8"
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {panel === "colour" && (
         <div className="border-t border-foreground/8">

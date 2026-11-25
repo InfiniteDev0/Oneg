@@ -11,7 +11,7 @@
 import { NotebookPen } from "lucide-react";
 import { SideHeader } from "./side-header";
 import { UserGroup } from "../icons/user-group";
-import { Tabs, TabsList, TabsTrigger } from "@/components/motion/tabs";
+
 import { cn } from "@/lib/utils";
 import { useBlocks } from "../blocks-provider";
 import { COUNT } from "../view-header";
@@ -99,7 +99,10 @@ export function SidePanel({
                     notes: notes.filter((n) => n.blockId === b.id),
                   })),
                   { id: "day", name: "General notes", colour: "color-mix(in srgb, var(--muted-foreground) 50%, transparent)", notes: notes.filter((n) => !n.blockId || !known.has(n.blockId)) },
-                ]}
+                ].filter(
+                  // Oneg: the search finds a category by its name too (there are many of them)
+                  (row) => !query?.trim() || row.name.toLowerCase().includes(query.trim().toLowerCase()) || row.notes.length > 0
+                )}
                 place={place}
                 onPlace={onPlace}
                 onOpenNote={onOpenNote}
@@ -112,19 +115,7 @@ export function SidePanel({
         </>
       )}
 
-      {/* what the tree shows, where a theme toggle would sit */}
-      {/* the same segment tabs as the top bar's Tasks | Blocks: your notes, or your reminders */}
-      <Tabs value={section} onValueChange={onSection} variant="segment" className="flex shrink-0 justify-center">
-        {/* its own grey: the panel is the same colour as the tabs' usual background */}
-        <TabsList className="bg-foreground/[0.07]">
-          <TabsTrigger value="notes" className="px-3 py-1 text-[13px]">
-            Notes
-          </TabsTrigger>
-          <TabsTrigger value="reminders" className="px-3 py-1 text-[13px]">
-            Reminders
-          </TabsTrigger>
-        </TabsList>
-      </Tabs>
+      {/* Oneg: notes only — Milo's Notes | Reminders tabs aren't here */}
     </aside>
   );
 }

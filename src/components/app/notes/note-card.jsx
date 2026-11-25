@@ -156,7 +156,7 @@ export function NoteCard({ note, query = "", selected = false, selecting = false
               {block.name.replace(" Block", "")}
             </span>
           ) : (
-            <span className="rounded-sm bg-foreground/10 px-2 py-0.5 text-xs font-medium text-muted-foreground">Day note</span>
+            <span className="rounded-sm bg-foreground/10 px-2 py-0.5 text-xs font-medium text-muted-foreground">General note</span>
           )}
           <span className="shrink-0 text-xs text-muted-foreground">{timeAgo(note.updatedAt ?? note.createdAt)}</span>
         </div>

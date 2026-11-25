@@ -107,7 +107,7 @@ export function SelectionBar({ count, total, onSelectAll, onMove, onDelete, onCl
                 }}
                 className="cursor-pointer rounded-lg px-2.5 py-1.5 text-left text-xs hover:bg-foreground/5"
               >
-                Day note
+                General note
               </button>
               {choices.map((b) => (
                 <button

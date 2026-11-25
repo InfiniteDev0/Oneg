@@ -601,7 +601,8 @@
       "family": "View family",
       "dashboard": "My dashboard",
       "lara": "Lara chat",
-      "trash": "Trash"
+      "trash": "Trash",
+      "language": "Language"
     },
     "side": {
       "title": "Home",
@@ -830,7 +831,8 @@
         "tabs": {
           "books": "Books",
           "universities": "Universities",
-          "courses": "Courses"
+          "courses": "Courses",
+          "notes": "Notes"
         },
         "books": {
           "title": "Books are coming",
@@ -857,6 +859,11 @@
           "attachments": "Placements for health students",
           "entry": "Grades and papers you need",
           "abroad": "Studying health outside Kenya"
+        },
+        "notesTab": {
+          "new": "New note",
+          "count": "{n} notes",
+          "empty": "No notes on {topic} yet. Write while you study — they're kept with your notes."
         }
       }
     },

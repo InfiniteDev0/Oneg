@@ -601,7 +601,8 @@
       "family": "Eeg qoyska",
       "dashboard": "Dashboard-kayga",
       "lara": "Sheekada Lara",
-      "trash": "Qashinka"
+      "trash": "Qashinka",
+      "language": "Luqadda"
     },
     "side": {
       "title": "Hoyga",
@@ -830,7 +831,8 @@
         "tabs": {
           "books": "Buugaag",
           "universities": "Jaamacado",
-          "courses": "Koorsooyin"
+          "courses": "Koorsooyin",
+          "notes": "Qoraallo"
         },
         "books": {
           "title": "Buugaag ayaa imanaya",
@@ -857,6 +859,11 @@
           "attachments": "Meelaha tababarka ardayda caafimaadka",
           "entry": "Dhibcaha iyo waraaqaha aad u baahan tahay",
           "abroad": "Barashada caafimaadka meel ka baxsan Kenya"
+        },
+        "notesTab": {
+          "new": "Qoraal cusub",
+          "count": "{n} qoraal",
+          "empty": "Weli qoraallo {topic} ah ma jiraan. Qor inta aad wax baranayso — waxay la kaydsan yihiin qoraalladaada."
         }
       }
     },

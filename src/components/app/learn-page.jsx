@@ -21,8 +21,10 @@ import { OPEN_LARA } from "@/components/lara/lara-chat";
 import { cn } from "@/lib/utils";
 import { TopicCard } from "./edu-browse";
 import { SECTIONS, STUDY_LISTS, TOPICS } from "./learn-data";
+import { NotesProviders } from "./notes-shell";
+import { TopicNotes } from "./notes/topic-notes";
 
-const TABS = ["books", "universities", "courses"];
+const TABS = ["books", "universities", "courses", "notes"];
 const ask = (text) => window.dispatchEvent(new CustomEvent(OPEN_LARA, { detail: { ask: text } }));
 
 const PROMPTS = [
@@ -190,6 +192,13 @@ export function LearnPage({ topic, t, lang }) {
 
           {tab === "courses" && (
             <Coming icon={BookOpen} title={t.courses.title} body={fill(t.courses.body)} askLabel={t.courses.askLabel} onAsk={() => ask(fill(t.courses.ask))} />
+          )}
+
+          {/* your notes on this topic (Milo's notes), opening beside the page as you study */}
+          {tab === "notes" && (
+            <NotesProviders edu={t}>
+              <TopicNotes topic={topic} name={name} t={t.notesTab} />
+            </NotesProviders>
           )}
         </div>
 

@@ -12,9 +12,26 @@ import {
   Minus,
   Pilcrow,
   TextQuote,
+  Sparkles,
+  ListChecks,
+  Layers,
+  PenLine,
+  NotebookText,
 } from "lucide-react";
+import { laraWrite } from "../lara-writer";
+
+// Oneg: Lara writes into the note — after "/query" is removed, so she writes where it was
+const lara = (action) => (c, editor) => {
+  setTimeout(() => laraWrite(editor, action));
+  return c;
+};
 
 export const SLASH_COMMANDS = [
+  { group: "Lara", title: "Ask Lara", keywords: "lara ask ai question help write", icon: Sparkles, run: lara("ask") },
+  { group: "Lara", title: "Summarise this note", keywords: "lara summary summarize recap tldr", icon: NotebookText, run: lara("summarise") },
+  { group: "Lara", title: "Revision questions", keywords: "lara quiz test questions revise exam", icon: ListChecks, run: lara("questions") },
+  { group: "Lara", title: "Flashcards", keywords: "lara cards flashcards memorise study", icon: Layers, run: lara("flashcards") },
+  { group: "Lara", title: "Continue writing", keywords: "lara continue more next write", icon: PenLine, run: lara("continue") },
   { group: "Style", title: "Text", keywords: "paragraph plain body", icon: Pilcrow, run: (c) => c.setParagraph() },
   { group: "Style", title: "Heading 1", keywords: "h1 title big", icon: Heading1, run: (c) => c.setHeading({ level: 1 }) },
   { group: "Style", title: "Heading 2", keywords: "h2 subtitle", icon: Heading2, run: (c) => c.setHeading({ level: 2 }) },

@@ -601,7 +601,8 @@
       "family": "Tazama familia",
       "dashboard": "Dashibodi yangu",
       "lara": "Mazungumzo na Lara",
-      "trash": "Tupio"
+      "trash": "Tupio",
+      "language": "Lugha"
     },
     "side": {
       "title": "Nyumbani",
@@ -830,7 +831,8 @@
         "tabs": {
           "books": "Vitabu",
           "universities": "Vyuo vikuu",
-          "courses": "Kozi"
+          "courses": "Kozi",
+          "notes": "Madokezo"
         },
         "books": {
           "title": "Vitabu vinakuja",
@@ -857,6 +859,11 @@
           "attachments": "Nafasi za mafunzo kwa wanafunzi wa afya",
           "entry": "Alama na nyaraka unazohitaji",
           "abroad": "Kusoma afya nje ya Kenya"
+        },
+        "notesTab": {
+          "new": "Dokezo jipya",
+          "count": "Madokezo {n}",
+          "empty": "Bado hakuna madokezo ya {topic}. Andika unaposoma — yanahifadhiwa pamoja na madokezo yako."
         }
       }
     },

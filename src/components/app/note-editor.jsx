@@ -95,6 +95,7 @@ import { useCursorVisibility } from "@/hooks/use-cursor-visibility";
 import { MAX_FILE_SIZE, uploadNoteImage } from "@/lib/note-upload";
 import { SelectionMenu } from "./editor/selection-menu";
 import { SlashCommand } from "./editor/slash/slash-command";
+import { LaraWriter } from "./editor/lara-writer";
 import { useSpellcheck } from "@/hooks/use-spellcheck";
 
 /* Their globals. The CLI wants these in app/globals.css; that file is plain CSS
@@ -345,6 +346,8 @@ export function NoteEditor({ noteId, body, onChange }) {
         />
 
         <SelectionMenu editor={editor} appendTo={menuHost} />
+        {/* Oneg: Lara writing into the note (/lara and the Lara actions) */}
+        <LaraWriter editor={editor} />
 
         <EditorContent
           editor={editor}

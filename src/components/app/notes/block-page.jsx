@@ -50,7 +50,7 @@ export function BlockNotesPage({ blockId }) {
 
       {missing ? (
         <p className="pt-16 text-center text-sm text-foreground/45">
-          This block isn&rsquo;t here any more. Its notes are with your Day notes.
+          This category isn&rsquo;t here any more. Its notes are with your general notes.
         </p>
       ) : (
         <>

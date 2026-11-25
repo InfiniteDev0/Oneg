@@ -22,7 +22,8 @@ import {
   HeartPulse,
   HelpCircle,
   Keyboard,
-  LayoutDashboard,
+  Check,
+  Languages,
   LogOut,
   Palette,
   Pill,
@@ -48,6 +49,9 @@ import { AvatarBadge, CalendarMark, CreateGlyph, WorkspaceBadge } from "./app-ic
 import { EmergencyButton } from "./emergency-button";
 import { NotificationsButton } from "./notifications-button";
 import { ThemesDialog } from "./themes-dialog";
+import { Flag } from "@/components/flag";
+import { useSwitchLocale } from "@/components/landing/use-switch-locale";
+import { LOCALE_FLAG, localeNames, locales } from "@/i18n/config";
 
 /** Barista's bar icons: just the grey icon, a soft square only under the pointer. */
 export const BAR_ICON =
@@ -203,6 +207,9 @@ function ProfileMenu({ t, lang }) {
   const [open, setOpen] = useState(false);
   const p = t.profile;
   const [themesOpen, setThemesOpen] = useState(false);
+  // the language list, opened under its row
+  const [langOpen, setLangOpen] = useState(false);
+  const switchLocale = useSwitchLocale();
   const router = useRouter();
   const go = (path) => {
     setOpen(false);
@@ -258,6 +265,38 @@ function ProfileMenu({ t, lang }) {
           <MenuAction icon={<Volume2 size={18} />} label={p.mute} />
           <MenuAction icon={<Settings size={18} />} label={p.settings} onClick={() => go("/settings")} />
           <MenuAction icon={<Palette size={18} />} label={p.themes} onClick={() => { setOpen(false); setThemesOpen(true); }} />
+          {/* the app's language: the same page in another one, remembered */}
+          <MenuAction
+            icon={<Languages size={18} />}
+            label={p.language}
+            extra={
+              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                {localeNames[lang]}
+                <ChevronDown size={14} className={cn("transition-transform", langOpen && "rotate-180")} />
+              </span>
+            }
+            onClick={() => setLangOpen((v) => !v)}
+          />
+          {langOpen && (
+            <div className="ms-6 space-y-0.5 border-s border-border ps-2">
+              {locales.map((code) => (
+                <button
+                  key={code}
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    setLangOpen(false);
+                    if (code !== lang) switchLocale(code);
+                  }}
+                  className="flex h-8 w-full cursor-pointer items-center gap-2.5 rounded-md px-2.5 text-start text-[13px] transition-colors hover:bg-accent hover:text-accent-foreground"
+                >
+                  <Flag code={LOCALE_FLAG[code]} />
+                  <span className="flex-1">{localeNames[code]}</span>
+                  {code === lang && <Check size={14} />}
+                </button>
+              ))}
+            </div>
+          )}
           <MenuAction icon={<Keyboard size={18} />} label={p.shortcuts} onClick={() => go("/shortcuts")} />
           <MenuAction icon={<Download size={18} />} label={p.download} extra={<ExternalLink size={14} />} onClick={() => go("/download")} />
           <MenuAction icon={<HelpCircle size={18} />} label={p.help} onClick={() => go("/help")} />
@@ -270,12 +309,11 @@ function ProfileMenu({ t, lang }) {
             <MenuAction icon={<PlusCircle size={18} />} label={p.book} showPin pinLabel={p.pin} onClick={() => go("/consultations")} />
             <MenuAction icon={<HeartPulse size={18} />} label={p.myHealth} showPin pinLabel={p.pin} onClick={() => go("/dashboard")} />
             <MenuAction icon={<Clock size={18} />} label={p.medicines} showPin pinLabel={p.pin} onClick={() => go("/medicines")} />
-            <MenuAction icon={<FileText size={18} />} label={p.notepad} showPin pinLabel={p.pin} onClick={() => go("/notepad")} />
+            {/* your notes (Milo's, More → Notes); reminders come later, so no Create reminder yet */}
+            <MenuAction icon={<FileText size={18} />} label={t.more.apps.notes} showPin pinLabel={p.pin} onClick={() => go("/notes")} />
             <MenuAction icon={<Video size={18} />} label={p.record} showPin pinLabel={p.pin} onClick={() => go("/record")} />
-            <MenuAction icon={<Bell size={18} />} label={p.reminder} showPin pinLabel={p.pin} onClick={() => go("/reminders")} />
             <MenuAction icon={<StickyNote size={18} />} label={p.records} showPin pinLabel={p.pin} onClick={() => go("/records")} />
             <MenuAction icon={<Users size={18} />} label={p.family} showPin pinLabel={p.pin} onClick={() => go("/family")} />
-            <MenuAction icon={<LayoutDashboard size={18} />} label={p.dashboard} showPin pinLabel={p.pin} isActive onClick={() => go("")} />
             <MenuAction
               icon={<Sparkles size={18} />}
               label={p.lara}
