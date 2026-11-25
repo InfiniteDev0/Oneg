@@ -208,7 +208,17 @@ export function NotesView() {
         {!open && !(category && !page) && (
           // phones: the row scrolls sideways, and starts with the way to the drawer
           <div className="flex h-11 shrink-0 items-center gap-5 scrollbar-none border-b border-border px-5 max-md:gap-4 max-md:overflow-x-auto max-md:px-3">
-            <button type="button" onClick={() => setDrawer(true)} aria-label="Open the notes sidebar" className="flex size-8 shrink-0 items-center justify-center rounded-md text-muted-foreground md:hidden">
+            {/* Oneg: on a computer too, once the side is folded (Ctrl+\ still works) */}
+            <button
+              type="button"
+              onClick={() => (phone ? setDrawer(true) : toggleSide())}
+              aria-label="Open the notes sidebar"
+              title="Open the sidebar (Ctrl+\)"
+              className={cn(
+                "flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                side ? "md:hidden" : "-ms-2"
+              )}
+            >
               <PanelLeft className="size-5" />
             </button>
             {/* the blank new page needs a way back (an open note hides this row and has its own) */}
