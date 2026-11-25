@@ -29,7 +29,7 @@ export function NoteRow({ note: n, grip, query, selected, onToggle, onOpen }) {
           onOpen(n);
         }
       }}
-      title="Click to open, drag onto a category to move it"
+      title="Click to open, drag onto a collection to move it"
       className={`flex cursor-pointer items-center gap-2.5 rounded-lg bg-card px-3 py-2.5 text-left text-sm transition-colors hover:bg-card/70 ${
         selected.has(n.id) ? "ring-1 ring-inset ring-foreground/40" : ""
       }`}

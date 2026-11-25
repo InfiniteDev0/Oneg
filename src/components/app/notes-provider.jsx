@@ -230,7 +230,7 @@ export function NotesProvider({ children }) {
       setNotes((prev) => prev.map((n) => byId.get(n.id) ?? n));
       moved.forEach((n) => saveNoteSoon(userId, n, 0));
       playTask();
-      showMovedToast({ count: moved.length, to: { name: category ? category.name || "Untitled" : "no category" }, noun: "note" });
+      showMovedToast({ count: moved.length, to: { name: category ? category.name || "Untitled" : "no collection" }, noun: "note" });
     },
     [canWrite, userId, notes],
   );

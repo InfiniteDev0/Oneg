@@ -98,7 +98,7 @@ export function SidePanel({
                     colour: b.bg,
                     notes: notes.filter((n) => n.blockId === b.id),
                   })),
-                  { id: "day", name: "Day notes", colour: "color-mix(in srgb, var(--muted-foreground) 50%, transparent)", notes: notes.filter((n) => !n.blockId || !known.has(n.blockId)) },
+                  { id: "day", name: "General notes", colour: "color-mix(in srgb, var(--muted-foreground) 50%, transparent)", notes: notes.filter((n) => !n.blockId || !known.has(n.blockId)) },
                 ]}
                 place={place}
                 onPlace={onPlace}

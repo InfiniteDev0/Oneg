@@ -126,7 +126,7 @@ export function NotesView() {
 
   const TABS = [
     { id: "all", label: "All notes", count: here.length },
-    { id: "blocks", label: "By block", count: here.filter((n) => known.has(n.blockId)).length },
+    { id: "blocks", label: "By category", count: here.filter((n) => known.has(n.blockId)).length },
     { id: "recent", label: "Recent", count: recent?.length },
     { id: "favorite", label: "Favorite", count: favorites.length },
     { id: "trash", label: "Trash", count: trashReady ? trashed.length : undefined },

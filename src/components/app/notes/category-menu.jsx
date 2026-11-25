@@ -50,7 +50,7 @@ export function CategoryMenu({ category, isSub, tops, hasSubs, onFavorite, onAdd
       <DropdownMenuContent align="start" side="right" sideOffset={8} className="w-64 rounded-sm p-1.5">
         {/* a label has to sit in a group */}
         <DropdownMenuGroup>
-          <DropdownMenuLabel className="px-2 pb-1.5">{isSub ? "Subcategory" : "Category"}</DropdownMenuLabel>
+          <DropdownMenuLabel className="px-2 pb-1.5">{isSub ? "Subcollection" : "Collection"}</DropdownMenuLabel>
           <DropdownMenuItem className={ROW} onClick={onFavorite}>
             <Star className={category.favorite ? "fill-[#f5c542] text-[#f5c542]" : undefined} />
             {category.favorite ? "Remove from Favorites" : "Add to Favorites"}
@@ -58,7 +58,7 @@ export function CategoryMenu({ category, isSub, tops, hasSubs, onFavorite, onAdd
           {!isSub && (
             <DropdownMenuItem className={ROW} onClick={onAddSub}>
               <FolderPlus />
-              Add subcategory
+              Add subcollection
             </DropdownMenuItem>
           )}
         </DropdownMenuGroup>
@@ -77,10 +77,10 @@ export function CategoryMenu({ category, isSub, tops, hasSubs, onFavorite, onAdd
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent className="w-52 rounded-sm p-1.5">
               <DropdownMenuItem className={ROW} onClick={() => onDuplicate(true)}>
-                With subcategories
+                With subcollections
               </DropdownMenuItem>
               <DropdownMenuItem className={ROW} onClick={() => onDuplicate(false)}>
-                Without subcategories
+                Without subcollections
               </DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
@@ -99,7 +99,7 @@ export function CategoryMenu({ category, isSub, tops, hasSubs, onFavorite, onAdd
               {isSub && (
                 <>
                   <DropdownMenuItem className={ROW} onClick={() => onMove(null)}>
-                    Its own category
+                    Its own collection
                   </DropdownMenuItem>
                   {homes.length > 0 && <DropdownMenuSeparator />}
                 </>

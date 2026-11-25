@@ -98,7 +98,7 @@ export function SelectionBar({ count, total, onSelectAll, onMove, onDelete, onCl
         >
           <div className={cn(onFile && "grid grid-cols-2 divide-x divide-foreground/10")}>
             <div className={cn("flex flex-col gap-1", onFile && "pe-2")}>
-              {onFile && <span className={HEAD}>Blocks</span>}
+              {onFile && <span className={HEAD}>Categories</span>}
               <button
                 type="button"
                 onClick={() => {
@@ -127,7 +127,7 @@ export function SelectionBar({ count, total, onSelectAll, onMove, onDelete, onCl
 
             {onFile && (
               <div className="flex min-w-0 flex-col gap-1 ps-2">
-                <span className={HEAD}>Categories</span>
+                <span className={HEAD}>Collections</span>
                 {/* out of any category */}
                 <button type="button" onClick={() => file(null)} className={`${CHOICE} text-muted-foreground`}>
                   No category
@@ -169,7 +169,7 @@ export function SelectionBar({ count, total, onSelectAll, onMove, onDelete, onCl
                       }}
                       onBlur={create}
                       placeholder="Name it, then Enter"
-                      aria-label="New category name"
+                      aria-label="New collection name"
                       className="mx-1 rounded-md bg-background px-2 py-1.5 text-xs outline-none ring-1 ring-(--theme-accent)"
                     />
                   ))}

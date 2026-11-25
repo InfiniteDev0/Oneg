@@ -35,7 +35,7 @@ export function BlockNotes({
 }) {
   const [searching, setSearching] = useState(false);
 
-  const name = block ? block.name.replace(" Block", "") : "Day notes";
+  const name = block ? block.name.replace(" Block", "") : "General notes";
   const searched = query.trim() !== "";
   const results = notes
     .map((n) => ({ note: n, found: findInNote(n, query, 2) }))

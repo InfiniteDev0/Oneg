@@ -26,7 +26,7 @@ export function BlockNotesPage({ blockId }) {
     isDay ? !n.blockId || !known.has(n.blockId) : n.blockId === blockId,
   );
 
-  const name = block ? block.name.replace(" Block", "") : "Day notes";
+  const name = block ? block.name.replace(" Block", "") : "General notes";
   const ready = hydrated && blocksReady;
   const missing = !isDay && ready && !block;
 

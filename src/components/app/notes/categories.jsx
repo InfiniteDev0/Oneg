@@ -35,7 +35,7 @@ function Name({ category, renaming, onRenamed, onSelect, count }) {
         autoFocus
         defaultValue={category.name}
         placeholder="Untitled"
-        aria-label="Category name"
+        aria-label="Collection name"
         onFocus={(e) => e.target.select()}
         onBlur={(e) => onRenamed(e.target.value.trim())}
         onKeyDown={(e) => {
@@ -116,7 +116,7 @@ export function Categories({ categories, selected, onSelect, onAdd, onOpenNote }
   };
 
   if (loadFailed) {
-    return <p className="px-2.5 text-xs leading-relaxed text-muted-foreground">Couldn&rsquo;t reach your categories. Nothing is lost.</p>;
+    return <p className="px-2.5 text-xs leading-relaxed text-muted-foreground">Couldn&rsquo;t reach your collections. Nothing is lost.</p>;
   }
   if (!hydrated) {
     return (
@@ -157,7 +157,7 @@ export function Categories({ categories, selected, onSelect, onAdd, onOpenNote }
     );
 
   return (
-    <nav aria-label="Categories" data-tour="categories" className="flex flex-col gap-0.5">
+    <nav aria-label="Collections" data-tour="categories" className="flex flex-col gap-0.5">
       {tops.map((c) => {
         const isOpen = open.has(c.id);
         const subs = list.filter((s) => s.parentId === c.id);
@@ -253,7 +253,7 @@ export function Categories({ categories, selected, onSelect, onAdd, onOpenNote }
           className="mt-2 flex h-9 w-full cursor-pointer items-center gap-2 rounded-lg border border-dashed border-foreground/15 px-3 text-sm text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground"
         >
           <Plus className="size-4" />
-          Add category
+          Add collection
         </button>
       )}
     </nav>

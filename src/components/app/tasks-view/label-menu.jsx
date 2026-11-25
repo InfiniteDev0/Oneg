@@ -169,7 +169,7 @@ export function LabelMenu({ value, onChange, big = false }) {
         if (!next) setNaming(null);
       }}
     >
-      <Tip label={current ? "Label" : "Label it with a category"}>
+      <Tip label={current ? "Label" : "Label it with a collection"}>
         <PopoverTrigger
           data-tour="label-button"
           onClick={(e) => e.stopPropagation()}
@@ -200,9 +200,9 @@ export function LabelMenu({ value, onChange, big = false }) {
           </button>
         )}
         {!categories.hydrated ? (
-          <span className="px-2.5 py-1.5 text-sm text-muted-foreground">Loading your categories…</span>
+          <span className="px-2.5 py-1.5 text-sm text-muted-foreground">Loading your collections…</span>
         ) : categories.loadFailed ? (
-          <span className="px-2.5 py-1.5 text-sm text-muted-foreground">Couldn&rsquo;t reach your categories.</span>
+          <span className="px-2.5 py-1.5 text-sm text-muted-foreground">Couldn&rsquo;t reach your collections.</span>
         ) : (
           tops.map((c) => (
             <div key={c.id} className="flex flex-col gap-0.5">
@@ -240,7 +240,7 @@ export function LabelMenu({ value, onChange, big = false }) {
               }}
               onBlur={create}
               placeholder="Name it, then Enter"
-              aria-label="New category name"
+              aria-label="New collection name"
               className="mx-1 mt-1 rounded-md bg-background px-2 py-1.5 text-sm outline-none ring-1 ring-(--theme-accent)"
             />
           ))}

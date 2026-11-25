@@ -97,7 +97,7 @@ function Slides({ state, onShow, onBack, onScope, full, onToggleFull }) {
             when="date"
             showBlock={false}
             searchLabel={`Search ${name}`}
-            emptyText={block ? `No notes in ${name} yet.` : "No day notes yet."}
+            emptyText={block ? `No notes in ${name} yet.` : "No general notes yet."}
             onMove={moveNotes}
             onDelete={removeNotes}
           />

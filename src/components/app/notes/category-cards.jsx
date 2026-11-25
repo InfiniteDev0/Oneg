@@ -53,7 +53,7 @@ export function TasksCard({ tasks, name, onNew, order, onOrder }) {
       tools={search.open && <SearchBox value={search.query} onChange={search.setQuery} placeholder="Search tasks" />}
       empty={
         tasks === false
-          ? "Couldn’t reach this category’s tasks."
+          ? "Couldn’t reach this collection’s tasks."
           : loaded && shown.length === 0
             ? words
               ? "Nothing matches that."

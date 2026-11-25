@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useBlocks } from "../blocks-provider";
 
-export const scopeName = (block) => (block ? block.name.replace(" Block", "") : "Day notes");
+export const scopeName = (block) => (block ? block.name.replace(" Block", "") : "General notes");
 
 export function ScopePicker({ block, onPick }) {
   const { blocks, droppedToday } = useBlocks();
