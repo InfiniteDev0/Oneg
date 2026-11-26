@@ -2,7 +2,8 @@
 
 // What this note is: its colour, the block it belongs to, and whether it's pinned.
 
-import { CalendarClock, Check, Pin } from "lucide-react";
+import { useState } from "react";
+import { CalendarClock, Check, Pin, Search } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { NOTE_COLOURS, paperStyle } from "@/lib/note-colours";
 import { nextStamp, stampOf } from "@/lib/stamp";
@@ -10,12 +11,46 @@ import { useNow } from "@/lib/time";
 import { useBlocks } from "../blocks-provider";
 import { NoteSettingsIcon } from "./icons";
 
+// one row of Belongs to: its colour's dot, its name, a tick on the one it's in
+function Choice({ label, dot, picked, onPick }) {
+  return (
+    <button
+      type="button"
+      onClick={onPick}
+      aria-pressed={picked}
+      className={`flex cursor-pointer items-center gap-2 rounded-md px-2 py-1.5 text-left text-xs transition-colors hover:bg-foreground/[0.05] ${
+        picked ? "text-foreground" : "text-foreground/70"
+      }`}
+    >
+      {dot ? (
+        <span className="size-2 shrink-0 rounded-full" style={{ backgroundColor: dot }} />
+      ) : (
+        <span className="size-2 shrink-0 rounded-full ring-1 ring-foreground/30" />
+      )}
+      <span className="min-w-0 flex-1 truncate">{label}</span>
+      {picked && <Check className="size-3.5 shrink-0" strokeWidth={2.5} />}
+    </button>
+  );
+}
+
 export function NoteSettings({ note, onChange }) {
   const { blocks, archived } = useBlocks();
 
   // a set-aside block still shows if this note already belongs to it
   const setAside = archived.find((b) => b.id === note.blockId);
   const choices = setAside ? [...blocks, setAside] : blocks;
+
+  // the categories, filtered by what's typed, in their sections
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const groups = [];
+  for (const b of choices) {
+    if (q && !b.name.toLowerCase().includes(q)) continue;
+    const section = b.sectionName ?? "";
+    const group = groups.find(([name]) => name === section);
+    if (group) group[1].push(b);
+    else groups.push([section, [b]]);
+  }
 
   // a minute's tick keeps "tomorrow" right across midnight
   const now = useNow(true, 60000);
@@ -58,37 +93,37 @@ export function NoteSettings({ note, onChange }) {
             </div>
           </div>
 
+          {/* Oneg: ~40 categories, so a short list to search (by section, a dot of each colour),
+              not Milo's cloud of chips */}
           <div className="flex flex-col gap-2 border-t border-foreground/5 pt-3">
             <span className="text-xs text-foreground/45">Belongs to</span>
-            <div className="flex flex-wrap gap-1.5">
-              <button
-                type="button"
-                onClick={() => onChange({ blockId: null })}
-                aria-pressed={note.blockId == null}
-                className={`cursor-pointer rounded-lg px-2.5 py-1 text-xs transition-colors ${
-                  note.blockId == null
-                    ? "bg-foreground text-background"
-                    : "text-foreground/55 ring-1 ring-foreground/10 hover:text-foreground"
-                }`}
-              >
-                General note
-              </button>
-              {choices.map((b) => (
-                <button
-                  key={b.id}
-                  type="button"
-                  onClick={() => onChange({ blockId: b.id })}
-                  aria-pressed={note.blockId === b.id}
-                  style={{ backgroundColor: b.bg, color: b.ink }}
-                  className={`cursor-pointer rounded-lg px-2.5 py-1 text-xs transition-shadow ${
-                    note.blockId === b.id
-                      ? "ring-2 ring-foreground/70 ring-offset-1 ring-offset-popover"
-                      : ""
-                  }`}
-                >
-                  {b.name.replace(" Block", "")}
-                </button>
+            <label className="flex h-8 items-center gap-2 rounded-lg bg-foreground/[0.05] px-2.5 text-xs">
+              <Search className="size-3.5 shrink-0 text-foreground/45" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Find a category"
+                aria-label="Find a category"
+                className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-foreground/40"
+              />
+            </label>
+            <div className="scrollbar-none -mx-1 flex max-h-56 flex-col overflow-y-auto">
+              {!q && <Choice label="General note" picked={note.blockId == null} onPick={() => onChange({ blockId: null })} />}
+              {groups.map(([section, list]) => (
+                <div key={section} className="flex flex-col">
+                  <span className="px-2 pt-2.5 pb-1 text-[11px] font-medium text-foreground/40">{section}</span>
+                  {list.map((b) => (
+                    <Choice
+                      key={b.id}
+                      label={b.name}
+                      dot={b.bg}
+                      picked={note.blockId === b.id}
+                      onPick={() => onChange({ blockId: b.id })}
+                    />
+                  ))}
+                </div>
               ))}
+              {q && groups.length === 0 && <span className="px-2 py-2 text-xs text-foreground/45">No category called that</span>}
             </div>
           </div>
 

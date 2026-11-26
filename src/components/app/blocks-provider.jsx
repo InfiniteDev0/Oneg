@@ -17,6 +17,7 @@ export function BlocksProvider({ edu, children }) {
         id: key,
         name: edu?.topics?.[key] ?? key,
         section: section.key,
+        sectionName: edu?.sections?.[section.key] ?? section.key,
         bg: TOPICS[key].colour,
         ink: "#ffffff",
         icon: TOPICS[key].icon,
